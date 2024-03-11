@@ -13,12 +13,22 @@ import facebook from "../../assets/Images/facebook-color-svgrepo-com.svg";
 import instagram from "../../assets/Images/instagram-1-svgrepo-com.svg";
 import linkedIn from "../../assets/Images/linkedin-svgrepo-com.svg";
 import twitter from "../../assets/Images/logo-x-twitter.svg";
-import youtube from "../../assets/Images/yt.svg";
+import youtube from "../../assets/Images/yt.png";
 import tiktok from "../../assets/Images/tiktok-icon-white-1-logo-svgrepo-com.svg";
 import thereds from "../../assets/Images/threads.svg";
 import pinterest from "../../assets/Images/pinterest-svgrepo-com.svg";
 import tumblr from "../../assets/Images/tumblr.svg";
 import Footer from "../../Components/Footer";
+
+// import facebook from "../../assets/Images/marquee-logo/facebook.png";
+// import instagram from "../../assets/Images/marquee-logo/instagram.png";
+// import linkedIn from "../../assets/Images/marquee-logo/linkedIn.png";
+// import twitter from "../../assets/Images/marquee-logo/twitter.png";
+// import youtube from "../../assets/Images/marquee-logo/youtube.png";
+// import tiktok from "../../assets/Images/marquee-logo/tiktok.png";
+// import thereds from "../../assets/Images/marquee-logo/thereds.png";
+// import pinterest from "../../assets/Images/marquee-logo/pinterest.png";
+// import tumblr from "../../assets/Images/marquee-logo/tumblr.png";
 
 const Main = () => {
   return (
@@ -104,10 +114,9 @@ const Main = () => {
           target="blank">
           <img
             loading="lazy"
-            className="max-w-[40px] h-[40px] md:max-w-[45px] md:h-[45px] mx-2"
+            className="max-w-[40px] h-[40px] md:max-w-[100%]  mx-2"
             src={youtube}
           />
-          Youtube
         </a>
         <a
           className="flex justify-center items-center mx-4 text-slate-600 grayscale text-sm md:text-4xl font-bold"
