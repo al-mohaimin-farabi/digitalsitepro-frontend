@@ -41,7 +41,7 @@ const Header = () => {
           Experience the joy of collaborative creativity with us, where every
           moment sparks magic for our beloved customers.
         </p>
-        <div className="flex flex-wrap mt-10 md:mt-16 lg:mt-20   text-white items-center justify-center ">
+        <div className="flex flex-wrap mt-10 md:mt-10 lg:mt-20   text-white items-center justify-center ">
           <NavLink
             className={`${HomeCss.text_shadow} md:text-xl rounded-md mx-4 bg-transparent py-3 px-8  border-2  border-purple-bright hover:bg-transparent transition-colors duration-200 ease-linear font-nav  hover:text-purple-bright `}
             to="/contact">
