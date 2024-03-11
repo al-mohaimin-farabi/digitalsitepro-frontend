@@ -19,8 +19,8 @@ const Fetures = () => {
           </div>
           <h4 className="font-bold text-base my-4 ">Web Devlopment</h4>
           <p className="w-full sm:w-4/5 mx-auto  md:w-full lg:w-full">
-            Whether you have a team of 2 or 200, our shared team inboxes keep
-            everyone on the same page and in the loop.
+            Elevate your online presence with our bespoke web development
+            solutions tailored to your unique business needs.
           </p>
         </div>
         <div
@@ -35,9 +35,10 @@ const Fetures = () => {
             />
           </div>
           <h4 className="font-bold text-base my-4">Graphics Design</h4>
-          <p className="w-full sm:w-4/5 mx-auto  md:w-full lg:w-full">
-            An all-in-one customer service platform that helps you balance
-            everything your customers need to be happy.
+          <p className="w-full text-pretty break-words sm:w-4/5 mx-auto  md:w-full lg:w-full">
+            Ignite your brand&apos;s visual identity with our graphic design
+            agency&apos;s expertise in crafting stunning logos, branding
+            materials, and marketing collateral.
           </p>
         </div>
         <div
@@ -53,8 +54,9 @@ const Fetures = () => {
           </div>
           <h4 className="font-bold text-base my-4">Video Edit</h4>
           <p className="w-full sm:w-4/5 mx-auto  md:w-full lg:w-full">
-            Measure what matters with Untitled’s easy-to-use reports. You can
-            filter, export, and drilldown on the data in a couple clicks.
+            Transform your raw footage into polished masterpieces with our
+            professional video editing services, tailored to your specific needs
+            and vision.
           </p>
         </div>
       </div>

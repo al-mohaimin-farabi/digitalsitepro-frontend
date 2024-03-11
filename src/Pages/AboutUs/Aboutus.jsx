@@ -77,10 +77,10 @@ const Aboutus = () => {
           </p>
           <p className="text-base font-inter text-pretty break-words">
             Digital Site Pro: Your premier ally in conquering the digital
-            frontier, pioneering innovation, and redefining possibilities. We're
-            not just a service provider; we're your partners in transforming
-            digital landscapes with unparalleled creativity and visionary
-            thinking.
+            frontier, pioneering innovation, and redefining possibilities.
+            We&apos;re not just a service provider; we&apos;re your partners in
+            transforming digital landscapes with unparalleled creativity and
+            visionary thinking.
           </p>
         </div>
         <h2 className="text-[#301934] text-3xl font-inter font-normal     text-center mt-12">
