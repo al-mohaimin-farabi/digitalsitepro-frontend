@@ -4,7 +4,7 @@ import fetureGraphics from "../../assets/Images/feture-graphics.png";
 import fetureVideoEdit from "../../assets/Images/feture-videoEdit.png";
 const Fetures = () => {
   return (
-    <div className="w-[100%]  mx-auto -mt-24 md:-mt-32 lg:-mt-36 mb-8 py-5 md:py-0 relative z-50  px-2">
+    <div className="w-[100%]  mx-auto -mt-24 md:-mt-30 lg:-mt-36 mb-8 py-5 md:py-0 relative z-50  px-2">
       <div className="bg-[#F9FAFB] grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-5  rounded  shadow-feture font-flow">
         <div
           className={`${HomeCss.feture__box} text-center text-pretty px-4  lg:px-6 font-flow py-4 md:py-10 lg:py-12 `}>
