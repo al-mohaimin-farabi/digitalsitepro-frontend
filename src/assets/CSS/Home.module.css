@@ -1,0 +1,164 @@
+.header_bg {
+  background-color: hsla(0, 0%, 0%, 1);
+  background-image: radial-gradient(
+      at 29% 90%,
+      hsla(0, 0%, 6%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 67% 40%, hsla(84, 0%, 6%, 1) 0px, transparent 50%),
+    radial-gradient(at 85% 14%, hsla(315, 21%, 28%, 0.45) 0px, transparent 50%),
+    radial-gradient(at 5% 9%, hsla(261, 0%, 0%, 0.27) 0px, transparent 50%),
+    radial-gradient(at 11% 24%, hsla(262, 32%, 33%, 1) 0px, transparent 50%),
+    radial-gradient(at 55% 65%, hsla(0, 0%, 6%, 1) 0px, transparent 50%),
+    radial-gradient(at 9% 81%, hsla(315, 21%, 28%, 0.98) 0px, transparent 50%);
+  /* -webkit-clip-path: ellipse(100% 55% at 48% 44%); */
+  /* clip-path: ellipse(100% 55% at 48% 44%); */
+}
+
+.gradient_text {
+  background: linear-gradient(180deg, #4c40f7, #9a6ce1);
+  background-clip: text;
+  color: transparent;
+}
+.gradient_bg {
+  background-color: hsla(0, 0%, 0%, 1);
+  background-image: radial-gradient(
+      at 29% 90%,
+      hsla(0, 0%, 6%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 67% 40%, hsla(84, 0%, 6%, 1) 0px, transparent 50%),
+    radial-gradient(at 85% 14%, hsla(315, 21%, 28%, 0.45) 0px, transparent 50%),
+    radial-gradient(at 5% 9%, hsla(261, 0%, 0%, 0.27) 0px, transparent 50%),
+    radial-gradient(at 11% 24%, hsla(262, 32%, 33%, 1) 0px, transparent 50%),
+    radial-gradient(at 55% 65%, hsla(0, 0%, 6%, 1) 0px, transparent 50%),
+    radial-gradient(at 9% 81%, hsla(315, 21%, 28%, 0.98) 0px, transparent 50%);
+}
+.card_gradient_text {
+  background: linear-gradient(90deg, #4c40f7, #9a6ce1);
+  /* background: linear-gradient(90deg, #5444f5, #9a6ce1); */
+  background-clip: text;
+  color: transparent;
+}
+
+.card_title {
+  position: relative;
+  width: max-content;
+}
+
+.card_title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  left: -10px;
+  bottom: -2px;
+  width: 115%;
+  background-color: aliceblue;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1500ms ease;
+}
+
+.card_inner_body:hover .card_title::after {
+  left: -5px;
+  transform: scaleX(1);
+}
+
+.border_bg {
+  background: linear-gradient(180deg, #5444f5, #9a6ce1);
+}
+
+.feture__box {
+  cursor: pointer !important;
+}
+
+.img__box {
+  width: 85px;
+  height: 85px;
+  line-height: 85px;
+  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+  background: #eee;
+  font-size: 40px;
+  color: #664ffa;
+  margin-bottom: 40px;
+  position: relative;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.img__box:after {
+  content: "";
+  width: 95px;
+  height: 95px;
+  border: 1px dashed #d6dad6;
+  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  z-index: 1;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.feture__box:hover .img__box {
+  border-radius: 50%;
+  background: #2c3392;
+}
+.feture__box:hover .img__box:after {
+  border-radius: 50%;
+}
+
+.glow {
+  background-color: transparent;
+  /*     
+  box-shadow: 0 0 5px #294ce9, 0 0 25px #8515b9, 0 0 50px #1aaace,
+    0 0 200px #b003f4; */
+}
+
+.overlay {
+  background-size: cover !important;
+  background: rgba(44, 51, 146, 0.5);
+  background: -webkit-linear-gradient(
+      rgba(44, 51, 146, 0.5),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url(../../assets/Images/ctaBg.png) center center no-repeat;
+  background: linear-gradient(rgba(44, 51, 146, 0.5), rgba(0, 0, 0, 0.8)),
+    url(../../assets/Images/ctaBg.png) center center no-repeat;
+  background-attachment: fixed;
+}
+
+.separator {
+  position: relative;
+}
+.separator::after {
+  content: "";
+  top: 1px;
+  right: -8px;
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  background-color: #eee;
+}
+
+.ContactUs {
+  position: relative;
+}
+.ContactUs::after {
+  position: absolute;
+  content: "";
+  left: 105%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20%;
+  height: 2px;
+  background-color: #2c3392;
+}
+.text_shadow{
+  text-shadow: 1px 1px transparent !important;
+}
+
+/* @media only screen and (max-width: 960px) {
+  .header_bg {
+    clip-path: ellipse(110% 50% at 48% 44%);
+  }
+} */

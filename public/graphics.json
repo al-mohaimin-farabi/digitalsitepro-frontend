@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Flayer Design For Furniture Brand",
+    "type": "graphics_design",
+    "img": "/showcaseimg/graphics4.jpg",
+    "subcategory": "flayerdesign",
+    "buttons": ["Falyer Design"],
+    "gallery": [
+      "/showcaseimg/graphics4.jpg",
+      "/showcaseimg/graphics1.jpg",
+      "/showcaseimg/graphics3.jpg",
+      "/showcaseimg/graphics5.jpg",
+      "/showcaseimg/graphics6.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Poster Design For Restaurant",
+    "type": "graphics_design",
+    "img": "/showcaseimg/graphics12.jpg",
+    "subcategory": "flayerdesign",
+    "buttons": ["Falyer Design"],
+    "gallery": [
+      "/showcaseimg/graphics12.jpg",
+      "/showcaseimg/graphics13.jpg",
+      "/showcaseimg/graphics14.jpg",
+      "/showcaseimg/graphics15.jpg",
+      "/showcaseimg/graphics16.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Minimal Flayer Design For Marketing Agency",
+    "type": "graphics_design",
+    "img": "/showcaseimg/graphics10.jpg",
+    "subcategory": "flayerdesign",
+    "buttons": ["Falyer Design"],
+    "gallery": [
+      "/showcaseimg/graphics10.jpg",
+      "/showcaseimg/graphics8.jpg",
+      "/showcaseimg/graphics9.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Helth Flayer Design",
+    "type": "graphics_design",
+    "img": "/showcaseimg/graphics18.jpg",
+    "subcategory": "flayerdesign",
+    "buttons": ["Falyer Design"],
+    "gallery": [
+      "/showcaseimg/graphics18.jpg",
+      "/showcaseimg/graphics17.jpg",
+      "/showcaseimg/graphics19.jpg"
+    ]
+  }
+]

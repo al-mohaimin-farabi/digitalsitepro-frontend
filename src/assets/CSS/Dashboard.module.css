@@ -1,0 +1,9 @@
+.bg_box {
+  /* background-color: red; */
+  background-image: url(../Images/dashboard-bg.jpg);
+}
+
+.phone_input {
+  min-height: 42px !important;
+  min-width: 100% !important;
+}

@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:wght@100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: #ffffff;
+  overflow: overlay !important;
+  /* overflow-x: hidden !important; */
+  /* font-family: 'Roboto Mono', monospace; */
+  /* font-family: "Jost", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Work Sans", sans-serif;
+ */
+}
+
+.font-nav {
+  font-family: "Jost", sans-serif !important;
+  font-optical-sizing: auto;
+}
+
+.font-cardo {
+  font-family: "Cardo", serif !important;
+  font-optical-sizing: auto;
+}
+.font-hero {
+  font-family: "Montserrat", sans-serif !important;
+  font-optical-sizing: auto;
+}
+
+.font-flow {
+  font-family: "Work Sans", sans-serif !important;
+  font-optical-sizing: auto;
+}
+.font-mono {
+  font-family: "Roboto Mono", monospace !important;
+  font-optical-sizing: auto;
+}
+.font-inter {
+  font-family: "Inter", sans-serif !important;
+  font-optical-sizing: auto;
+}
+
+.active {
+  font-weight: 700;
+  position: relative;
+}
+.active.hideState.dashboard_tab {
+  font-weight: 400;
+  position: relative;
+}
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #711db0;
+}
+.active.hideState::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: transparent;
+}
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+.login-bg {
+  /* background: linear-gradient(90deg, #9a6ce1, #2947a9); */
+  background-color: hsla(0, 0%, 0%, 1);
+  background-image: radial-gradient(
+      at 29% 90%,
+      hsla(0, 0%, 6%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 67% 40%, hsla(84, 0%, 6%, 1) 0px, transparent 50%),
+    radial-gradient(at 85% 14%, hsla(315, 21%, 28%, 0.45) 0px, transparent 50%),
+    radial-gradient(at 5% 9%, hsla(261, 0%, 0%, 0.27) 0px, transparent 50%),
+    radial-gradient(at 11% 24%, hsla(262, 32%, 33%, 1) 0px, transparent 50%),
+    radial-gradient(at 55% 65%, hsla(0, 0%, 6%, 1) 0px, transparent 50%),
+    radial-gradient(at 9% 81%, hsla(315, 21%, 28%, 0.98) 0px, transparent 50%);
+  clip-path: circle(62.3% at 110% 50%);
+}
+.full-bg {
+  background-color: hsla(0, 0%, 0%, 1);
+  background-image: radial-gradient(
+      at 29% 90%,
+      hsla(0, 0%, 6%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 67% 40%, hsla(84, 0%, 6%, 1) 0px, transparent 50%),
+    radial-gradient(at 85% 14%, hsla(315, 21%, 28%, 0.45) 0px, transparent 50%),
+    radial-gradient(at 5% 9%, hsla(261, 0%, 0%, 0.27) 0px, transparent 50%),
+    radial-gradient(at 11% 24%, hsla(262, 32%, 33%, 1) 0px, transparent 50%),
+    radial-gradient(at 55% 65%, hsla(0, 0%, 6%, 1) 0px, transparent 50%),
+    radial-gradient(at 9% 81%, hsla(315, 21%, 28%, 0.98) 0px, transparent 50%);
+}
+.country-list {
+  position: fixed !important;
+  padding-top: 4px !important;
+}
+.aboutbg {
+  background-image: url("./assets/Images/aboutusbgimg.jpg");
+  background-repeat: repeat-x;
+  background-size: inherit;
+  background-position: center center;
+}
+.testimonialbg {
+  background-image: url("./assets/Images/testimonialpagebg.jpg");
+  background-repeat: repeat;
+  background-size: inherit;
+  background-position: center center;
+}
+.shadow-feture {
+  box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.1);
+}

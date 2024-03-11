@@ -1,0 +1,12 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyBfgkU6RahiPJXtNbuA5cbIx1R_yFM00CQ",
+  authDomain: "digitalsitepro-91897.firebaseapp.com",
+  projectId: "digitalsitepro-91897",
+  storageBucket: "digitalsitepro-91897.appspot.com",
+  messagingSenderId: "1059408446903",
+  appId: "1:1059408446903:web:e3ff9a4e1898ffe3905432",
+  measurementId: "G-MSCQBGFWE1"
+};
+
+email js service id=  service_gcbux8k
+email js pass = BJK-M5*.ppR4Wfm
