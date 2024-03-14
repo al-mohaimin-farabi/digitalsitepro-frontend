@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
-import logo from "../assets/Images/logo2.svg";
+import logo from "../assets/Images/logo.svg";
 import logo_dark from "../assets/Images/logo__dark.svg";
 import { IoIosArrowDown, IoMdLogOut } from "react-icons/io";
 import { useEffect, useRef, useState } from "react";
@@ -181,14 +181,14 @@ const Navbar = () => {
         className={` flex md:max-w-[960px] lg:max-w-[1280px] mx-auto h-16 px-2  justify-between items-center py-10 my-2 rounded  `}>
         <NavLink
           to="/"
-          className="flex justify-start items-center active hideState">
+          className="flex justify-start items-center active hideState min-w-[135px]">
           <img
             loading="lazy"
-            className="mx-2 max-w-8  "
+            className="mx-2 max-w-16  "
             src={scrolled ? logo_dark : logo}
             alt="digital site pro logo"
           />
-          <div>
+          <div className="hidden">
             <h2 className="font-semibold text-sm">
               DIGITALSITE <br />
             </h2>
