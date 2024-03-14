@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/Images/logo2.svg";
+import logo from "../assets/Images/logo.svg";
 import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 const Footter = () => {
   return (
@@ -7,14 +7,8 @@ const Footter = () => {
       <div className=" py-5  md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2">
         <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-4 text-white">
           <div className="flex flex-col justify-start items-start py-2 px-1 md:px-0 md:col-span-2 lg:col-span-1">
-            <div className="flex justify-between items-center h-[70px]">
-              <div className="w-[60px] h-[60px] rounded-full bg-black grid place-content-center">
-                <img className="max-w-6" src={logo} alt="" />
-              </div>
-              <span className="text-sm ml-4 font-bold uppercase font-flow">
-                DigitalSite <br /> pro
-              </span>
-            </div>
+            <img className="max-w-16" src={logo} alt="" />
+
             <p className="text-sm my-2 py-5 font-hero text-pretty text-white md:pr-3 lg:pr-0">
               Unleash boundless creativity with our award-winning global digital
               agency. From bustling metropolises to serene landscapes, we craft
