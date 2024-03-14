@@ -15,7 +15,7 @@ const Footter = () => {
                 DigitalSite <br /> pro
               </span>
             </div>
-            <p className="text-sm my-2 py-5 font-hero text-pretty text-white">
+            <p className="text-sm my-2 py-5 font-hero text-pretty text-white md:pr-3 lg:pr-0">
               Unleash boundless creativity with our award-winning global digital
               agency. From bustling metropolises to serene landscapes, we craft
               unforgettable brand experiences worldwide. Join us on the
