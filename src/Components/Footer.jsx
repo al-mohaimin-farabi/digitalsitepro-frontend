@@ -5,8 +5,8 @@ const Footter = () => {
   return (
     <div className="bg-slate-900 ">
       <div className=" py-5  md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2">
-        <div className="grid grid-cols-1 md:grid-cols-4 text-white">
-          <div className="flex flex-col justify-start items-start py-2 px-1 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-4 text-white">
+          <div className="flex flex-col justify-start items-start py-2 px-1 md:px-0 md:col-span-2 lg:col-span-1">
             <div className="flex justify-between items-center h-[70px]">
               <div className="w-[60px] h-[60px] rounded-full bg-black grid place-content-center">
                 <img className="max-w-6" src={logo} alt="" />
@@ -22,7 +22,7 @@ const Footter = () => {
               forefront of innovation, where imagination knows no limits
             </p>
           </div>
-          <div className="py-2 px-1 md:p-2">
+          <div className="py-2 px-1 md:py-2 md:px-0 lg:p-2">
             <p className="uppercase font-bold text-white h-[70px] grid items-center">
               Services <br />
               &nbsp;
@@ -55,7 +55,7 @@ const Footter = () => {
               </li>
             </ul>
           </div>
-          <div className="py-2 px-1 md:p-2">
+          <div className="py-2 px-1 md:py-2 md:px-4 lg:p-2">
             <p className="uppercase font-bold text-white h-[70px] grid items-center">
               Quick Links <br />
               &nbsp;
@@ -78,7 +78,7 @@ const Footter = () => {
               </li>
             </ul>
           </div>
-          <div className="py-2 px-1 md:p-2">
+          <div className="py-2 px-1 md:py-2 md:col-span-2 lg:col-span-1">
             <p className="uppercase font-bold text-white h-[70px] grid items-center">
               Contact <br />
               &nbsp;
@@ -89,22 +89,22 @@ const Footter = () => {
                   digitalsitepro@gmail.com
                 </a>
               </li>
-              <li className="text-white text-base    cursor-pointer transition-transform flex  flex-wrap gap-1">
-                Bangladesh:
+              <li className="text-white text-base cursor-pointer transition-transform flex flex-wrap">
+                <span>Bangladesh:</span>
                 <a
-                  className=" ml-2 hover:scale-110 origin-left"
+                  className="hover:scale-110 origin-left break-words"
                   href="tel:+8801720867938"
                   target="blank">
                   +8801720867938,
                 </a>
                 <a
-                  className=" hover:scale-110 origin-left"
+                  className=" hover:scale-110 origin-left break-words"
                   href="tel:+8801720867938"
                   target="blank">
                   +8801782310773,
                 </a>
                 <a
-                  className="ml-2 hover:scale-110 origin-left"
+                  className="hover:scale-110 origin-left break-words"
                   href="tel:+8801720867938"
                   target="blank">
                   +8801609678851,
