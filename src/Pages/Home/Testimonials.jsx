@@ -106,7 +106,7 @@ const Testimonials = () => {
               <div
                 className="w-full  h-[420px] md:h-[480px] relative grid grid-cols-1 bg-fixed content-end bg-cover bg-center p-5 rounded-xl font-flow"
                 style={{ backgroundImage: `url(${testimonial.bg})` }}>
-                <div className="w-full relative bg-[#fff] rounded-xl shadow-2xl py-4 px-3  text-center font-mono md:h-[calc(480px-295px)]">
+                <div className="w-full relative bg-[#fff] rounded-xl shadow-2xl py-4 px-3  text-center font-mono md:h-[calc(480px-260px)] lg:h-[calc(480px-295px)] ">
                   <img
                     className="absolute top-0 -translate-y-1/2 left-[50%] -translate-x-1/2 w-[78px] h-[78px] rounded-full border-x-4 border-t-4 border-[#fff] border-b-4"
                     src={testimonial.img}
