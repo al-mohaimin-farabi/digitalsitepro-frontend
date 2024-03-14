@@ -1,6 +1,61 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footter from "../../Components/Footer";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import HomeCss from "../../assets/CSS/Home.module.css";
+import useAuth from "../../Hooks/useAuth";
+import { useForm } from "react-hook-form";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Testimonial = () => {
+  const { user } = useAuth();
+  const [captchaValue, setCaptchaValue] = useState("");
+  const [verified, setVerified] = useState(false);
+
+  const onChange = (value) => {
+    setCaptchaValue(value);
+    setVerified(true);
+  };
+
+  const {
+    reset,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    const apiUrl = import.meta.env.VITE_REACT_APP_SAVE_TESTIMONIAL;
+    if (captchaValue && verified) {
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json", // Specify JSON content type
+          // Add any other headers if required
+        },
+        body: JSON.stringify(data), // Convert data to JSON string
+      };
+      fetch(apiUrl, options)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          // Parse response JSON
+          return response.json();
+        })
+        .then((data) => {
+          // Handle successful response data
+          alert("Your compliment was successfully submitted");
+          console.log(data);
+          reset();
+        })
+        .catch((error) => {
+          // Handle errors
+          console.error("There was a problem with the request:", error);
+        });
+    }
+  };
+
   return (
     <>
       <div className="w-full pt-[50px] md:pt-[70px] relative overflow-hidden  min-h-[400px] testimonialbg">
@@ -23,43 +78,105 @@ const Testimonial = () => {
             testimonial, please use the form bellow. We greatly appreciate your
             feedback
           </h2>
-          <form className="py-5 mt-8 space-y-5 px-4 sm:px-2 md:px-0">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="py-5 mt-8 space-y-5 px-4 sm:px-2 md:px-0  ">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <input
+                autoComplete="true"
+                placeholder="Your Name"
+                className={`${
+                  user && "text-gray-400"
+                } outline-gray-950 outline outline-1 rounded p-2`}
                 type="text"
-                placeholder="Name"
-                name="Name"
-                className="outline rounded w-full outline-1 p-2"></input>
+                id="name"
+                defaultValue={user?.displayName || ""}
+                readOnly={user.email ? true : false}
+                {...register("name", {
+                  required: !user ? "Name is required!" : "",
+                })}
+              />
+              {errors.name && (
+                <p className="text-red-600">{errors.name.message}</p>
+              )}
               <input
+                autoComplete="true"
+                placeholder="Your Email"
+                className={`${
+                  user && "text-gray-400"
+                } outline-gray-950 outline outline-1 rounded p-2`}
                 type="email"
-                placeholder="Email"
-                name="Email"
-                className="outline rounded w-full outline-1 p-2"></input>
+                id="email"
+                defaultValue={user?.email || ""}
+                readOnly={user.email ? true : false}
+                {...register("email", {
+                  required: !user ? "Email is required!" : "",
+                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                })}
+              />
+              {errors.email && (
+                <p className="text-red-600">{errors.email.message}</p>
+              )}
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <input
+                autoComplete="true"
                 type="text"
                 placeholder="Location"
                 name="Location"
-                className="outline rounded w-full outline-1 p-2"></input>
+                className="outline rounded w-full outline-1 p-2"
+                {...register("location", {
+                  required: "Location is required!",
+                })}
+              />
+              {errors.message && (
+                <p className="text-red-600">{errors.message.message}</p>
+              )}
               <input
                 type="text"
                 placeholder="Role"
                 name="Role"
-                className="outline rounded w-full outline-1 p-2"></input>
+                className="outline rounded w-full outline-1 p-2"
+                {...register("Role", {
+                  required: "Role is required!",
+                })}
+              />
+              {errors.message && (
+                <p className="text-red-600">{errors.message.message}</p>
+              )}
             </div>
             <div className="grid grid-cols-1  ">
               <textarea
                 placeholder="Your Message Here"
                 className="outline outline-1 rounded p-2 w-full min-h-[180px] max-h-[220px] "
                 id="message"
+                {...register("message", {
+                  required: "Message is required!",
+                  minLength: {
+                    value: 15,
+                    message: "Message must be at least 15 characters long.",
+                  },
+                })}
+              />
+              {errors.message && (
+                <p className="text-red-600">{errors.message.message}</p>
+              )}
+            </div>
+            <div className=" grid place-content-start">
+              <p className="font-thin font-mono text-sm text-left">
+                <span className="text-red-600">*</span>reCAPTCHA
+              </p>
+              <ReCAPTCHA
+                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                onChange={onChange}
               />
             </div>
-            <input
-              className="bg-slate-900 px-12 py-3 cursor-pointer hover:bg-transparent hover:text-slate-900 border-2 transition-all duration-300 border-slate-900 text-white rounded"
-              type="submit"
-              value="Submit"
-            />
+            <button
+              disabled={!verified}
+              className={` bg-primary px-10 py-3  my-6 font-bold  text-white hover:text-[#6E72DD]  hover:bg-transparent border-2 transition-colors duration-200 ease-linear border-primary hover:border-[#6E72DD]  rounded  cursor-pointer`}>
+              <div className={`${HomeCss.separator} inline`}>Submit</div>
+              <FontAwesomeIcon className="ml-[14px] " icon={faPaperPlane} />
+            </button>
           </form>
         </div>
       </div>

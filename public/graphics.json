@@ -54,5 +54,48 @@
       "/showcaseimg/graphics17.jpg",
       "/showcaseimg/graphics19.jpg"
     ]
+  },
+  {
+    "id": 5,
+    "name": "Flayer Design For Furniture Brand",
+    "type": "Website",
+    "img": "/showcaseimg/graphics4.jpg",
+    "subcategory": "flayrdesign",
+    "buttons": ["Falyer Design"],
+    "gallery": [
+      "/showcaseimg/graphics4.jpg",
+      "/showcaseimg/graphics1.jpg",
+      "/showcaseimg/graphics3.jpg",
+      "/showcaseimg/graphics5.jpg",
+      "/showcaseimg/graphics6.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Poster Design For Restaurant",
+    "type": "website",
+    "img": "/showcaseimg/graphics12.jpg",
+    "subcategory": "flayrdesign",
+    "buttons": ["Falyer Design"],
+    "gallery": [
+      "/showcaseimg/graphics12.jpg",
+      "/showcaseimg/graphics13.jpg",
+      "/showcaseimg/graphics14.jpg",
+      "/showcaseimg/graphics15.jpg",
+      "/showcaseimg/graphics16.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Minimal Flayer Design For Marketing Agency",
+    "type": "video_editing",
+    "img": "/showcaseimg/graphics10.jpg",
+    "subcategory": "flayerdesgn",
+    "buttons": ["Falyer Design"],
+    "gallery": [
+      "/showcaseimg/graphics10.jpg",
+      "/showcaseimg/graphics8.jpg",
+      "/showcaseimg/graphics9.jpg"
+    ]
   }
 ]

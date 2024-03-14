@@ -33,7 +33,7 @@ import Footer from "../../Components/Footer";
 const Main = () => {
   return (
     <div className=" w-full">
-      <main className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto ">
+      <main className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-0">
         <Fetures />
         <Services />
         <TechStack />

@@ -24,7 +24,8 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState("");
   const [passResetEmailSend, setPassResetEmailSend] = useState(false);
-  // const [admin, setAdmin] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [admin, setAdmin] = useState(false);
   const [emailVerificationSent, setEmailVerificationSent] = useState(false);
   const [userEmailVerified, setUserEmailVerified] = useState(false);
 
@@ -206,18 +207,18 @@ const useFirebase = () => {
     return () => unsubscribe();
   }, [auth]);
 
-  // // check user role
-  // useEffect(() => {
-  //   async function isAdmin() {
-  //     const url = `http://localhost:5000/users/${user?.email}`;
-  //     await fetch(url)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setAdmin(data.admin);
-  //       });
-  //   }
-  //   isAdmin();
-  // }, [user.email]);
+  // check user role
+  useEffect(() => {
+    async function isAdmin() {
+      const url = `http://localhost:5000/users/${user?.email}`;
+      await fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          setAdmin(data.admin);
+        });
+    }
+    isAdmin();
+  }, [user.email]);
 
   // logout
   const logout = () => {
@@ -247,7 +248,7 @@ const useFirebase = () => {
 
   return {
     user,
-    // admin,
+    admin,
     isLoading,
     authError,
     userEmailVerified,

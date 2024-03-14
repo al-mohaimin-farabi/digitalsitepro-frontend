@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
-import logo from "../assets/Images/logo.svg";
+import logo from "../assets/Images/logo2.svg";
 import logo_dark from "../assets/Images/logo__dark.svg";
 import { IoIosArrowDown, IoMdLogOut } from "react-icons/io";
 import { useEffect, useRef, useState } from "react";
@@ -15,7 +15,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [serviceActive, setServiceActive] = useState(false);
-  const [testimonialActive, setTestimonialActive] = useState(false);
+  // const [testimonialActive, setTestimonialActive] = useState(false);
   const { user, logout } = useAuth();
 
   const mobileNavVariants = {
@@ -109,13 +109,12 @@ const Navbar = () => {
   const scaleSubMenu = {
     open: {
       opacity: 1,
-      scaleY: 1,
+      height: 128,
       transition: { duration: 0.3 },
     },
     closed: {
       opacity: 0,
-      scaleY: 0,
-
+      height: 0,
       transition: { duration: 0.3 },
     },
   };
@@ -123,15 +122,15 @@ const Navbar = () => {
   const handeisMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
     setServiceActive(false);
-    setTestimonialActive(false);
+    // setTestimonialActive(false);
   };
 
-  const handleTestimonilaOpen = () => {
-    setServiceActive(false);
-    setTestimonialActive(!testimonialActive);
-  };
+  // const handleTestimonilaOpen = () => {
+  //   setServiceActive(false);
+  //   setTestimonialActive(!testimonialActive);
+  // };
   const handlSserviceOpen = () => {
-    setTestimonialActive(false);
+    // setTestimonialActive(false);
     setServiceActive(!serviceActive);
   };
 
@@ -144,7 +143,7 @@ const Navbar = () => {
       if (navbarRef.current && !navbarRef.current.contains(event.target)) {
         setIsMenuOpen(false);
         setServiceActive(false);
-        setTestimonialActive(false);
+        // setTestimonialActive(false);
       }
     };
 
@@ -177,7 +176,7 @@ const Navbar = () => {
         scrolled ? "text-slate-900" : "text-white"
       }   ${!scrolled && isNavbarBg} ${positionClass} ${isSmall && scrolled} ${
         !isSmall && scrolled
-      } ${scrolled && "shadow "}`}>
+      } ${scrolled && "shadow-lg "}`}>
       <div
         className={` flex md:max-w-[960px] lg:max-w-[1280px] mx-auto h-16 px-2  justify-between items-center py-10 my-2 rounded  `}>
         <NavLink
@@ -203,19 +202,19 @@ const Navbar = () => {
 
         {/* <div className="hidden md:flex justify-start "> */}
         <ul className="hidden md:flex  justify-start space-x-0  sm:space-x-2 md:space-x-2 lg:space-x-8">
-          <li className="p-2 text-lg flex justify-center items-center ">
+          <li className="p-2 text-base flex justify-center items-center ">
             <NavLink className={`${NavCss.menu_hovered}`} to="/">
               Home
             </NavLink>
           </li>
 
-          <li className="p-2 text-lg flex justify-start items-center">
+          <li className="p-2 text-base flex justify-start items-center">
             <NavLink className={`${NavCss.menu_hovered}`} to="/aboutus">
               About Us
             </NavLink>
           </li>
 
-          <li className=" p-2 text-lg relative group cursor-pointer flex  items-center">
+          <li className="p-2  text-base relative group cursor-pointer flex  items-center">
             <NavLink
               className={`${NavCss.menu_hovered}  hideState `}
               to="/services">
@@ -223,7 +222,7 @@ const Navbar = () => {
             </NavLink>
             <IoIosArrowDown className="transition-all duration-300 group-hover:rotate-180 ml-1 inline-block" />
 
-            <div className="hidden absolute top-11 z-[999999] w-[200px]  py-2 text-black  group-hover:block  ">
+            <div className="hidden absolute top-10 z-[999999] w-[200px]  py-2 text-black  group-hover:block  ">
               <ul className="bg-gray-200 shadow-lg p-2 rounded-md space-y-1">
                 <li className="pl-3 py-2 hover:bg-black hover:text-white rounded-md">
                   <NavLink
@@ -250,7 +249,7 @@ const Navbar = () => {
             </div>
           </li>
 
-          <li className=" p-2 text-lg relative group cursor-pointer flex items-center">
+          <li className=" p-2 text-base relative group cursor-pointer flex items-center">
             <NavLink to="/testimonial" className={`${NavCss.menu_hovered}`}>
               Testimonial
             </NavLink>
@@ -291,7 +290,7 @@ const Navbar = () => {
                     <FaRegUserCircle />
                   )}
                 </NavLink>
-                <div className="hidden absolute right-2 top-11 z-[999999] w-[150px] mt-2 py-2 text-black  group-hover:block  ">
+                <div className="hidden absolute right-2 top-10   z-[999999] w-[170px] mt-2 py-2 text-black  group-hover:block  ">
                   <ul className="bg-gray-200 p-2 rounded-md w-full  shadow-lg space-y-1">
                     <li className="pl-3 py-2 hover:bg-black hover:text-white rounded-md ">
                       <NavLink
@@ -423,43 +422,10 @@ const Navbar = () => {
               </motion.li>
               <motion.li
                 variants={itemsVariant}
-                className="mx-2 p-2 text-base relative overflow-hidden w-full">
-                <NavLink
-                  to="/testimonial"
-                  onClick={handleTestimonilaOpen}
-                  className="flex justify-start items-center  ">
-                  Testimonial
-                  <motion.span
-                    variants={arrow}
-                    animate={testimonialActive ? "open" : "closed"}
-                    className="ml-1 ">
-                    {/* <IoIosArrowDown></IoIosArrowDown> */}
-                  </motion.span>
-                </NavLink>
-
-                {/* <AnimatePresence>
-                  {testimonialActive && (
-                    <motion.div
-                      initial="closed"
-                      animate={testimonialActive ? "open" : "closed"}
-                      exit="closed"
-                      variants={scaleSubMenu}
-                      className=" mt-2  text-black rounded-md shadow-lg origin-top bg-gray-200 w-[100%]">
-                      <ul className="p-1 rounded-md w-full">
-                        <li className="p-2 hover:bg-primary hover:text-white rounded-md">
-                          <NavLink to="/demo1">Lorem</NavLink>
-                        </li>
-                        <li className="p-2 hover:bg-primary hover:text-white rounded-md">
-                          <NavLink to="/demo2">Ipsam</NavLink>
-                        </li>
-                        <li className="p-2 hover:bg-primary hover:text-white rounded-md">
-                          <NavLink to="/demo3">Ammet</NavLink>
-                        </li>
-                      </ul>
-                    </motion.div>
-                  )}
-                </AnimatePresence> */}
+                className="mx-2 p-2 text-base w-full">
+                <NavLink to="/testimonial">Testimonial</NavLink>
               </motion.li>
+
               <AnimatePresence>
                 {user.email && user?.emailVerified && (
                   <motion.li

@@ -101,7 +101,7 @@
 
 .feture__box:hover .img__box {
   border-radius: 50%;
-  background: #2c3392;
+  background: #000000;
 }
 .feture__box:hover .img__box:after {
   border-radius: 50%;

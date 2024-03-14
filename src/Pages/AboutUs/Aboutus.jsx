@@ -47,7 +47,7 @@ const Aboutus = () => {
   return (
     <>
       <div className="w-full pt-[50px] md:pt-[70px] relative overflow-hidden  min-h-[400px] aboutbg">
-        <div className=" md:max-w-[960px] lg:max-w-[1280px]  -mb-[50px] md:mt-[20px] mx-auto p-2 text-left flex items-center min-h-[400px]">
+        <div className=" md:max-w-[960px] lg:max-w-[1280px]  -mb-[50px] md:mt-[20px] mx-auto px-3 md:p-2 text-left flex items-center min-h-[400px]">
           <div className=" py-5  text-left">
             <p className="relative z-50 text-gray-100 font-inter   text-xl font-bold font-inter mb-2">
               Who We Are
@@ -64,12 +64,12 @@ const Aboutus = () => {
         /> */}
         <div className="bg-gray-900/70 absolute inset-0 z-30"></div>
       </div>
-      <div className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto p-2 text-left   my-16 ">
+      <div className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto px-3 md:p-2 text-left   my-16 ">
         <h2 className="text-2xl sm:text-2xl font-normal font-inter text-[#301934] mb-4">
           We provide our top-notch creative services
         </h2>
-        <div className="grid grid-cols-2 gap-5 md:gap-10 mt-8">
-          <p className="text-base font-inter text-pretty break-words md:p-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 mt-8">
+          <p className="text-base font-inter text-pretty break-words ">
             Digital Site Pro is a solution service provider committed to helping
             you establish a strong presence in the digital realm. We are the
             agency known for innovative thinking and pushing the limits of what

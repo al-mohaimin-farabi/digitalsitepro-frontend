@@ -15,7 +15,7 @@ const actions = [
 ];
 
 const Dashboard = () => {
-  const { user } = useAuth();
+  const { user, admin } = useAuth();
   const [error, setError] = useState("");
   const modalWrapperRef = useRef(null);
   const [activeTab, setActiveTab] = useState(actions[0].id);
@@ -217,7 +217,10 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="actions border-[1px]  p-2   rounded my-6 text-center grid content-center">
+        <div
+          className={
+            "actions border-[1px]  p-2   rounded my-6 text-center grid content-center"
+          }>
           <ul className="flex flex-wrap  space-x-2">
             {actions.map((action) => (
               <li key={action.id}>

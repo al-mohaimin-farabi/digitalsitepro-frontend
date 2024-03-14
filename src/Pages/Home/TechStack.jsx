@@ -52,7 +52,7 @@ const TechStack = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         ref={TechStack}
-        className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-5 font-mono pt-6 pb-8 px-6 ">
+        className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-5 font-mono pt-6 pb-8  ">
         <motion.div
           variants={children}
           className="p-1 sm:p-2 bg-gray-100 flex flex-col sm:flex-row  justify-start items-center rounded ">

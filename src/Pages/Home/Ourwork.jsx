@@ -36,6 +36,7 @@ const Ourwork = () => {
     if (activeTab === "all") {
       setFilteredWorks(allWorks);
     } else {
+      console.log(activeTab);
       const filtered = allWorks.filter((work) => work.type === activeTab);
       setFilteredWorks(filtered);
     }
@@ -107,7 +108,7 @@ const Mockup = ({ work }) => {
             <li className="flex my-2">
               <Link
                 className="rounded-[100px] px-4 py-2 text-sm"
-                to="/service/graphicsdesign">
+                to="/services/graphicsdesign">
                 More <FontAwesomeIcon className="ml-1" icon={faArrowRight} />
               </Link>
             </li>

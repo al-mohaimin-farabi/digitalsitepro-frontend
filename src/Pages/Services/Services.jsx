@@ -13,7 +13,7 @@ import Footter from "../../Components/Footer";
 const Services = () => {
   return (
     <>
-      <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto mt-[120px] p-2 font-inter">
+      <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto mt-[130px] py-2 px-3 md:p-2 font-inter my-8">
         <h2 className="text-primary text-2xl md:text-3xl uppercase font-inter tracking-wide mb-2">
           Digital Site Pro Services
         </h2>

@@ -28,11 +28,14 @@ const GraphicsDesign = () => {
   const fetchWork = async () => {
     const res = await fetch("/graphics.json");
     const data = await res.json();
-    setDesigns(data);
+    setDesigns(data.filter((work) => work.type === "graphics_design"));
     setFilteredDesigns(
-      category && category !== "all"
-        ? data.filter((work) => work.subcategory === category)
-        : data
+      category !== "all"
+        ? data.filter(
+            (work) =>
+              work.type === "graphics_design" && work.subcategory === category
+          )
+        : data.filter((work) => work.type === "graphics_design")
     );
   };
 
@@ -40,7 +43,7 @@ const GraphicsDesign = () => {
     setActiveTab(id);
     setFilteredDesigns(
       category === "all"
-        ? designs
+        ? designs.filter((work) => work.type === "graphics_design")
         : designs.filter((design) => design.subcategory === category)
     );
   };
@@ -80,17 +83,17 @@ const GraphicsDesign = () => {
   return (
     <>
       {isModalOpen && (
-        <div className="bg-black/30 w-[100vw] h-[100vh] inset-0  absolute z-[5555555] grid place-content-center  ">
+        <div className="bg-black/30 w-[100vw] h-[100vh] inset-0  fixed z-[5555555] grid place-content-center  ">
           <div
             ref={modalWrapperRef}
-            className=" w-[calc(100%-20px)] mx-auto md:mx-0 sm:min-w-[320px] sm:max-w-[450px] md:min-w-[380px] md:max-w-[450px] lg:max-w-[580px]   bg-white shadow-lg grid place-content-center py-5 rounded px-2">
+            className=" w-[calc(100%-20px)] mx-auto md:mx-0 sm:min-w-[320px] sm:max-w-[450px] md:min-w-[420px] md:max-w-[480px] lg:max-w-[580px]   bg-white shadow-lg grid place-content-center py-5 rounded px-2">
             <img
               // loading="lazy"
               className=" aspect-[4/3]   rounded  "
               src={imgPath}
               alt=""
             />
-            <div className="mt-4 flex flex-wrap  justify-start gap-2">
+            <div className="mt-4 flex flex-wrap  justify-start gap-2 ">
               {isModalOpen &&
                 galleryImg.map((img, index) => (
                   <img
@@ -116,12 +119,12 @@ const GraphicsDesign = () => {
           </div>
         </div>
       )}
-      <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto mt-[120px] p-2">
-        <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-6 gap-3">
-          <div className=" sm:border-r-2 ">
-            <ul className="flex  flex-row sm:flex-col space-x-2 sm:space-x-0 sm:space-y-2 ">
+      <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto mt-[130px] py-2 px-3 md:px-2 md:py-0  ">
+        <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-6 gap-3 ">
+          <div className="mb-8 mr-5">
+            <ul className="flex w-full  sm:w-[148px] lg:w-[200px] flex-row sm:flex-col space-x-2 sm:space-x-0 sm:space-y-2 fixed sm:border-r-2 h-[calc(100vh-130px)]  ">
               {tabs.map((tab) => (
-                <li className="sm:w-[90%]" key={tab.id}>
+                <li className="sm:w-[140px]" key={tab.id}>
                   <NavLink
                     to={`/services/graphicsdesign/?category=${tab.category}`}
                     onClick={() => handleTabChange(tab.id, tab.category)}
@@ -134,9 +137,11 @@ const GraphicsDesign = () => {
               ))}
             </ul>
           </div>
-          <div className="sm:col-span-4 md:col-span-5 grid grid-cols-1 sm:grid-cols-4 gap-2">
+          <div className="sm:ml-[calc(146px-122px)] md:ml-0 sm:col-span-4 md:col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 min-h-[calc(100vh-130px)]   pb-5">
             {filteredDesigns.map((design, index) => (
-              <div key={index} className="bg-gray-100 p-2 rounded text-center">
+              <div
+                key={index}
+                className="bg-gray-100 p-2 rounded text-center h-max">
                 <div className="img-box w-full  p-2 rounded group overflow-hidden cursor-pointer">
                   <img
                     onClick={() => showImage(design.img, design.gallery)}

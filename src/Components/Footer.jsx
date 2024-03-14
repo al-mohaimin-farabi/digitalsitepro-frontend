@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/Images/logo.svg";
+import logo from "../assets/Images/logo2.svg";
 import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 const Footter = () => {
   return (
     <div className="bg-slate-900 ">
       <div className=" py-5  md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2">
         <div className="grid grid-cols-1 md:grid-cols-4 text-white">
-          <div className="flex flex-col justify-start items-start py-2 ">
+          <div className="flex flex-col justify-start items-start py-2 px-1 md:px-0">
             <div className="flex justify-between items-center h-[70px]">
               <div className="w-[60px] h-[60px] rounded-full bg-black grid place-content-center">
                 <img className="max-w-6" src={logo} alt="" />
@@ -22,7 +22,7 @@ const Footter = () => {
               forefront of innovation, where imagination knows no limits
             </p>
           </div>
-          <div className="p-2">
+          <div className="py-2 px-1 md:p-2">
             <p className="uppercase font-bold text-white h-[70px] grid items-center">
               Services <br />
               &nbsp;
@@ -55,7 +55,7 @@ const Footter = () => {
               </li>
             </ul>
           </div>
-          <div className="p-2">
+          <div className="py-2 px-1 md:p-2">
             <p className="uppercase font-bold text-white h-[70px] grid items-center">
               Quick Links <br />
               &nbsp;
@@ -78,7 +78,7 @@ const Footter = () => {
               </li>
             </ul>
           </div>
-          <div className="p-2">
+          <div className="py-2 px-1 md:p-2">
             <p className="uppercase font-bold text-white h-[70px] grid items-center">
               Contact <br />
               &nbsp;
