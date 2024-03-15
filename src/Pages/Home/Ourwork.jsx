@@ -49,12 +49,16 @@ const Ourwork = () => {
           <button
             key={tab.id}
             onClick={() => handleClick(tab.id)}
-            className={`capitalize p-2 md:px-6 md:py-2 rounded-full relative ${
+            className={`capitalize py-2 px-2 md:px-6  rounded-full relative ${
               activeTab === tab.id
                 ? "text-white bg-primary"
                 : "text-black hover:text-black/50"
             }`}>
-            {tab.label}
+            {tab.label === "All"
+              ? "\u00A0\u00A0\u00A0\u00A0" +
+                tab.label +
+                "\u00A0\u00A0\u00A0\u00A0"
+              : tab.label}
           </button>
         ))}
       </div>

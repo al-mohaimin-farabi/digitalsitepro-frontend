@@ -36,10 +36,10 @@ const Faq = () => {
   ];
 
   return (
-    <div id="faq" className="my-5  px-2 py-5 font-flow">
+    <div id="faq" className="my-5  px-2 py-2 font-flow">
       <ContentHeader title={"FAQ"} />
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5  my-0 md:my-10">
-        <div className="hidden md:flex justify-center items-start">
+        <div className="hidden md:flex justify-center items-center">
           <img
             loading="lazy"
             src={faq}

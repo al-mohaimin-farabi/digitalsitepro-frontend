@@ -38,9 +38,7 @@ const Footter = () => {
                 </a>
               </li>
               <li className="text-white text-base hover:scale-110    origin-left cursor-pointer transition-transform">
-                <a href="" target="blank">
-                  Graphics Design
-                </a>
+                <NavLink to="/services/graphicsdesign">Graphics Design</NavLink>
               </li>
               <li className="text-white text-base hover:scale-110    origin-left cursor-pointer transition-transform">
                 <a href="" target="blank">

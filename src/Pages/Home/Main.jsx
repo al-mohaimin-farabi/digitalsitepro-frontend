@@ -7,32 +7,22 @@ import Testimonials from "./Testimonials";
 import Calltoaction from "./Calltoaction";
 import Faq from "./Faq";
 import OurTeam from "./OurTeam";
-
-import Marquee from "react-fast-marquee";
-import facebook from "../../assets/Images/facebook-color-svgrepo-com.svg";
-import instagram from "../../assets/Images/instagram-1-svgrepo-com.svg";
-import linkedIn from "../../assets/Images/linkedin-svgrepo-com.svg";
-import twitter from "../../assets/Images/logo-x-twitter.svg";
-import youtube from "../../assets/Images/yt.png";
-import tiktok from "../../assets/Images/tiktok-icon-white-1-logo-svgrepo-com.svg";
-import thereds from "../../assets/Images/threads.svg";
-import pinterest from "../../assets/Images/pinterest-svgrepo-com.svg";
-import tumblr from "../../assets/Images/tumblr.svg";
 import Footer from "../../Components/Footer";
+import Marquee from "react-fast-marquee";
 
-// import facebook from "../../assets/Images/marquee-logo/facebook.png";
-// import instagram from "../../assets/Images/marquee-logo/instagram.png";
-// import linkedIn from "../../assets/Images/marquee-logo/linkedIn.png";
-// import twitter from "../../assets/Images/marquee-logo/twitter.png";
-// import youtube from "../../assets/Images/marquee-logo/youtube.png";
-// import tiktok from "../../assets/Images/marquee-logo/tiktok.png";
-// import thereds from "../../assets/Images/marquee-logo/thereds.png";
-// import pinterest from "../../assets/Images/marquee-logo/pinterest.png";
-// import tumblr from "../../assets/Images/marquee-logo/tumblr.png";
+import facebook from "../../assets/Images/marquee-logo/facebook.png";
+import instagram from "../../assets/Images/marquee-logo/instagram.png";
+import linkedIn from "../../assets/Images/marquee-logo/linkedin.png";
+import twitter from "../../assets/Images/marquee-logo/x.png";
+import youtube from "../../assets/Images/marquee-logo/youtube.png";
+import tiktok from "../../assets/Images/marquee-logo/tiktok.png";
+import thereds from "../../assets/Images/marquee-logo/thereds.png";
+import pinterest from "../../assets/Images/marquee-logo/pinterest.png";
+import tumblr from "../../assets/Images/marquee-logo/tumblr.png";
 
 const Main = () => {
   return (
-    <div className=" w-full">
+    <div className="w-full">
       <main className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-0">
         <Fetures />
         <Services />
@@ -45,7 +35,7 @@ const Main = () => {
         <Faq />
       </main>
       <Marquee
-        className="overflow-hidden my-5 md:my-16 py-4 font-mono grayscale  "
+        className="overflow-hidden my-5 md:my-10 py-4 font-mono   "
         speed={50}
         pauseOnHover="True"
         pauseOnClick="True"
@@ -53,103 +43,103 @@ const Main = () => {
         gradient="True"
         gradientWidth={10}>
         <a
-          className="flex justify-center items-center mx-4 text-slate-600 grayscale  text-sm md:text-4xl font-bold"
-          href="https://www.facebook.com/profile.php?id=61555619364077&is_tour_dismissed=true"
-          target="blank">
+          target="blank"
+          href="https://www.facebook.com/profile.php?id=61555619364077"
+          className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[40px] h-[40px] md:max-w-[45px] md:h-[45px] mx-2"
+            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
             src={facebook}
-            alt=""
+            alt="Facebook Logo"
           />
-          Facebook
         </a>
         <a
-          className="flex justify-center items-center mx-4 text-slate-600 grayscale text-sm md:text-4xl font-bold"
+          target="blank"
           href="https://www.instagram.com/digitalsitepro/"
-          target="blank">
+          className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[40px] h-[40px] md:max-w-[45px] md:h-[45px] mx-2"
+            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
             src={instagram}
+            alt="Instagram Logo"
           />
-          Instagram
         </a>
         <a
-          className="flex justify-center items-center mx-4 text-slate-600 grayscale text-sm md:text-4xl font-bold"
-          href="https://twitter.com/Digitalsitepro"
-          target="blank">
+          target="blank"
+          href="https://www.linkedin.com/in/almohaiminfarabi/"
+          className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[40px] h-[40px] md:max-w-[45px] md:h-[45px] mx-2"
-            src={twitter}
-          />
-          Twitter
-        </a>
-        <a
-          className="flex justify-center items-center mx-4 text-slate-600 grayscale text-sm md:text-4xl font-bold"
-          href="https://www.pinterest.com/digitalsitep/"
-          target="blank">
-          <img
-            loading="lazy"
-            className="max-w-[40px] h-[40px] md:max-w-[45px] md:h-[45px] mx-2"
-            src={pinterest}
-          />
-          Pinterest
-        </a>
-        <a
-          className="flex justify-center items-center mx-4 text-slate-600 grayscale text-sm md:text-4xl font-bold"
-          href=""
-          target="blank">
-          <img
-            loading="lazy"
-            className="max-w-[40px] h-[40px] md:max-w-[45px] md:h-[45px] mx-2"
+            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
             src={linkedIn}
+            alt="LinkedIn Logo"
           />
-          LinkedIn
         </a>
         <a
-          className="flex justify-center items-center mx-4 text-slate-600 grayscale text-sm md:text-4xl font-bold"
-          href=""
-          target="blank">
+          target="blank"
+          href="https://twitter.com/Digitalsitepro"
+          className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-0">
           <img
             loading="lazy"
-            className="max-w-[40px] h-[40px] md:max-w-[100%]  mx-2"
+            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
+            src={twitter}
+            alt="Twitter Logo"
+          />
+        </a>
+        <a
+          target="blank"
+          href="https://www.youtube.com/channel/UCiqozKPVLIsEoi0ZCZuL-2w"
+          className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
+          <img
+            loading="lazy"
+            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
             src={youtube}
+            alt="YouTube Logo"
           />
         </a>
         <a
-          className="flex justify-center items-center mx-4 text-slate-600 grayscale text-sm md:text-4xl font-bold"
-          href=""
-          target="blank">
+          target="blank"
+          href="https://www.tiktok.com/@digitalsitepro"
+          className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[40px] h-[40px] md:max-w-[45px] md:h-[45px] mx-2"
+            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
             src={tiktok}
+            alt="TikTok Logo"
           />
-          Tiktok
         </a>
         <a
-          className="flex justify-center items-center mx-4 text-slate-600 grayscale text-sm md:text-4xl font-bold"
-          href=""
-          target="blank">
+          target="blank"
+          href="https://www.threads.net/@digitalsitepro"
+          className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[40px] h-[40px] md:max-w-[45px] md:h-[45px] mx-2"
+            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
             src={thereds}
+            alt="The Reds Logo"
           />
-          Thereds
         </a>
         <a
-          className="flex justify-center items-center mx-4 text-slate-600 grayscale text-sm md:text-4xl font-bold"
-          href="https://www.tumblr.com/digitalsitepro"
-          target="blank">
+          target="blank"
+          href="https://www.pinterest.com/digitalsitep/"
+          className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[40px] h-[40px] md:max-w-[45px] md:h-[45px] mx-2"
-            src={tumblr}
+            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
+            src={pinterest}
+            alt="Pinterest Logo"
           />
-          Tumblr
+        </a>
+        <a
+          target="blank"
+          href="https://www.tumblr.com/blog/digitalsitepro"
+          className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
+          <img
+            loading="lazy"
+            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
+            src={tumblr}
+            alt="Tumblr Logo"
+          />
         </a>
       </Marquee>
       <Footer />

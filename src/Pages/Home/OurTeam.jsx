@@ -48,7 +48,7 @@ const OurTeam = () => {
   return (
     <div className="my-5 py-5">
       <div className="grid gap-5 grid-cols-1  md:grid-cols-2">
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 p-2 order-2 md:order-1">
+        <div className="grid grid-cols-1  sm:grid-cols-2 sm:gap-5 p-2 order-2 md:order-1">
           <div className="h-full flex flex-col justify-start items-end  w-full md:m-2">
             <motion.div
               ref={payel}

@@ -30,12 +30,12 @@ const GraphicsDesign = () => {
     const data = await res.json();
     setDesigns(data.filter((work) => work.type === "graphics_design"));
     setFilteredDesigns(
-      category !== "all"
-        ? data.filter(
+      category === "all" || category == null || activeTab === 1
+        ? data.filter((work) => work.type === "graphics_design")
+        : data.filter(
             (work) =>
               work.type === "graphics_design" && work.subcategory === category
           )
-        : data.filter((work) => work.type === "graphics_design")
     );
   };
 
@@ -78,7 +78,7 @@ const GraphicsDesign = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [category, modalWrapperRef]);
+  }, [category]);
 
   return (
     <>
