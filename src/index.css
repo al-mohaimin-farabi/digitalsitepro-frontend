@@ -10,14 +10,38 @@ html {
 
 html,
 body {
-  background-color: #ffffff;
-  overflow: overlay !important;
-  /* overflow-x: hidden !important; */
-  /* font-family: 'Roboto Mono', monospace; */
-  /* font-family: "Jost", sans-serif;
-  font-family: "Montserrat", sans-serif;
-  font-family: "Work Sans", sans-serif;
- */
+  scrollbar-width: normal;
+  background-color: transparent !important;
+}
+body::-webkit-scrollbar-track-piece:start {
+  background: transparent !important;
+  z-index: -200;
+}
+
+body::-webkit-scrollbar-track-piece:end {
+  background: transparent !important;
+  z-index: -200;
+}
+body::-webkit-scrollbar {
+  position: absolute;
+  z-index: -200;
+  background-color: transparent !important;
+  width: 15px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #711db0;
+  border: 2px solid #e2e0e0;
+  border-radius: 10rem;
+  cursor: pointer;
+  z-index: -200;
+}
+body::-webkit-scrollbar-track {
+  position: absolute;
+  right: -3rem;
+  top: -50rem;
+  z-index: -100 !important;
+  background: transparent !important;
+  z-index: -200;
 }
 
 .font-nav {

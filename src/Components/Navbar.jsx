@@ -172,16 +172,16 @@ const Navbar = () => {
   return (
     <nav
       ref={navbarRef}
-      className={`w-full   py-2 px-4 font-nav ${
+      className={`w-full  py-2 px-4 font-nav  ${
         scrolled ? "text-slate-900" : "text-white"
       }   ${!scrolled && isNavbarBg} ${positionClass} ${isSmall && scrolled} ${
         !isSmall && scrolled
       } ${scrolled && "shadow-lg "}`}>
       <div
-        className={` flex md:max-w-[960px] lg:max-w-[1280px] mx-auto h-16 px-2  justify-between items-center py-10 my-2 rounded  `}>
+        className={` flex md:max-w-[960px] lg:max-w-[1280px] mx-auto h-16 px-2   items-center py-10 my-2 rounded  `}>
         <NavLink
           to="/"
-          className="flex justify-start items-center active hideState min-w-[135px]">
+          className="flex justify-start items-center active hideState min-w-[140px]">
           <img
             loading="lazy"
             className="mx-2 max-w-16  "
@@ -201,7 +201,7 @@ const Navbar = () => {
         </NavLink>
 
         {/* <div className="hidden md:flex justify-start "> */}
-        <ul className="hidden md:flex  justify-start space-x-0  sm:space-x-2 md:space-x-2 lg:space-x-8">
+        <ul className="hidden w-full md:flex  justify-center space-x-0  sm:space-x-2 md:space-x-2 lg:space-x-8">
           <li className="p-2 text-base flex justify-center items-center ">
             <NavLink className={`${NavCss.menu_hovered}`} to="/">
               Home
@@ -276,7 +276,7 @@ const Navbar = () => {
               </div> */}
           </li>
         </ul>
-        <ul className="hidden md:flex justify-end space-x-0  sm:space-x-2 md:space-x-2 lg:space-x-8 min-w-[140px]">
+        <ul className="hidden md:flex justify-end space-x-0  sm:space-x-2 md:space-x-2 lg:space-x-8 min-w-[140px] max-w-[140px]">
           <li className="  text-base flex items-center relative group cursor-pointer">
             {user?.email && user.emailVerified ? (
               <>
@@ -319,9 +319,9 @@ const Navbar = () => {
             ) : (
               <NavLink
                 to="/login"
-                className={`text-base font-bold tracking-wide  ${
+                className={`text-base font-bold tracking-wide text-center  ${
                   isScrolled ? "text-purple-bright" : "text-white"
-                }  border-2 border-purple-bright hover:text-[#ffffff] hover:bg-purple-bright  py-2 px-2 md:px-8 lg:px-10 transition-colors duration-200 ease-linear  hideState rounded-md`}>
+                }  border-2 border-purple-bright hover:text-[#ffffff] hover:bg-purple-bright  py-2 px-6  min-w-[140px] transition-colors duration-200 ease-linear  hideState rounded-md`}>
                 Login
               </NavLink>
             )}
