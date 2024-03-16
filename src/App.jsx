@@ -65,7 +65,7 @@ function App() {
                 </Suspense>
               }
             />
-            {/* <Route path="/test" element={<LazyAboutUs />} /> */}
+            <Route path="/test" element={<SuspenseLoader />} />
             <Route
               path="/testimonial"
               element={
