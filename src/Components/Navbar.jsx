@@ -184,7 +184,7 @@ const Navbar = () => {
           className="flex justify-start items-center active hideState min-w-[140px]">
           <img
             loading="lazy"
-            className="mx-2 max-w-16  "
+            className=" max-w-16  "
             src={scrolled ? logo_dark : logo}
             alt="digital site pro logo"
           />
