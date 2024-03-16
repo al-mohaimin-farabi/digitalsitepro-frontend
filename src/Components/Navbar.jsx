@@ -172,7 +172,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navbarRef}
-      className={`w-full  py-2 px-4 font-nav  ${
+      className={`w-full  py-2 px-2 font-nav  ${
         scrolled ? "text-slate-900" : "text-white"
       }   ${!scrolled && isNavbarBg} ${positionClass} ${isSmall && scrolled} ${
         !isSmall && scrolled
