@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
-import logo from "../assets/Images/logo.svg";
-import logo_dark from "../assets/Images/logo__dark.svg";
+import logo from "../assets/Images/logo_lite.svg";
+import logo_dark from "../assets/Images/logo_dark.svg";
 import { IoIosArrowDown, IoMdLogOut } from "react-icons/io";
 import { useEffect, useRef, useState } from "react";
 import NavCss from "../assets/CSS/Navbar.module.css";

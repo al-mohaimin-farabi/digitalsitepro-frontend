@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/Images/logo.svg";
+import logo from "../assets/Images/logo_lite.svg";
 import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 const Footter = () => {
   return (

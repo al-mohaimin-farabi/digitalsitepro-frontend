@@ -1,13 +1,13 @@
-import Wordpress_logo from "../../assets/Images/Wordpress_logo.png";
-import React_logo from "../../assets/Images/react-logo.png";
-import Elementor_logo from "../../assets/Images/elementor-logo.png";
-import Divi_logo from "../../assets/Images/divi-logo.png";
-import Shopify_logo from "../../assets/Images/shopify-logo.png";
-import Pagefly_logo from "../../assets/Images/pagefly-logo.png";
-import Adobe_Premiere_Pro_logo from "../../assets/Images/Adobe_Premiere_Pro.png";
-import Adobe_After_Effects_logo from "../../assets/Images/Adobe-After-Effects-logo.png";
-import DaVinci_logo from "../../assets/Images/DaVinci-Resolve-Studio-logo.png";
-import Audacity_logo from "../../assets/Images/Audacity-Logo.png";
+import Wordpress_logo from "../../assets/Images/tech-stack/Wordpress_logo.webp";
+import React_logo from "../../assets/Images/tech-stack/react-logo.webp";
+import Elementor_logo from "../../assets/Images/tech-stack/elementor-logo.png";
+import Divi_logo from "../../assets/Images/tech-stack/divi-logo.webp";
+import Shopify_logo from "../../assets/Images/tech-stack/shopify-logo.webp";
+import Pagefly_logo from "../../assets/Images/tech-stack/pagefly-logo.webp";
+import Adobe_Premiere_Pro_logo from "../../assets/Images/tech-stack/Adobe_Premiere_Pro.webp";
+import Adobe_After_Effects_logo from "../../assets/Images/tech-stack/Adobe-After-Effects-logo.webp";
+import DaVinci_logo from "../../assets/Images/tech-stack/DaVinci-Resolve-Studio-logo.webp";
+import Audacity_logo from "../../assets/Images/tech-stack/Audacity-Logo.webp";
 import { useRef } from "react";
 import { useInView, motion } from "framer-motion";
 

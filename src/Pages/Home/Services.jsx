@@ -11,7 +11,7 @@ import {
 
 const Services = () => {
   return (
-    <div className="services py-2  my-5 md:my-12 px-2 font-flow">
+    <div className="services py-2  my-5 md:my-16 px-2 font-flow">
       <ContentHeader title="OUR SERVICES" />
       <div className="grid  grid-cols-1 md:grid-cols-3 ">
         <div className="p-4 text-center text-pretty text-base md:border-gray-200 md:border-b-2">

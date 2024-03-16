@@ -1,7 +1,7 @@
-import Payel from "../../assets/Images/Asraful.png";
-import Farabi from "../../assets/Images/Farabi.png";
-import Rabbi from "../../assets/Images/Rabbi.png";
-import Faysal from "../../assets/Images/Faysal.png";
+import Payel from "../../assets/Images/avatar/Asraful.webp";
+import Farabi from "../../assets/Images/avatar/Farabi.webp";
+import Rabbi from "../../assets/Images/avatar/Rabbi.webp";
+import Faysal from "../../assets/Images/avatar/Faysal.webp";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 

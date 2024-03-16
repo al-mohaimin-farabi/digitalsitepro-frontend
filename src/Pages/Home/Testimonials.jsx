@@ -1,12 +1,12 @@
 import ContentHeader from "../../Components/ContentHeader.jsx";
-import person1 from "../../assets/Images/person1.png";
-import person2 from "../../assets/Images/person2.png";
-import person3 from "../../assets/Images/person3.png";
-import person4 from "../../assets/Images/person4.png";
-import bg1 from "../../assets/Images/testimonial-bg-1.png";
-import bg2 from "../../assets/Images/testimonial-bg-2.png";
-import bg3 from "../../assets/Images/testimonial-bg-3.png";
-import bg4 from "../../assets/Images/testimonial-bg-4.png";
+import person1 from "../../assets/Images/avatar/person1.webp";
+import person2 from "../../assets/Images/avatar/person2.webp";
+import person3 from "../../assets/Images/avatar/person3.webp";
+import person4 from "../../assets/Images/avatar/person4.webp";
+import bg1 from "../../assets/Images/background/testimonial-bg-1.webp";
+import bg2 from "../../assets/Images/background/testimonial-bg-2.webp";
+import bg3 from "../../assets/Images/background/testimonial-bg-3.webp";
+import bg4 from "../../assets/Images/background/testimonial-bg-4.webp";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -96,7 +96,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="my-5 md:my-10 p-2 ">
+    <div className="my-5 md:my-8 p-2 ">
       <ContentHeader title={"Testimonials"} />
 
       <div className="">

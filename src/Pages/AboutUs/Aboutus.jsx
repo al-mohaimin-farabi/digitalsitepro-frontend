@@ -1,31 +1,22 @@
-import Payel from "../../assets/Images/Asraful.png";
-import Farabi from "../../assets/Images/Farabi.png";
-import Rabbi from "../../assets/Images/Rabbi.png";
-import Faysal from "../../assets/Images/Faysal.png";
+import Payel from "../../assets/Images/avatar/Asraful.webp";
+import Farabi from "../../assets/Images/avatar/Farabi.webp";
+import Rabbi from "../../assets/Images/avatar/Rabbi.webp";
+import Faysal from "../../assets/Images/avatar/Faysal.webp";
 import Footter from "../../Components/Footer";
 
 const Aboutus = () => {
   const members = [
     {
       id: 1,
-      name: "Al Mohaimin Farabi",
-      email: "almohaiminfarabi.work@gmail.com",
-      img: Farabi,
-      role: "Tech Lead",
+      name: "Fazlee Rabbi",
+      email: "frbijoy019@gmail.com",
+      img: Rabbi,
+      role: "Managing Director (Founder) ",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ratione.",
     },
     {
       id: 2,
-      name: "Al Faysal",
-      email: "alfaysalshagor@gmail.com",
-      img: Faysal,
-      role: "Media Creative Director",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ratione.",
-    },
-    {
-      id: 3,
       name: "Ashraful Isalm",
       email: "ashrafulislam@gmail.com",
       img: Payel,
@@ -34,11 +25,20 @@ const Aboutus = () => {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ratione.",
     },
     {
+      id: 3,
+      name: "Al Faysal",
+      email: "alfaysalshagor@gmail.com",
+      img: Faysal,
+      role: "Media Creative Director",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ratione.",
+    },
+    {
       id: 4,
-      name: "Fazlee Rabbi",
-      email: "frbijoy019@gmail.com",
-      img: Rabbi,
-      role: "Managing Director (Founder) ",
+      name: "Al Mohaimin Farabi",
+      email: "almohaiminfarabi.work@gmail.com",
+      img: Farabi,
+      role: "Tech Lead",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ratione.",
     },

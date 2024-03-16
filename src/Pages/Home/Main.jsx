@@ -10,15 +10,15 @@ import OurTeam from "./OurTeam";
 import Footer from "../../Components/Footer";
 import Marquee from "react-fast-marquee";
 
-import facebook from "../../assets/Images/marquee-logo/facebook.png";
-import instagram from "../../assets/Images/marquee-logo/instagram.png";
-import linkedIn from "../../assets/Images/marquee-logo/linkedin.png";
-import twitter from "../../assets/Images/marquee-logo/x.png";
-import youtube from "../../assets/Images/marquee-logo/youtube.png";
-import tiktok from "../../assets/Images/marquee-logo/tiktok.png";
-import thereds from "../../assets/Images/marquee-logo/thereds.png";
-import pinterest from "../../assets/Images/marquee-logo/pinterest.png";
-import tumblr from "../../assets/Images/marquee-logo/tumblr.png";
+import facebook from "../../assets/Images/marquee-logo/facebook.webp";
+import instagram from "../../assets/Images/marquee-logo/instagram.webp";
+import linkedIn from "../../assets/Images/marquee-logo/linkedin.webp";
+import twitter from "../../assets/Images/marquee-logo/x.webp";
+import youtube from "../../assets/Images/marquee-logo/youtube.webp";
+import tiktok from "../../assets/Images/marquee-logo/tiktok.webp";
+import thereds from "../../assets/Images/marquee-logo/thereds.webp";
+import pinterest from "../../assets/Images/marquee-logo/pinterest.webp";
+import tumblr from "../../assets/Images/marquee-logo/tumblr.webp";
 
 const Main = () => {
   return (
@@ -35,7 +35,7 @@ const Main = () => {
         <Faq />
       </main>
       <Marquee
-        className="overflow-hidden my-5 md:my-10 py-4 font-mono   "
+        className="overflow-hidden my-5 md:my-14 py-4 font-mono   "
         speed={50}
         pauseOnHover="True"
         pauseOnClick="True"
