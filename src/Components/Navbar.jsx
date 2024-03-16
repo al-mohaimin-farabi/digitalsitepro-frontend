@@ -178,7 +178,7 @@ const Navbar = () => {
         !isSmall && scrolled
       } ${scrolled && "shadow-lg "}`}>
       <div
-        className={` flex md:max-w-[960px] lg:max-w-[1280px] mx-auto h-16 px-2   items-center py-10 my-2 rounded  `}>
+        className={` flex md:max-w-[960px] lg:max-w-[1280px] mx-auto h-16 px-2 justify-between  items-center py-10 my-2 rounded  `}>
         <NavLink
           to="/"
           className="flex justify-start items-center active hideState min-w-[140px]">
