@@ -112,10 +112,7 @@ const SignUp = ({ isNewAuth, setIsNewAuth, isSmallScreen }) => {
                   </button>
                 </li>
                 <li className="bg-gray-200 hover:bg-primary  hover:text-gray-100 rounded-full w-[40px] md:w-[45px] h-[40px] md:h-[45px] grid place-content-center cursor-pointer transition-all">
-                  <button
-                    onClick={handleFaceBookSignIn}
-                    className="text-lg"
-                   >
+                  <button onClick={handleFaceBookSignIn} className="text-lg">
                     <FaFacebookF />
                   </button>
                 </li>
@@ -263,7 +260,7 @@ const SignUp = ({ isNewAuth, setIsNewAuth, isSmallScreen }) => {
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className=" md:block transition-all hideState  px-12 py-4 rounded-lg bg-primary border-2 border-primary hover:bg-transparent hover:text-primary md:w-max md:mx-auto text-white font-bold">
+                    className=" md:block transition-all hideState  px-12 md:px-16 py-4 rounded-lg bg-primary border-2 border-primary hover:bg-transparent hover:text-primary md:w-max md:mx-auto text-white font-bold">
                     SignUp
                   </button>
                   <button

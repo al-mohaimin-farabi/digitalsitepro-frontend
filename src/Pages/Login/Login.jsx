@@ -208,7 +208,7 @@ const Login = ({ isNewAuth, setIsNewAuth, isSmallScreen }) => {
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className=" md:block transition-all hideState  px-12 py-4 rounded-lg bg-primary border-2 border-primary hover:bg-transparent hover:text-primary md:w-max md:mx-auto text-white font-bold">
+                  className=" md:block transition-all hideState  px-12 md:px-16 py-4 rounded-lg bg-primary border-2 border-primary hover:bg-transparent hover:text-primary md:w-max md:mx-auto text-white font-bold">
                   Login
                 </button>
                 <button

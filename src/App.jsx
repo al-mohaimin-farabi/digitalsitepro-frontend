@@ -17,6 +17,9 @@ const LazyServices = lazy(() => import("./Pages/Services/Services.jsx"));
 const LazyGraphicsDesign = lazy(() =>
   import("./Pages/Services/GraphicsDesign.jsx")
 );
+const LazyWebDevelopment = lazy(() =>
+  import("./Pages/Services/WebDevelopment.jsx")
+);
 const LazyAuth = lazy(() => import("./Pages/Login/Auth.jsx"));
 const LazyPassreset = lazy(() => import("./Pages/Login/Passreset.jsx"));
 const LazyContactUs = lazy(() => import("./Pages/ContactUs/ContactUs.jsx"));
@@ -33,11 +36,11 @@ function App() {
     <>
       <div className="App">
         <AuthProvider>
-          {/* <div className="bg-gray-200">
+          <div className="bg-gray-200">
             <p className=" text-center text-md text-red-600 font-bold">
               * WebSite Under Development *
             </p>
-          </div> */}
+          </div>
           <Navbar />
           <Routes>
             <Route
@@ -87,6 +90,14 @@ function App() {
               element={
                 <Suspense fallback={<SuspenseLoader />}>
                   <LazyGraphicsDesign />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/services/webdevelopment"
+              element={
+                <Suspense fallback={<SuspenseLoader />}>
+                  <LazyWebDevelopment />
                 </Suspense>
               }
             />

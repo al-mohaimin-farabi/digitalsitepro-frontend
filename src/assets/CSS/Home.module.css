@@ -1,26 +1,27 @@
-.header_bg {
+/* .header_bg {
   background-color: hsla(0, 0%, 0%, 1);
   background-image: radial-gradient(
       at 29% 90%,
       hsla(0, 0%, 6%, 1) 0px,
       transparent 50%
     ),
-    radial-gradient(at 67% 40%, hsla(84, 0%, 6%, 1) 0px, transparent 50%),
+    /* radial-gradient(at 67% 40%, hsla(84, 0%, 6%, 1) 0px, transparent 50%),
     radial-gradient(at 85% 14%, hsla(315, 21%, 28%, 0.45) 0px, transparent 50%),
     radial-gradient(at 5% 9%, hsla(261, 0%, 0%, 0.27) 0px, transparent 50%),
     radial-gradient(at 11% 24%, hsla(262, 32%, 33%, 1) 0px, transparent 50%),
     radial-gradient(at 55% 65%, hsla(0, 0%, 6%, 1) 0px, transparent 50%),
-    radial-gradient(at 9% 81%, hsla(315, 21%, 28%, 0.98) 0px, transparent 50%);
+    radial-gradient(at 9% 81%, hsla(315, 21%, 28%, 0.98) 0px, transparent 50%); */
   /* -webkit-clip-path: ellipse(100% 55% at 48% 44%); */
   /* clip-path: ellipse(100% 55% at 48% 44%); */
-}
+/* } */
 
 .gradient_text {
-  background: linear-gradient(180deg, #4c40f7, #9a6ce1);
+  background: linear-gradient(180deg, #4c40f7, #711DB0);
   background-clip: text;
   color: transparent;
 }
-.gradient_bg {
+/* #711DB0 */
+/* .gradient_bg {
   background-color: hsla(0, 0%, 0%, 1);
   background-image: radial-gradient(
       at 29% 90%,
@@ -33,13 +34,13 @@
     radial-gradient(at 11% 24%, hsla(262, 32%, 33%, 1) 0px, transparent 50%),
     radial-gradient(at 55% 65%, hsla(0, 0%, 6%, 1) 0px, transparent 50%),
     radial-gradient(at 9% 81%, hsla(315, 21%, 28%, 0.98) 0px, transparent 50%);
-}
-.card_gradient_text {
-  background: linear-gradient(90deg, #4c40f7, #9a6ce1);
-  /* background: linear-gradient(90deg, #5444f5, #9a6ce1); */
+} */
+/* .card_gradient_text {
+  background: linear-gradient(90deg, #4c40f7, #711DB0);
+  background: linear-gradient(90deg, #5444f5, #9a6ce1);
   background-clip: text;
   color: transparent;
-}
+} */
 
 .card_title {
   position: relative;

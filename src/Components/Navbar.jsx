@@ -159,7 +159,7 @@ const Navbar = () => {
   const isHomeOrRoot =
     location.pathname !== "/" && location.pathname !== "/home";
 
-  const isNavbarBg = isHomeOrRoot ? NavCss.navbar_bg : "";
+  const isNavbarBg = isHomeOrRoot ? "bg-black" : "";
 
   const positionClass = isHomeOrRoot
     ? "fixed top-0 left-0 right-0 z-[999999]"
@@ -184,7 +184,7 @@ const Navbar = () => {
           className="flex justify-start items-center active hideState min-w-[140px]">
           <img
             loading="lazy"
-            className=" max-w-16  "
+            className=" max-w-16 text-slate-900 "
             src={scrolled ? logo_dark : logo}
             alt="digital site pro logo"
           />

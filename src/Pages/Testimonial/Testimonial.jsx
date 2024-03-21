@@ -58,7 +58,7 @@ const Testimonial = () => {
 
   return (
     <>
-      <div className="w-full pt-[50px] md:pt-[70px] relative overflow-hidden  min-h-[400px] testimonialbg">
+      <div className="w-full py-[30px] md:py-[50px] relative overflow-hidden  min-h-[400px] testimonialbg">
         <div className="md:max-w-[960px] lg:max-w-[1280px]  -mb-[50px] md:mt-[20px] mx-auto p-2 text-left flex items-center min-h-[400px] ">
           <div className=" py-5  text-left">
             <p className="relative z-50 text-gray-100 font-inter   text-xl font-bold font-inter mb-2">

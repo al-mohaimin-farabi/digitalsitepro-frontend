@@ -1,7 +1,7 @@
 import HomeCss from "../../assets/CSS/Home.module.css";
-import fetureWeb from "../../assets/Images/feture-web.png";
-import fetureGraphics from "../../assets/Images/feture-graphics.png";
-import fetureVideoEdit from "../../assets/Images/feture-videoEdit.png";
+import fetureWeb from "../../assets/Images/Creative-Web-Development-Icons-for-Modern-Projects.svg";
+import fetureGraphics from "../../assets/Images/Creative-Graphic-Design-Icons-for-Every-Project.svg";
+import fetureVideoEdit from "../../assets/Images/Powerful-Video-Editing-Icons for Your Projectsn.svg";
 const Fetures = () => {
   return (
     <div className="w-[100%]  mx-auto -mt-24 md:-mt-30 lg:-mt-36 mb-8 py-5 md:py-0 relative z-50  px-2">
@@ -47,7 +47,7 @@ const Fetures = () => {
             className={`${HomeCss.img__box}  mb-4  grid place-items-center mx-auto`}>
             <img
               loading="lazy"
-              className="w-max"
+              className="w-max "
               src={fetureVideoEdit}
               alt="video-editing-feture"
             />

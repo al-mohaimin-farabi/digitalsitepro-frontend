@@ -58,6 +58,7 @@ const OurTeam = () => {
               className="bg-gray-100 text-black px-2 w-full md:w-[80%] py-8 rounded  text-center  my-2">
               <div className="bg-gray-200 w-[95px] h-[95px] md:w-[130px] md:h-[130px] rounded-full mx-auto relative border-2">
                 <img
+                  loading="lazy"
                   className="w-[95px] h-[calc(100%+15px)] md:w-[145px] md:h-[calc(100%+25px)] rounded-full   absolute bottom-0 "
                   src={Payel}
                   alt="Ashraful Islam Payel Img"
@@ -73,6 +74,7 @@ const OurTeam = () => {
             <motion.div
               ref={farabi}
               variants={card}
+              loading="lazy"
               initial="hidden"
               animate={farabiInView && "visible"}
               className="bg-gray-100 text-black px-2 w-full md:w-[80%] py-8 rounded  text-center  my-2">
@@ -93,6 +95,7 @@ const OurTeam = () => {
           </div>
           <div className="h-full flex flex-col justify-end items-start  w-full md:m-2 md:mt-10">
             <motion.div
+              loading="lazy"
               ref={rabbi}
               variants={card}
               initial="hidden"
@@ -113,6 +116,7 @@ const OurTeam = () => {
               </p>
             </motion.div>
             <motion.div
+              loading="lazy"
               ref={faysal}
               variants={card}
               initial="hidden"

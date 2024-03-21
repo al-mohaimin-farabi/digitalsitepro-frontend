@@ -101,8 +101,8 @@ body::-webkit-scrollbar-track {
   margin: 0 10px;
 }
 
-.login-bg {
-  /* background: linear-gradient(90deg, #9a6ce1, #2947a9); */
+/* .login-bg {
+  background: linear-gradient(90deg, #9a6ce1, #2947a9);
   background-color: hsla(0, 0%, 0%, 1);
   background-image: radial-gradient(
       at 29% 90%,
@@ -120,17 +120,17 @@ body::-webkit-scrollbar-track {
 .full-bg {
   background-color: hsla(0, 0%, 0%, 1);
   background-image: radial-gradient(
-      at 29% 90%,
-      hsla(0, 0%, 6%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 67% 40%, hsla(84, 0%, 6%, 1) 0px, transparent 50%),
+    at 29% 90%,
+    hsla(0, 0%, 6%, 1) 0px,
+    transparent 50%
+  );
+  radial-gradient(at 67% 40%, hsla(84, 0%, 6%, 1) 0px, transparent 50%),
     radial-gradient(at 85% 14%, hsla(315, 21%, 28%, 0.45) 0px, transparent 50%),
     radial-gradient(at 5% 9%, hsla(261, 0%, 0%, 0.27) 0px, transparent 50%),
     radial-gradient(at 11% 24%, hsla(262, 32%, 33%, 1) 0px, transparent 50%),
     radial-gradient(at 55% 65%, hsla(0, 0%, 6%, 1) 0px, transparent 50%),
     radial-gradient(at 9% 81%, hsla(315, 21%, 28%, 0.98) 0px, transparent 50%);
-}
+} */
 .country-list {
   position: fixed !important;
   padding-top: 4px !important;
@@ -169,13 +169,13 @@ body::-webkit-scrollbar-track {
 
 @media screen and (max-width: 960px) {
   .aboutbg {
-    background-image: url("./assets/Images/aboutusbgimg.jpg");
+    background-image: url("./assets/Images/background/aboutusbgimg.webp");
     background-repeat: repeat-x;
     background-size: cover;
     background-position: center center;
   }
   .testimonialbg {
-    background-image: url("./assets/Images/testimonialpagebg.jpg");
+    background-image: url("./assets/Images/background/aboutusbgimg.webp");
     background-repeat: repeat;
     background-size: cover;
     background-position: center center;
