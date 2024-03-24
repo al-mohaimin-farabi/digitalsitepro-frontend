@@ -6,6 +6,8 @@ import AuthProvider from "./Context/AuthProvider/AuthProvider.jsx";
 import SecureAuthRoute from "./Pages/Login/SecureAuthRoute.jsx";
 import SecureRoute from "./Pages/Login/SecureRoute.jsx";
 import SuspenseLoader from "./Components/SuspenseLoader.jsx";
+import ScrollToTop from "./Components/ScrollToTop.jsx";
+import AdminRoute from "./Pages/Login/AdminRoute.jsx";
 
 // Lazy-loaded components
 const LazyHome = lazy(() => import("./Pages/Home/Home.jsx"));
@@ -20,12 +22,16 @@ const LazyGraphicsDesign = lazy(() =>
 const LazyWebDevelopment = lazy(() =>
   import("./Pages/Services/WebDevelopment.jsx")
 );
+const LazyVideoEdit = lazy(() => import("./Pages/Services/VideoEditing.jsx"));
 const LazyAuth = lazy(() => import("./Pages/Login/Auth.jsx"));
 const LazyPassreset = lazy(() => import("./Pages/Login/Passreset.jsx"));
 const LazyContactUs = lazy(() => import("./Pages/ContactUs/ContactUs.jsx"));
 const LazyDashboard = lazy(() => import("./Pages/Dashboard/Dashboard.jsx"));
 const LazyAccountSetting = lazy(() =>
   import("./Pages/Dashboard/AccountSetting.jsx")
+);
+const LazyApproveTestimonial = lazy(() =>
+  import("./Pages/Dashboard/ApproveTestimonial.jsx")
 );
 const LazyMakeProposal = lazy(() =>
   import("./Pages/MakeProposal/MakeProposal.jsx")
@@ -35,12 +41,13 @@ function App() {
   return (
     <>
       <div className="App">
+        <ScrollToTop />
         <AuthProvider>
-          <div className="bg-gray-200">
+          {/* <div className="bg-gray-200">
             <p className=" text-center text-md text-red-600 font-bold">
               * WebSite Under Development *
             </p>
-          </div>
+          </div> */}
           <Navbar />
           <Routes>
             <Route
@@ -102,6 +109,14 @@ function App() {
               }
             />
             <Route
+              path="/services/videoedit"
+              element={
+                <Suspense fallback={<SuspenseLoader />}>
+                  <LazyVideoEdit />
+                </Suspense>
+              }
+            />
+            <Route
               path="dashboard"
               element={
                 <SecureRoute>
@@ -128,6 +143,16 @@ function App() {
                       <LazyAccountSetting />
                     </Suspense>
                   </SecureRoute>
+                }
+              />
+              <Route
+                path="approvetestimonial"
+                element={
+                  <AdminRoute>
+                    <Suspense fallback={<SuspenseLoader />}>
+                      <LazyApproveTestimonial />
+                    </Suspense>
+                  </AdminRoute>
                 }
               />
             </Route>

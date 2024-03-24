@@ -44,21 +44,28 @@ const Ourwork = () => {
 
   return (
     <div className="my-5 md:my-5 py-2 overflow-hidden px-2">
-      <div className="text-center space-x-2 space-y-1 py-2 ">
+      <div className="text-center space-x-2 space-y- md:spcae-y-1 py-2 ">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => handleClick(tab.id)}
-            className={`capitalize py-2 px-2 md:px-6  rounded-full relative ${
-              activeTab === tab.id
-                ? "text-white bg-primary"
-                : "text-black hover:text-black/50"
-            }`}>
-            {tab.label === "All"
-              ? "\u00A0\u00A0\u00A0\u00A0" +
-                tab.label +
-                "\u00A0\u00A0\u00A0\u00A0"
-              : tab.label}
+            className={`${
+              activeTab === tab.id ? "text-white" : "hover:text-gray-500 "
+            }   relative rounded-full px-3 md:px-6 py-2 text-lg md:text-xl  text-primary`}>
+            {activeTab === tab.id && (
+              <motion.div
+                style={{ borderRadius: 9999 }}
+                transition={{ duration: 0.3, type: "spring" }}
+                layoutId="active-pill"
+                className="absolute inset-0  bg-black"></motion.div>
+            )}
+            <span className="relative z-10 mix-blend-exclusion ">
+              {tab.label === "All"
+                ? "\u00A0\u00A0" +
+                  tab.label +
+                  "\u00A0\u00A0"
+                : tab.label}
+            </span>
           </button>
         ))}
       </div>

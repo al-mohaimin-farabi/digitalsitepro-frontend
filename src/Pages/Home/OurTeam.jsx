@@ -72,47 +72,47 @@ const OurTeam = () => {
               </p>
             </motion.div>
             <motion.div
-              ref={farabi}
+              ref={rabbi}
               variants={card}
               loading="lazy"
               initial="hidden"
-              animate={farabiInView && "visible"}
+              animate={rabbiInView && "visible"}
               className="bg-gray-100 text-black px-2 w-full md:w-[80%] py-8 rounded  text-center  my-2">
               <div className="bg-gray-200 w-[95px] h-[95px] md:w-[130px] md:h-[130px] rounded-full mx-auto relative">
                 <img
                   className="w-[95px] h-[calc(100%+15px)] md:w-[165px] md:h-[calc(100%+20px)] rounded-full   absolute bottom-0 "
-                  src={Farabi}
+                  src={Rabbi}
                   alt="Ashraful Islam Payel Img"
                 />
               </div>
               <h4 className="mt-6 mb-0 font-bold text-lg font-flow">
-                Al Mohaimin Farabi
+                 Fazlee Rabbi
               </h4>
               <p className="text-base font-mono text-wrap break-words  ">
-                Tech Lead
+                 Managing Director (Founder)
               </p>
             </motion.div>
           </div>
           <div className="h-full flex flex-col justify-end items-start  w-full md:m-2 md:mt-10">
             <motion.div
               loading="lazy"
-              ref={rabbi}
+              ref={farabi}
               variants={card}
               initial="hidden"
-              animate={rabbiInView && "visible"}
+              animate={farabiInView && "visible"}
               className="bg-gray-100 text-black px-2 w-full md:w-[80%] py-8 rounded  text-center  my-2">
               <div className="bg-gray-200 w-[95px] h-[95px] md:w-[130px] md:h-[130px] rounded-full mx-auto relative">
                 <img
                   className="w-[95px] h-[calc(100%+15px)] md:w-[145px] md:h-[calc(100%+25px)] rounded-full   absolute bottom-0 "
-                  src={Rabbi}
+                  src={Farabi}
                   alt="Ashraful Islam Payel Img"
                 />
               </div>
               <h4 className="mt-6 mb-0 font-bold text-lg font-flow ">
-                Fazlee Rabbi
+              Al Mohaimin Farabi
               </h4>
               <p className="text-base font-mono text-wrap break-words  ">
-                Managing Director (Founder)
+              Tech Lead
               </p>
             </motion.div>
             <motion.div

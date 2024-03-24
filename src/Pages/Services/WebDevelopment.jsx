@@ -1,11 +1,11 @@
-import Img_01 from "../../assets/Images/icon/Responsive-Design-Icon.svg";
-import Img_02 from "../../assets/Images/icon/E-Com-Dev-Icon.svg";
-import Img_03 from "../../assets/Images/icon/Creative-Web-App-Icon.svg";
-import Img_04 from "../../assets/Images/icon/Creative-Website-Maintenance-&-Support-Icon-Design.svg";
-import Img_05 from "../../assets/Images/icon/Creative-Website-Analytics-Icon-Design.svg";
-import Img_06 from "../../assets/Images/icon/Creative-SEO-Icon.svg";
-import Img_07 from "../../assets/Images/icon/Custom-Web-Dev-Icon.svg";
-import Img_08 from "../../assets/Images/icon/CMS-Icon.svg";
+import Img_01 from "../../assets/Images/icon/WebDevelopment/Responsive-Design-Icon.svg";
+import Img_02 from "../../assets/Images/icon/WebDevelopment/E-Com-Dev-Icon.svg";
+import Img_03 from "../../assets/Images/icon/WebDevelopment/Creative-Web-App-Icon.svg";
+import Img_04 from "../../assets/Images/icon/WebDevelopment/Creative-Website-Maintenance-&-Support-Icon-Design.svg";
+import Img_05 from "../../assets/Images/icon/WebDevelopment/Creative-Website-Analytics-Icon-Design.svg";
+import Img_06 from "../../assets/Images/icon/WebDevelopment/Creative-SEO-Icon.svg";
+import Img_07 from "../../assets/Images/icon/WebDevelopment/Custom-Web-Dev-Icon.svg";
+import Img_08 from "../../assets/Images/icon/WebDevelopment/CMS-Icon.svg";
 
 const WebDevelopment = () => {
   const servicesCard = [
@@ -78,7 +78,9 @@ const WebDevelopment = () => {
               src={service?.img}
               alt={service?.heading}
             />
-            <h4 className="my-2 h-[50px]  font-bold text-base">{service?.heading}</h4>
+            <h4 className="my-2 h-[50px]  font-bold text-base capitalize">
+              {service?.heading}
+            </h4>
             <p className="text-sm text-wrap break-words ">
               {service?.descriptions}
             </p>

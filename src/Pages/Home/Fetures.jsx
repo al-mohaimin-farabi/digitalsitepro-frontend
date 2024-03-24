@@ -12,7 +12,7 @@ const Fetures = () => {
             className={`${HomeCss.img__box}  mb-4 grid place-items-center mx-auto`}>
             <img
               loading="lazy"
-              className="w-max"
+              className="max-w-[70px]"
               src={fetureWeb}
               alt="web-devolopment-feture"
             />
@@ -29,7 +29,7 @@ const Fetures = () => {
             className={`${HomeCss.img__box}  mb-4  grid place-items-center mx-auto`}>
             <img
               loading="lazy"
-              className="w-max"
+              className="max-w-[70px]"
               src={fetureGraphics}
               alt="graphic-design-feture"
             />
@@ -47,7 +47,7 @@ const Fetures = () => {
             className={`${HomeCss.img__box}  mb-4  grid place-items-center mx-auto`}>
             <img
               loading="lazy"
-              className="w-max "
+              className="max-w-[60px] "
               src={fetureVideoEdit}
               alt="video-editing-feture"
             />

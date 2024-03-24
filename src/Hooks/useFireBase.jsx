@@ -25,7 +25,7 @@ const useFirebase = () => {
   const [authError, setAuthError] = useState("");
   const [passResetEmailSend, setPassResetEmailSend] = useState(false);
   // eslint-disable-next-line no-unused-vars
-  const [admin, setAdmin] = useState(false);
+  const [isadmin, setAdmin] = useState(false);
   const [emailVerificationSent, setEmailVerificationSent] = useState(false);
   const [userEmailVerified, setUserEmailVerified] = useState(false);
 
@@ -248,7 +248,7 @@ const useFirebase = () => {
 
   return {
     user,
-    admin,
+    isadmin,
     isLoading,
     authError,
     userEmailVerified,

@@ -8,14 +8,31 @@ import { useEffect, useRef, useState } from "react";
 import Dropzone from "react-dropzone";
 import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const actions = [
-  { id: 1, label: "Account Settings", to: "/dashboard/accountsetting" },
-  { id: 2, label: "Order History", to: "/dashboard/orderhistory" },
+  {
+    id: 1,
+    accessLevel: "open",
+    label: "Account Settings",
+    to: "/dashboard/accountsetting",
+  },
+  {
+    id: 2,
+    accessLevel: "user",
+    label: "Order History",
+    to: "/dashboard/orderhistory",
+  },
+  {
+    id: 3,
+    accessLevel: "admin",
+    label: "Approve Testimonial",
+    to: "/dashboard/approvetestimonial",
+  },
 ];
 
 const Dashboard = () => {
-  const { user, admin } = useAuth();
+  const { user, isadmin } = useAuth();
   const [error, setError] = useState("");
   const modalWrapperRef = useRef(null);
   const [activeTab, setActiveTab] = useState(actions[0].id);
@@ -114,8 +131,15 @@ const Dashboard = () => {
   return (
     <>
       {isModalOpen && (
-        <div className="bg-black/30 w-[100vw] h-[100vh] inset-0  fixed z-[5555555] grid place-content-center ">
-          <div
+        <motion.div
+          initial={{ opacity: 0 }}
+          transition={{ type: "fade", duration: 0.5 }}
+          animate={isModalOpen && { opacity: 1 }}
+          className="bg-black/40 w-[100vw] origin-top h-[100vh] inset-0  fixed z-[5555555] grid place-content-center ">
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={isModalOpen && { opacity: 1, y: 0 }}
+            transition={{ type: "fade", duration: 0.3 }}
             ref={modalWrapperRef}
             className="w-[calc(100vw-50px)] md:min-w-[670px] md:max-w-[700px] max-h-[570px] min-h-[390px] md:min-h-[490px] bg-white rounded-lg px-6 grid items-center shadow-lg">
             <div className="-mt-1   border-[2px] border-dashed border-purple-bright/50 min-h-[170px] md:min-h-[350px] rounded-lg grid place-content-center text-center">
@@ -180,8 +204,8 @@ const Dashboard = () => {
               <FontAwesomeIcon className="hidden md:block" icon={faXmark} />{" "}
               <span className="md:hidden text-base font-inter">close</span>
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
 
       <div
@@ -219,21 +243,28 @@ const Dashboard = () => {
         </div>
         <div
           className={
-            "actions border-[1px]  p-2   rounded my-6 text-center grid content-center"
+            "actions border-[1px] p-2  rounded my-6 text-center grid content-center"
           }>
           <ul className="flex flex-wrap  space-x-2">
-            {actions.map((action) => (
-              <li key={action.id}>
-                <NavLink
-                  to={action.to}
-                  onClick={() => handeAccountSettings(action.id)}
-                  className={`${
-                    activeTab == action.id && "bg-gray-200 px-4"
-                  } py-2 rounded hideState dashboard_tab block`}>
-                  {action.label}
-                </NavLink>
-              </li>
-            ))}
+            {actions
+              .filter((action) => {
+                return (
+                  action.accessLevel === "open" ||
+                  action.accessLevel === (isadmin ? "admin" : "user")
+                );
+              })
+              .map((action) => (
+                <li key={action.id}>
+                  <NavLink
+                    to={action.to}
+                    onClick={() => handeAccountSettings(action.id)}
+                    className={`${
+                      activeTab === action.id ? "bg-gray-200" : ""
+                    } py-2 px-4 rounded hideState dashboard_tab block`}>
+                    {action.label}
+                  </NavLink>
+                </li>
+              ))}
           </ul>
         </div>
         <Outlet />

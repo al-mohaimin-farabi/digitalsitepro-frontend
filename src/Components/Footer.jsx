@@ -84,25 +84,25 @@ const Footter = () => {
               <li className="text-white text-base cursor-pointer transition-transform flex flex-wrap">
                 <span>Bangladesh:</span>
                 <a
-                  className="hover:scale-110 origin-left break-words"
+                  className="hover:scale-[1.03] origin-left break-words"
                   href="tel:+8801720867938"
                   target="blank">
                   +8801720867938,
                 </a>
                 <a
-                  className=" hover:scale-110 origin-left break-words"
+                  className=" hover:scale-[1.03] origin-left break-words"
                   href="tel:+8801720867938"
                   target="blank">
                   +8801782310773,
                 </a>
                 <a
-                  className="hover:scale-110 origin-left break-words"
+                  className="hover:scale-[1.03] origin-left break-words"
                   href="tel:+8801720867938"
                   target="blank">
                   +8801609678851,
                 </a>
                 <a
-                  className="hover:scale-110 origin-left"
+                  className="hover:scale-[1.03] origin-left break-words"
                   href="tel:+8801720867938"
                   target="blank">
                   +8801881608076

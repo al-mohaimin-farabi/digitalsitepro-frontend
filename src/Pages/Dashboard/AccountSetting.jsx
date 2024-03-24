@@ -28,7 +28,9 @@ const AccountSetting = () => {
 
   return (
     <div className="py-0">
-      <form className="text-center md:text-left p-2" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="text-center md:text-left p-2"
+        onSubmit={handleSubmit(onSubmit)}>
         <div className="grid  grid-cols-1 md:grid-cols-4 gap-5">
           <div className="flex flex-col text-left">
             <label className="mb-2 font-[500] font-inter">Username</label>

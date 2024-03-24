@@ -119,12 +119,12 @@ const GraphicsDesign = () => {
           </div>
         </div>
       )}
-      <div className=" mt-[130px]"></div>
+      {/* <div className=" mt-[130px]"></div> */}
 
-      <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto my-10  py-2 px-3 md:px-2 md:py-0  ">
+      <div className="mt-[130px] md:max-w-[960px] lg:max-w-[1280px] mx-auto my-10  py-2 px-3 md:px-2 md:py-0  ">
         <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-6 gap-3 ">
           <div className="mb-8 mr-5">
-            <ul className="flex w-full  sm:w-[148px] lg:w-[200px] flex-row sm:flex-col space-x-2 sm:space-x-0 sm:space-y-2 sm:border-r-2 h-[calc(100vh-130px)]  ">
+            <ul className="flex w-full  sm:w-[148px] lg:w-[200px] flex-row sm:flex-col space-x-2 sm:space-x-0 sm:space-y-2 sm:border-r-2 md:h-[calc(100vh-130px)]  ">
               {tabs.map((tab) => (
                 <li className="sm:w-[140px]" key={tab.id}>
                   <NavLink
@@ -139,7 +139,7 @@ const GraphicsDesign = () => {
               ))}
             </ul>
           </div>
-          <div className="sm:ml-[calc(146px-122px)] md:ml-0 sm:col-span-4 md:col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 max-h-[calc(100vh-130px)]   pb-5">
+          <div className="sm:ml-[calc(146px-122px)] md:ml-0 sm:col-span-4 md:col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2  pb-5">
             {filteredDesigns.map((design, index) => (
               <div
                 key={index}

@@ -59,7 +59,7 @@ const Testimonial = () => {
   return (
     <>
       <div className="w-full py-[30px] md:py-[50px] relative overflow-hidden  min-h-[400px] testimonialbg">
-        <div className="md:max-w-[960px] lg:max-w-[1280px]  -mb-[50px] md:mt-[20px] mx-auto p-2 text-left flex items-center min-h-[400px] ">
+        <div className="md:max-w-[960px] lg:max-w-[1280px]  -mb-[70px] md:mt-[20px] mx-auto p-2 text-left flex items-center min-h-[400px] ">
           <div className=" py-5  text-left">
             <p className="relative z-50 text-gray-100 font-inter   text-xl font-bold font-inter mb-2">
               Who We Are
@@ -71,7 +71,7 @@ const Testimonial = () => {
           <div className="bg-gray-900/70 absolute inset-0 z-30"></div>
         </div>
       </div>
-      <div className=" bg-gray-200 py-10 pb-16 mt-16">
+      <div className=" bg-slate-200  py-12 mt-16">
         <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto p-2">
           <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-600 text-center tracking-wide  md:text-balance md:px-12">
             If you are on our customers and would like to submit your
@@ -82,68 +82,76 @@ const Testimonial = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="py-5 mt-8 space-y-5 px-4 sm:px-2 md:px-0  ">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <input
-                autoComplete="true"
-                placeholder="Your Name"
-                className={`${
-                  user && "text-gray-400"
-                } outline-gray-950 outline outline-1 rounded p-2`}
-                type="text"
-                id="name"
-                defaultValue={user?.displayName || ""}
-                readOnly={user.email ? true : false}
-                {...register("name", {
-                  required: !user ? "Name is required!" : "",
-                })}
-              />
-              {errors.name && (
-                <p className="text-red-600">{errors.name.message}</p>
-              )}
-              <input
-                autoComplete="true"
-                placeholder="Your Email"
-                className={`${
-                  user && "text-gray-400"
-                } outline-gray-950 outline outline-1 rounded p-2`}
-                type="email"
-                id="email"
-                defaultValue={user?.email || ""}
-                readOnly={user.email ? true : false}
-                {...register("email", {
-                  required: !user ? "Email is required!" : "",
-                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                })}
-              />
-              {errors.email && (
-                <p className="text-red-600">{errors.email.message}</p>
-              )}
+              <div className="flex flex-col">
+                <input
+                  autoComplete="true"
+                  placeholder="Your Name"
+                  className={`${
+                    user && "text-gray-400"
+                  } outline-gray-950 outline outline-1 rounded p-2`}
+                  type="text"
+                  id="name"
+                  defaultValue={user?.displayName || ""}
+                  readOnly={user.email ? true : false}
+                  {...register("name", {
+                    required: !user ? "Name is required!" : "",
+                  })}
+                />
+                {errors.name && (
+                  <p className="text-red-600">{errors.name.message}</p>
+                )}
+              </div>
+              <div className="flex flex-col">
+                <input
+                  autoComplete="true"
+                  placeholder="Your Email"
+                  className={`${
+                    user && "text-gray-400"
+                  } outline-gray-950 outline outline-1 rounded p-2`}
+                  type="email"
+                  id="email"
+                  defaultValue={user?.email || ""}
+                  readOnly={user.email ? true : false}
+                  {...register("email", {
+                    required: !user ? "Email is required!" : "",
+                    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  })}
+                />
+                {errors.email && (
+                  <p className="text-red-600">{errors.email.message}</p>
+                )}
+              </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <input
-                autoComplete="true"
-                type="text"
-                placeholder="Location"
-                name="Location"
-                className="outline rounded w-full outline-1 p-2"
-                {...register("location", {
-                  required: "Location is required!",
-                })}
-              />
-              {errors.message && (
-                <p className="text-red-600">{errors.message.message}</p>
-              )}
-              <input
-                type="text"
-                placeholder="Role"
-                name="Role"
-                className="outline rounded w-full outline-1 p-2"
-                {...register("Role", {
-                  required: "Role is required!",
-                })}
-              />
-              {errors.message && (
-                <p className="text-red-600">{errors.message.message}</p>
-              )}
+              <div className="flex flex-col">
+                <input
+                  autoComplete="true"
+                  type="text"
+                  placeholder="Location"
+                  name="Location"
+                  className="outline rounded w-full outline-1 p-2"
+                  {...register("location", {
+                    required: "Location is required!",
+                  })}
+                />
+                {errors.location && (
+                  <p className="text-red-600">{errors.location.message}</p>
+                )}
+              </div>
+              <div className="flex flex-col">
+                <input
+                  type="text"
+                  placeholder="Role"
+                  name="Role"
+                  className="outline rounded w-full outline-1 p-2"
+                  {...register("role", {
+                    required: "Role is required!",
+                  })}
+                />
+                {errors.role && (
+                  <p className="text-red-600">{errors.role.message}</p>
+                )}
+              </div>
             </div>
             <div className="grid grid-cols-1  ">
               <textarea

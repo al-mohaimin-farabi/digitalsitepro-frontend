@@ -48,7 +48,7 @@ const Main = () => {
           className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
+            className="max-w-[105px] md:max-w-[150px]     "
             src={facebook}
             alt="Facebook Logo"
           />
@@ -59,7 +59,7 @@ const Main = () => {
           className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
+            className="max-w-[105px] md:max-w-[150px]     "
             src={instagram}
             alt="Instagram Logo"
           />
@@ -70,7 +70,7 @@ const Main = () => {
           className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
+            className="max-w-[105px] md:max-w-[150px]     "
             src={linkedIn}
             alt="LinkedIn Logo"
           />
@@ -81,7 +81,7 @@ const Main = () => {
           className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-0">
           <img
             loading="lazy"
-            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
+            className="max-w-[105px] md:max-w-[150px]     "
             src={twitter}
             alt="Twitter Logo"
           />
@@ -92,7 +92,7 @@ const Main = () => {
           className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
+            className="max-w-[105px] md:max-w-[150px]     "
             src={youtube}
             alt="YouTube Logo"
           />
@@ -103,7 +103,7 @@ const Main = () => {
           className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
+            className="max-w-[105px] md:max-w-[150px]     "
             src={tiktok}
             alt="TikTok Logo"
           />
@@ -114,7 +114,7 @@ const Main = () => {
           className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
+            className="max-w-[105px] md:max-w-[150px]     "
             src={thereds}
             alt="The Reds Logo"
           />
@@ -125,7 +125,7 @@ const Main = () => {
           className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
+            className="max-w-[105px] md:max-w-[150px]     "
             src={pinterest}
             alt="Pinterest Logo"
           />
@@ -136,7 +136,7 @@ const Main = () => {
           className="flex justify-center items-center text-slate-600 font-bold cursor-pointer mx-6">
           <img
             loading="lazy"
-            className="max-w-[105px] md:max-w-[150px] lg:max-w-[200px]   "
+            className="max-w-[105px] md:max-w-[150px]     "
             src={tumblr}
             alt="Tumblr Logo"
           />

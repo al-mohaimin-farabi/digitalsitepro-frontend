@@ -172,7 +172,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navbarRef}
-      className={`w-full  py-2 px-2 font-nav  ${
+      className={`w-full py-0 md:py-2 px-2 font-nav  ${
         scrolled ? "text-slate-900" : "text-white"
       }   ${!scrolled && isNavbarBg} ${positionClass} ${isSmall && scrolled} ${
         !isSmall && scrolled
@@ -284,7 +284,7 @@ const Navbar = () => {
                   {user?.photoURL ? (
                     <img
                       src={user?.photoURL}
-                      className="w-[45px] h-[45px] rounded-full border-2 "
+                      className="w-[55px] h-[55px] rounded-full border-2 "
                     />
                   ) : (
                     <FaRegUserCircle />
@@ -361,7 +361,7 @@ const Navbar = () => {
             animate={isMenuOpen ? "open" : "closed"}
             exit="closed"
             variants={mobileNavVariants}
-            className={`md:hidden  ${NavCss.navbar_bg} text-white z-40  
+            className={`md:hidden  bg-black text-white -z-[1]  
            fixed top-0 right-0 left-[calc(40%-10px)] flex flex-col items-end  h-[calc(100vh+10px)] px-4 py-4 `}>
             <motion.ul
               variants={ulVariant}
@@ -381,7 +381,7 @@ const Navbar = () => {
               </motion.li>
               <motion.li
                 variants={itemsVariant}
-                className="mx-2 p-2 text-base overflow-hidden w-full">
+                className="mx-2 p-2 text-base overflow-hidden w-max md:w-full">
                 <NavLink
                   to="/services"
                   onClick={handlSserviceOpen}
@@ -405,15 +405,19 @@ const Navbar = () => {
                       className=" mt-2  text-black rounded-md shadow-lg origin-top bg-gray-200 w-[100%]">
                       <ul className="p-1 rounded-md w-full">
                         <li className="p-2 hover:bg-primary hover:text-white rounded-md">
-                          <NavLink to="/demo1">Web Development</NavLink>
-                        </li>
-                        <li className="p-2 hover:bg-primary hover:text-white rounded-md">
-                          <NavLink to="/services/graphicsdesign/?category=all">
-                            Graphics Desing
+                          <NavLink to="/services/webdevelopment/">
+                            Web Development
                           </NavLink>
                         </li>
                         <li className="p-2 hover:bg-primary hover:text-white rounded-md">
-                          <NavLink to="/demo3">Video Editing</NavLink>
+                          <NavLink to="/services/graphicsdesign/?category=all">
+                            Graphics Design
+                          </NavLink>
+                        </li>
+                        <li className="p-2 hover:bg-primary hover:text-white rounded-md">
+                          <NavLink to="/services/videoedit">
+                            Video Editing
+                          </NavLink>
                         </li>
                       </ul>
                     </motion.div>

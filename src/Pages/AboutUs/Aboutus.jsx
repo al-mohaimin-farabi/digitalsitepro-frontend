@@ -46,8 +46,9 @@ const Aboutus = () => {
 
   return (
     <>
-      <div className="w-full pt-[50px] md:pt-[70px] relative overflow-hidden  min-h-[400px] aboutbg">
-        <div className=" md:max-w-[960px] lg:max-w-[1280px]  -mb-[50px] md:mt-[20px] mx-auto px-3 md:p-2 text-left flex items-center min-h-[400px]">
+      
+      <div className="w-full py-[30px] md:py-[50px] relative overflow-hidden  min-h-[400px] aboutbg">
+        <div className="md:max-w-[960px] lg:max-w-[1280px]  -mb-[70px] md:mt-[20px] mx-auto p-2 text-left flex items-center min-h-[400px] ">
           <div className=" py-5  text-left">
             <p className="relative z-50 text-gray-100 font-inter   text-xl font-bold font-inter mb-2">
               Who We Are
@@ -56,13 +57,8 @@ const Aboutus = () => {
               Designers, thinkers & collaborators
             </h2>
           </div>
+          <div className="bg-gray-900/70 absolute inset-0 z-30"></div>
         </div>
-        {/* <img
-          className="absolute inset-0 bg-gray-900 -top-[190px]  w-full z-30"
-          src={bgImg}
-          alt=""
-        /> */}
-        <div className="bg-gray-900/70 absolute inset-0 z-30"></div>
       </div>
       <div className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto px-3 md:p-2 text-left   my-16 ">
         <h2 className="text-2xl sm:text-2xl font-normal font-inter text-[#301934] mb-4">

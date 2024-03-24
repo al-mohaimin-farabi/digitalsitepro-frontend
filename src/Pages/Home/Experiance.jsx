@@ -22,7 +22,7 @@ const Experiance = () => {
             </p>
             <NavLink
               to="/contact"
-              className="bg-primary  px-6 py-2 lg:py-4 mx-auto md:mx-0 text-white my-4 md:my-8  block w-max  border-2 border-primary hover:text-[#000] hover:bg-transparent transition-colors duration-200 ease-linear hideState font-semibold text-lg rounded-tl-lg rounded-br-lg">
+              className="bg-primary  px-6 md:px-10 py-2 lg:py-4 mx-auto md:mx-0 text-white my-4 md:my-8  block w-max  border-2 border-primary hover:text-[#000] hover:bg-transparent transition-colors duration-200 ease-linear hideState font-semibold text-lg rounded-md">
               Contact Us
             </NavLink>
           </div>
