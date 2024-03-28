@@ -28,6 +28,7 @@ const useFirebase = () => {
   const [isadmin, setAdmin] = useState(false);
   const [emailVerificationSent, setEmailVerificationSent] = useState(false);
   const [userEmailVerified, setUserEmailVerified] = useState(false);
+  const [userPhone, setUserPhone] = useState("");
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -149,6 +150,7 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
+
   // twitter signin
   const signInWithTwitter = (location, navigate) => {
     setIsLoading(true);
@@ -207,17 +209,75 @@ const useFirebase = () => {
     return () => unsubscribe();
   }, [auth]);
 
-  // check user role
-  useEffect(() => {
-    async function isAdmin() {
-      const url = `http://localhost:5000/users/${user?.email}`;
-      await fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-          setAdmin(data.admin);
+  //update user name
+  const handleDisplayNameChange = async (name) => {
+    const user = auth.currentUser;
+
+    if (!user?.email || !user?.emailVerified) {
+      // If no user is signed in, handle the error
+      console.error("No user signed in");
+      return;
+    }
+    if (user !== null) {
+      // The user object has basic properties such as display name, email, etc.
+      const displayName = name;
+      const email = user?.email;
+      const photoURL = user?.photoURL;
+      const emailVerified = user?.emailVerified;
+
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      })
+        .then(() => {
+          const user = { email, displayName, photoURL, emailVerified };
+
+          setUser(user);
+        })
+        .catch((error) => {
+          // An error occurred
+          console.log(error);
         });
     }
+  };
+
+  // Check user role
+  useEffect(() => {
+    async function isAdmin() {
+      if (!user || !user.email) return; // Check if user or user.email is undefined/null
+      try {
+        const url = `http://localhost:5000/users/${user.email}`;
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Failed to fetch user role");
+        }
+        const data = await response.json();
+        setAdmin(data.admin);
+      } catch (error) {
+        console.error("Error fetching user role:", error);
+        // Handle error state if needed
+      }
+    }
     isAdmin();
+  }, [user.email]);
+
+  // Get user info
+  useEffect(() => {
+    async function userPhone() {
+      if (!user || !user.email) return; // Check if user or user.email is undefined/null
+      try {
+        const url = `http://localhost:5000/users/phone/${user.email}`;
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("The user didn't update the phone number");
+        }
+        const data = await response.json();
+        setUserPhone(data.phoneNumber);
+      } catch (error) {
+        console.error("Error fetching user phone number:", error);
+        // Handle error state if needed
+      }
+    }
+    userPhone();
   }, [user.email]);
 
   // logout
@@ -249,10 +309,13 @@ const useFirebase = () => {
   return {
     user,
     isadmin,
+    userPhone,
     isLoading,
     authError,
     userEmailVerified,
     emailVerificationSent,
+    setUserPhone,
+    handleDisplayNameChange,
     setAuthError,
     registerUser,
     loginUser,

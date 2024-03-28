@@ -5,23 +5,56 @@ import DashboardCss from "../../assets/CSS/Dashboard.module.css";
 import "react-phone-input-2/lib/style.css";
 import { useState } from "react";
 
-// import { useEffect, useState } from "react";
-
 const AccountSetting = () => {
-  const { user } = useAuth();
+  const { user, handleDisplayNameChange, userPhone, setUserPhone } = useAuth();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [country, setCountry] = useState("");
 
-  const onSubmit = (data) => {
-    // Handle form submission logic here
-    // e.g., send data to server for update
-    const moredata = { ...data, phoneNumber, country };
-    console.log(moredata);
+  const [newPhoneNumber, setNewPhoneNumber] = useState("");
+  const [newCountry, setNewCountry] = useState("");
+
+  const handlechange = (value, country) => {
+    // Extract phone number and set it to newPhoneNumber state
+    setNewPhoneNumber(value);
+    setNewCountry(country);
+  };
+
+  const onSubmit = async (data) => {
+    try {
+      if (user?.displayName !== data.displayName) {
+        handleDisplayNameChange(data.displayName);
+      }
+      if (user?.email && user?.emailVerified) {
+        const response = await fetch(
+          `http://localhost:5000/users/${user.email}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              displayName: data.displayName,
+              phoneNumber: newPhoneNumber,
+              country: newCountry,
+            }),
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Failed to update user");
+        }
+
+        const responseData = await response.json();
+        if (!userPhone?.length >= 5) {
+          setUserPhone(newPhoneNumber);
+        }
+        console.log(responseData);
+      }
+    } catch (error) {
+      console.error("Error updating user:", error.message);
+    }
   };
 
   const inputClass = DashboardCss.phone_input;
@@ -40,9 +73,9 @@ const AccountSetting = () => {
               defaultValue={user.displayName}
               {...register("displayName", { required: true })}
             />
-            {errors.username && (
+            {errors.displayName && (
               <span className="text-red-500 text-sm">
-                {errors.username.message}
+                Display name is required
               </span>
             )}
           </div>
@@ -51,34 +84,17 @@ const AccountSetting = () => {
               Add Phone Number
             </label>
             <PhoneInput
-              autoFormat="false"
               inputClass={inputClass}
-              country="bd"
-              value={phoneNumber}
-              onChange={(value, country) => {
-                setPhoneNumber("+" + value);
-                setCountry(country);
-                // console.log(country);
-                // console.log(e);
-                // console.log("+" + value);
-                // console.log(formattedValue);
-              }}
+              country={"bd"}
+              value={newPhoneNumber}
+              onChange={handlechange}
             />
-            {errors.phoneNumber && (
-              <span className="text-red-500 text-sm">
-                {errors.phoneNumber.type === "required"
-                  ? "Phone number is required"
-                  : errors.phoneNumber.type === "pattern"
-                  ? "Invalid phone number format (10 digits expected)"
-                  : "Invalid phone number format"}
-              </span>
-            )}
           </div>
         </div>
 
         <button
           type="submit"
-          className="md:block mx-auto md:mx-0 mt-8 md:mt-4 transition-all duration-300 text-white hideState px-10 py-2  rounded-lg bg-green-600 border-2 border-green-600 hover:bg-transparent hover:text-green-600 w-max   font-bold">
+          className="md:block mx-auto md:mx-0 mt-8 md:mt-4 transition-all duration-300 text-white hideState px-10 py-2  rounded bg-green-600 border-2 border-green-600 hover:bg-transparent hover:text-green-600 w-max   font-bold">
           Update Profile
         </button>
       </form>

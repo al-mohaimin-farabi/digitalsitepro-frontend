@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import NavCss from "../assets/CSS/Navbar.module.css";
 import useAuth from "../Hooks/useAuth";
 import { HashLink } from "react-router-hash-link";
-import { FaRegUserCircle } from "react-icons/fa";
+import DefultAvatar from "./DefultAvatar";
 
 const Navbar = () => {
   const location = useLocation();
@@ -15,6 +15,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [serviceActive, setServiceActive] = useState(false);
+
   // const [testimonialActive, setTestimonialActive] = useState(false);
   const { user, logout } = useAuth();
 
@@ -172,13 +173,13 @@ const Navbar = () => {
   return (
     <nav
       ref={navbarRef}
-      className={`w-full py-0 md:py-2 px-2 font-nav  ${
+      className={`w-full py-0 ${scrolled ? "py-0" : "md:py-2"} px-2 font-nav  ${
         scrolled ? "text-slate-900" : "text-white"
       }   ${!scrolled && isNavbarBg} ${positionClass} ${isSmall && scrolled} ${
         !isSmall && scrolled
       } ${scrolled && "shadow-lg "}`}>
       <div
-        className={` flex md:max-w-[960px] lg:max-w-[1280px] mx-auto h-16 px-2 justify-between  items-center py-10 my-2 rounded  `}>
+        className={` flex md:max-w-[960px] lg:max-w-[1280px] mx-auto min-h-16 max-h-16 px-2 justify-between  items-center py-10 my-2 rounded  `}>
         <NavLink
           to="/"
           className="flex justify-start items-center active hideState min-w-[140px]">
@@ -287,14 +288,19 @@ const Navbar = () => {
                       className="w-[55px] h-[55px] rounded-full border-2 "
                     />
                   ) : (
-                    <FaRegUserCircle />
+                    <DefultAvatar
+                      height="55px"
+                      width="55px"
+                      textColor={isScrolled ? "#000000" : "#ffffff"}
+                      textSize="36px"
+                    />
                   )}
                 </NavLink>
-                <div className="hidden absolute right-2 top-10   z-[999999] w-[170px] mt-2 py-2 text-black  group-hover:block  ">
+                <div className="hidden  absolute right-2 top-10   z-[999999] w-[170px] mt-2 py-2 text-black  group-hover:block  ">
                   <ul className="bg-gray-200 p-2 rounded-md w-full  shadow-lg space-y-1">
                     <li className="pl-3 py-2 hover:bg-black hover:text-white rounded-md ">
                       <NavLink
-                        className="inline-block w-[100%]"
+                        className="inline-block w-[100%] "
                         to="/dashboard">
                         Dashboard
                       </NavLink>

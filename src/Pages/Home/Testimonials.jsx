@@ -7,9 +7,14 @@ import bg1 from "../../assets/Images/background/testimonial-bg-1.webp";
 import bg2 from "../../assets/Images/background/testimonial-bg-2.webp";
 import bg3 from "../../assets/Images/background/testimonial-bg-3.webp";
 import bg4 from "../../assets/Images/background/testimonial-bg-4.webp";
+import quote from "../../assets/Images/quote.svg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import HomeCss from "../../assets/CSS/Home.module.css";
+import { useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 // import AliceCarousel from "react-alice-carousel";
 // import "react-alice-carousel/lib/alice-carousel.css";
@@ -50,74 +55,72 @@ const Testimonials = () => {
     },
   ];
 
-  // const responsive = {
-  //   0: { items: 1 },
-  //   960: { items: 3 },
-  // };
+  let sliderRef = useRef(null);
+  const next = () => {
+    sliderRef.slickNext();
+  };
+  const previous = () => {
+    sliderRef.slickPrev();
+  };
 
   const settings = {
     arrows: false,
     dots: true,
     infinite: true,
-
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2500,
-    // cssEase: "linear",
-    slidesToShow: 3,
+    autoplay: false,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+    initialSlide: 1,
   };
 
   return (
     <div className="my-5 md:my-8 p-2 ">
       <ContentHeader title={"Testimonials"} />
 
-      <div className="">
-        <Slider {...settings}>
+      <div
+        className={`${HomeCss.testimonialBg} w-full mx-auto px-5 pt-5 pb-10 md:p-10 `}>
+        <Slider
+          ref={(slider) => {
+            sliderRef = slider;
+          }}
+          {...settings}>
           {testimonialData.map((testimonial, index) => (
-            <div key={index}>
-              <div
-                className="w-full  h-[420px] md:h-[480px] relative grid grid-cols-1 bg-fixed content-end bg-cover bg-center p-5 rounded-xl font-flow"
-                style={{ backgroundImage: `url(${testimonial.bg})` }}>
-                <div className="w-full relative bg-[#fff] rounded-xl shadow-2xl py-4 px-3  text-center font-mono md:h-[calc(480px-260px)] lg:h-[calc(480px-295px)] ">
-                  <img
-                    className="absolute top-0 -translate-y-1/2 left-[50%] -translate-x-1/2 w-[78px] h-[78px] rounded-full border-x-4 border-t-4 border-[#fff] border-b-4"
-                    src={testimonial.img}
-                    alt=""
-                  />
-
-                  <h4 className="font-bold mt-8">{testimonial.name}</h4>
-                  <h6 className="font-thin">{testimonial.company}</h6>
-                  <p className="text-sm my-2 text-pretty">
-                    {testimonial.testimonial}
-                  </p>
+            <div key={index} className="w-full">
+              <div className="rounded bg-white h-[580px] md:h-full w-full md:max-w-[660px] lg:max-w-[960px] mx-auto   py-6  px-10 flex flex-col justify-evenly">
+                <img className="w-[70px] " src={quote} alt="" />
+                <p className="font-inter text-pretty break-words w-[100%] my-16 text-lg md:text-2xl">
+                  {testimonial?.testimonial}
+                </p>
+                <div className="flex flex-col md:flex-row  justify-between  space-x-2 items-center -mt-5 md:mt-0">
+                  <div className="flex items-center">
+                    <div className={`${HomeCss.layer} `}>
+                      <img
+                        className="rounded-md overflow-hidden max-w-[100px] md:max-w-[135px] "
+                        src={testimonial?.img}
+                        alt={testimonial?.name}
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h4 className="font-extrabold text-xl md:text-2xl font-inter">
+                        {testimonial?.name}
+                      </h4>
+                      <h6 className="text-sm md:text-base font-semibold font-inter text-gray-800">
+                        {testimonial?.company}
+                      </h6>
+                    </div>
+                  </div>
+                  <div className=" flex  pr-5 mt-5 md:mt-0 space-x-10">
+                    <button
+                      className=" my-2 mx-2 text-2xl  px-5 py-2"
+                      onClick={previous}>
+                      <FontAwesomeIcon icon={faAngleLeft} />
+                    </button>
+                    <button
+                      className=" my-2 mx-2 text-2xl  px-5 py-2"
+                      onClick={next}>
+                      <FontAwesomeIcon icon={faAngleRight} />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

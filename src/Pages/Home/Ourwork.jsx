@@ -55,7 +55,7 @@ const Ourwork = () => {
             {activeTab === tab.id && (
               <motion.div
                 style={{ borderRadius: 9999 }}
-                transition={{ duration: 0.3, type: "spring" }}
+                transition={{ duration: 0.3, type: "easeIn" }}
                 layoutId="active-pill"
                 className="absolute inset-0  bg-black"></motion.div>
             )}

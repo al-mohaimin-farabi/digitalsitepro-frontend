@@ -9,6 +9,7 @@ import Dropzone from "react-dropzone";
 import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import DefultAvatar from "../../Components/DefultAvatar";
 
 const actions = [
   {
@@ -32,7 +33,7 @@ const actions = [
 ];
 
 const Dashboard = () => {
-  const { user, isadmin } = useAuth();
+  const { user, isadmin, userPhone } = useAuth();
   const [error, setError] = useState("");
   const modalWrapperRef = useRef(null);
   const [activeTab, setActiveTab] = useState(actions[0].id);
@@ -126,7 +127,7 @@ const Dashboard = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [modalWrapperRef]);
+  }, [modalWrapperRef, userPhone]);
 
   return (
     <>
@@ -213,11 +214,22 @@ const Dashboard = () => {
         <div className="w-full border-[1px]  p-2 rounded">
           <div className={`${DashboardCss.bg_box} h-[150px] rounded relative`}>
             <div className="absolute left-[20px] bottom-[-30px]">
-              <img
-                className="w-[120px] h-[120px] rounded-full border-2 border-gray-100 "
-                src={user?.photoURL}
-                alt="user photo"
-              />
+              {user?.photoURL ? (
+                <>
+                  <img
+                    className="w-[120px] h-[120px] rounded-full border-2 border-gray-100 "
+                    src={user?.photoURL}
+                    alt="user photo"
+                  />
+                </>
+              ) : (
+                <DefultAvatar
+                  width="120px"
+                  height="120px"
+                  textColor="#ffffff"
+                  textSize="56px"
+                />
+              )}
               <button
                 onClick={changeAvatar}
                 className="bg-gray-100 w-[30px] h-[30px]  text-black rounded absolute right-[8px] -top-[3px] border-[1px]">
@@ -230,14 +242,19 @@ const Dashboard = () => {
               <h4 className="text-2xl font-bold font-inter  ">
                 {user?.displayName}
               </h4>
-              <button className="options border-[1px] border-gray-100 py-2 px-4 rounded">
+              <button className="options hidden border-[1px] border-gray-100 py-2 px-4 rounded">
                 <FontAwesomeIcon icon={faEllipsisVertical} />
               </button>
             </div>
-            <div className="bottom mt-2">
+            <div className="bottom mt-2 flex gap-2">
               <p className="text-sm bg-gray-200 text-blue-900 w-max px-2 rounded">
                 {user?.email}
               </p>
+              
+                <p className="text-sm bg-gray-200 text-blue-900 w-max px-2 rounded">
+                  +{userPhone}
+                </p>
+              
             </div>
           </div>
         </div>

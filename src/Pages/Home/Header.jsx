@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <header
       ref={ref}
-      className={`bg-black  relative w-full py-16 px-0 overflow-hidden  h-[110vh] grid place-items-center`}>
+      className={`bg-black  relative w-full py-16 px-0 overflow-hidden  h-[100svh] md:h-[110vh] grid place-items-center`}>
       <div className="min-w-[100%] md:min-w-0 md:md:max-w-[960px] lg:max-w-[1280px]  py-12 grid place-items-center  text-center font-cardo text-balance z-[50]">
         <h1 className=" relative text-white md:-mt-[0px] lg:-mt-[50px]  md:mb-[10px] lg:mb-[20px] text-[32px] sm:text-[40px] md:text-[45px] font-extrabold my-2 px-1  uppercase tracking-widest text-pretty break-words ">
           Digital Site Pro <br />
@@ -43,7 +43,7 @@ const Header = () => {
         </p>
         <div className="flex flex-wrap mt-10 md:mt-10 lg:mt-20   text-white items-center justify-center ">
           <NavLink
-            className={`${HomeCss.text_shadow} md:text-xl rounded-md mx-4 bg-transparent py-3 px-8  border-2  border-purple-bright hover:bg-transparent transition-colors duration-200 ease-linear font-nav  hover:text-purple-bright `}
+            className={`${HomeCss.text_shadow} md:text-bas font-bold rounded-md mx-4 bg-transparent py-3 min-w-[180px] px-6  border-2  border-purple-bright hover:bg-transparent transition-colors duration-200 ease-linear font-nav  hover:text-purple-bright `}
             to="/contact">
             Contact Us
           </NavLink>

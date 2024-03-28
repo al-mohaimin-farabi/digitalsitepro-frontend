@@ -61,9 +61,37 @@ html {
   height: 3px;
   background-color: transparent;
 }
-.slick-slide > div {
-  margin: 0 10px;
+.slick-current {
+  margin: 0 auto !important;
 }
+.slick-slide > div {
+  margin: 0 1px;
+}
+.slick-dots li {
+  display: flex;
+  align-items: center;
+  background: transparent !important;
+  width: 22px !important;
+  height: 2px !important;
+}
+.slick-dots li button {
+  background: white !important;
+  border-radius: 8px !important  ;
+  width: 22px !important;
+  height: 2px !important;
+}
+.slick-dots li.slick-active button {
+  background: black !important;
+  border-radius: 8px !important  ;
+}
+.slick-dots li button:before {
+  color: transparent !important;
+}
+.slick-dots li.slick-active button:before {
+  color: transparent !important;
+}
+
+
 
 /* .login-bg {
   background: linear-gradient(90deg, #9a6ce1, #2947a9);

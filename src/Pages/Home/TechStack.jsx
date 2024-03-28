@@ -10,6 +10,7 @@ import DaVinci_logo from "../../assets/Images/tech-stack/DaVinci-Resolve-Studio-
 import Audacity_logo from "../../assets/Images/tech-stack/Audacity-Logo.webp";
 import { useRef } from "react";
 import { useInView, motion } from "framer-motion";
+import ContentHeader from "../../Components/ContentHeader";
 
 const TechStack = () => {
   const TechStack = useRef(null);
@@ -40,13 +41,7 @@ const TechStack = () => {
   return (
     <div className="my-5 md:my-10 py-2 px-2  rounded-md">
       {/* <ContentHeader title={"Our Tech Stack"} /> */}
-      <div className="p-2 my-4 text-center">
-        <h2 className="text-primary text-2xl md:text-3xl    uppercase font-flow font-bold">
-          Our Tech Stack
-        </h2>
-        <div
-          className={`bg-primary w-[50%] mx-auto h-[3px] my-2 rounded-md`}></div>
-      </div>
+      <ContentHeader title="Our Tech Stack" />
       <motion.div
         variants={parentVariants}
         initial="hidden"
