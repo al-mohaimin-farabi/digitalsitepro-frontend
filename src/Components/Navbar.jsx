@@ -285,14 +285,14 @@ const Navbar = () => {
                   {user?.photoURL ? (
                     <img
                       src={user?.photoURL}
-                      className="w-[55px] h-[55px] rounded-full border-2 "
+                      className="w-[50px] h-[50px] rounded-full border-2 "
                     />
                   ) : (
                     <DefultAvatar
-                      height="55px"
-                      width="55px"
+                      height="50px"
+                      width="50px"
                       textColor={isScrolled ? "#000000" : "#ffffff"}
-                      textSize="36px"
+                      textSize="32px"
                     />
                   )}
                 </NavLink>

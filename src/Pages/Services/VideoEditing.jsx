@@ -18,7 +18,7 @@ const VideoEditing = () => {
     {
       id: 2,
       img: Img_02,
-      heading: "BrandStory Clip",
+      heading: "Promotional Video",
       descriptions:
         "We create captivating video clips that connect with your audience and amplify your brand message.",
     },

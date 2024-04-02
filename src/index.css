@@ -9,7 +9,8 @@ html {
 }
 
 .font-nav {
-  font-family: "Jost", sans-serif !important;
+  /* font-family: "Jost", sans-serif !important; */
+  font-family: "Inter", sans-serif !important;
   font-optical-sizing: auto;
 }
 
@@ -65,33 +66,37 @@ html {
   margin: 0 auto !important;
 }
 .slick-slide > div {
-  margin: 0 1px;
+  margin: 0 2px;
 }
 .slick-dots li {
   display: flex;
+
+  margin-top: 10px !important;
   align-items: center;
   background: transparent !important;
   width: 22px !important;
   height: 2px !important;
 }
 .slick-dots li button {
+  margin-top: 10px !important;
   background: white !important;
   border-radius: 8px !important  ;
   width: 22px !important;
   height: 2px !important;
 }
 .slick-dots li.slick-active button {
-  background: black !important;
+  margin-top: 10px !important;
+  background: rgb(51, 51, 51) !important;
   border-radius: 8px !important  ;
 }
 .slick-dots li button:before {
+  margin-top: 10px !important;
   color: transparent !important;
 }
+
 .slick-dots li.slick-active button:before {
   color: transparent !important;
 }
-
-
 
 /* .login-bg {
   background: linear-gradient(90deg, #9a6ce1, #2947a9);
@@ -138,6 +143,12 @@ html {
   background-repeat: repeat;
   background-size: inherit;
   background-position: center center;
+}
+.testimonialbgWrapper {
+  background: linear-gradient(#562772, #000000 45%);
+}
+.testimonialbgWrapperTwo {
+  background: linear-gradient(45deg, #562772, #000000 60%);
 }
 .shadow-feture {
   box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.1);

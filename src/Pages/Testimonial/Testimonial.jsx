@@ -6,6 +6,8 @@ import HomeCss from "../../assets/CSS/Home.module.css";
 import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import ReCAPTCHA from "react-google-recaptcha";
+import TestimonialSlider from "./TestimonialSlider.jsx";
+import testimonialBg from "../../assets/Images/background/testimonialpagebg.webp";
 
 const Testimonial = () => {
   const { user } = useAuth();
@@ -58,20 +60,131 @@ const Testimonial = () => {
 
   return (
     <>
-      <div className="w-full py-[30px] md:py-[50px] relative overflow-hidden  min-h-[400px] testimonialbg">
-        <div className="md:max-w-[960px] lg:max-w-[1280px]  -mb-[70px] md:mt-[20px] mx-auto p-2 text-left flex items-center min-h-[400px] ">
-          <div className=" py-5  text-left">
-            <p className="relative z-50 text-gray-100 font-inter   text-xl font-bold font-inter mb-2">
-              Who We Are
-            </p>
-            <h2 className=" relative z-50  text-gray-100 font-bold text-3xl  md:text-4xl  font-inter tracking-widest">
-              Designers, thinkers & collaborators
-            </h2>
+      <div className="mt-[110px] py-10">
+        <div className="w-full p-2 md:mx-w-[960px] lg:max-w-[1280px] mx-auto text-center">
+          <h2 className="leading-[45px] md:leading-[55px] font-extrabold text-4xl md:text-5xl lg:text-5xl font-inter tracking-wide text-center my-2 font-inter">
+            Where Individual Pieces Form a Brilliant Picture
+          </h2>
+          <h4 className="font-semibold text-base md:text-lg lg:text-xl text-center mt-6 break-words font-inter">
+            Digitalsitepro is your compass, guiding you with a steady hand. We
+            understand the anxieties of carving a space online, and we&apos;re
+            here to offer a supportive touch.
+          </h4>
+          <div className=" w-full my-4  md:mx-w-[960px] lg:max-w-[1280px] mx-auto text-center relative overflow-hidden ">
+            <img
+              className="w-full h-[400px] mx-auto aspect-auto "
+              src={testimonialBg}
+              alt="Employee taking feedback from customer"
+            />
+            <div className="absolute w-[100%] left-[50%] translate-x-[-50%]  h-full top-0 bg-gray-700/20 "></div>
           </div>
-          <div className="bg-gray-900/70 absolute inset-0 z-30"></div>
+          <p className="text-balance px-1 text-base md:text-lg lg:text-2xl text-left mt-6  break-words font-inter">
+            Located in Chittagong, Bangladesh, Digitalsitepro leverages its team
+            of accomplished professionals to deliver comprehensive solutions for
+            your business&lsquo;s online and offline presence. With over a
+            decade of experience, we possess an unparalleled understanding of
+            the industry, consistently ranking among the leading technology
+            service providers. Our agile and innovative approach, fostered by
+            our streamlined team structure, empowers us to deliver exceptional
+            results within today&lsquo;s dynamic business environment. Partner
+            with Digitalsitepro and propel your organization to the forefront of
+            its field.
+          </p>
         </div>
       </div>
-      <div className=" bg-slate-200  py-12 mt-16">
+
+      <div className="py-16  testimonialbgWrapper ">
+        <div className="w-full py-5 px-3 md:mx-w-[960px] lg:max-w-[1280px] mx-auto">
+          <h2 className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl lg:text-5xl font-inter tracking-wide text-center my-2">
+            What our client said <br /> about us .
+          </h2>
+          <p className="text-white font-semibold text-base md:text-lg lg:text-xl text-center mt-6 font-inter">
+            More than a vendor, they became a trusted partner in our digital
+            journey.
+          </p>
+        </div>
+        <TestimonialSlider />
+      </div>
+
+      <div className=" py-16  testimonialbgWrapperTwo ">
+        <div className="w-full md:mx-w-[960px] lg:max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 p-2 gap-5 ">
+          <div className="content font-inter">
+            <h2 className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl lg:text-5xl font-inter tracking-wide text-left my-2 capitalize">
+              What we believe
+            </h2>
+            <p className="text-white font-normal text-base lg:text-lg text-left mt-6">
+              In the ever-evolving digital landscape,your voice can easily get
+              lost. We believe every business deserves to be heard, no matter
+              the size. That&apos;s why we craft personalized digital strategies
+              that connect you with your dream audience, fostering meaningful
+              connections and growth.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-8 justify-center items-start mt-5">
+            <div className="bg-[#1E1E1E] rounded-md px-4 py-8 min-h-[200px] max-h-[250px] -mt-5">
+              <h4 className="text-white my-2 font-bold text-lg font-inter capitalize">
+                Build meaningful relationships
+              </h4>
+              <div className="h-[2px] bg-purple-bright w-[25%] rounded-full my-2"></div>
+              <p className="text-white font-inter">
+                We care about our clients and partners, and we&apos;re committed
+                to building long-term relationships based on trust and respect.
+              </p>
+            </div>
+            <div className="bg-[#1E1E1E] rounded-md px-4 py-8  min-h-[200px] max-h-[250px] mt-5">
+              <h4 className="text-white my-2 font-bold text-lg font-inter capitalize">
+                Build meaningful relationships
+              </h4>
+              <div className="h-[2px] bg-purple-bright w-[25%] rounded-full my-2"></div>
+              <p className="text-white font-inter">
+                We care about our clients and partners, and we&apos;re committed
+                to build long-term relationships based on trust and respect.
+              </p>
+            </div>
+            <div className="bg-[#1E1E1E] rounded-md px-4 py-8  min-h-[200px] max-h-[250px] -mt-5">
+              <h4 className="text-white my-2 font-bold text-lg font-inter capitalize">
+                Build meaningful relationships
+              </h4>
+              <div className="h-[2px] bg-purple-bright w-[25%] rounded-full my-2"></div>
+              <p className="text-white font-inter">
+                We care about our clients and partners, and we&apos;re committed
+                to build long-term relationships based on trust and respect.
+              </p>
+            </div>
+            <div className="bg-[#1E1E1E] rounded-md px-4 py-8  min-h-[200px] max-h-[250px] mt-5">
+              <h4 className="text-white my-2 font-bold text-lg font-inter capitalize">
+                Build meaningful relationships
+              </h4>
+              <div className="h-[2px] bg-purple-bright w-[25%] rounded-full my-2"></div>
+              <p className="text-white font-inter">
+                We care about our clients and partners, and we&apos;re committed
+                to build long-term relationships based on trust and respect.
+              </p>
+            </div>
+            <div className="bg-[#1E1E1E] rounded-md px-4 py-8  min-h-[200px] max-h-[250px] -mt-5">
+              <h4 className="text-white my-2 font-bold text-lg font-inter capitalize">
+                Build meaningful relationships
+              </h4>
+              <div className="h-[2px] bg-purple-bright w-[25%] rounded-full my-2"></div>
+              <p className="text-white font-inter">
+                We care about our clients and partners, and we&apos;re committed
+                to build long-term relationships based on trust and respect.
+              </p>
+            </div>
+            <div className="bg-[#1E1E1E] rounded-md px-4 py-8  min-h-[200px] max-h-[250px] mt-5">
+              <h4 className="text-white my-2 font-bold text-lg font-inter capitalize">
+                Build meaningful relationships
+              </h4>
+              <div className="h-[2px] bg-purple-bright w-[25%] rounded-full my-2"></div>
+              <p className="text-white font-inter">
+                We care about our clients and partners, and we&apos;re committed
+                to build long-term relationships based on trust and respect.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className=" bg-gray-200  py-12 ">
         <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto p-2">
           <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-600 text-center tracking-wide  md:text-balance md:px-12">
             If you are on our customers and would like to submit your
