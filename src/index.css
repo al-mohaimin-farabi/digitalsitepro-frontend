@@ -77,6 +77,9 @@ html {
   width: 22px !important;
   height: 2px !important;
 }
+.center{
+  margin: 0 -10 px !important;
+}
 .slick-dots li button {
   margin-top: 10px !important;
   background: white !important;
