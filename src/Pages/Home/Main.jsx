@@ -6,7 +6,7 @@ import TechStack from "./TechStack";
 import Testimonials from "./Testimonials";
 import Calltoaction from "./Calltoaction";
 import Faq from "./Faq";
-import OurTeam from "./OurTeam";
+// import OurTeam from "./OurTeam";
 import Footer from "../../Components/Footer";
 import Marquee from "react-fast-marquee";
 
@@ -24,16 +24,19 @@ const Main = () => {
   return (
     <div className="w-full">
       <main className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-0">
-        <Fetures />
-        <Services />
+        <Fetures />{" "}
+      </main>
+      <Services />
+      <main className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-0">
         <TechStack />
         <Experiance />
         <Ourwork />
         <Testimonials />
         <Calltoaction />
-        <OurTeam />
+        {/* <OurTeam /> */}
         <Faq />
       </main>
+
       <Marquee
         className="overflow-hidden my-5 md:my-14 py-4 font-mono   "
         speed={50}

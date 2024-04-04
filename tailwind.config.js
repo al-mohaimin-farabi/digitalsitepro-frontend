@@ -19,6 +19,7 @@ export default {
 
       boxShadow: {
         "2xl": "0px 2px 10px 0px rgba(0,0,0,0.3)",
+        even: "0px 0px 10px 3px rgba(109, 58, 156,1)",
       },
       screens: {
         md: "960px",

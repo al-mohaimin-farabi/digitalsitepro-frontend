@@ -16,9 +16,9 @@ const Faq = () => {
   const faqData = [
     {
       id: 1,
-      question: "What services does DigitalSite Pro offer?",
+      question: "What services does Digital Site Pro offer?",
       answer:
-        "DigitalSite Pro offers a range of services including web development, video editing, graphics design, SEO, and digital marketing.",
+        "Digital Site Pro offers a range of services including web development, video editing, graphics design, SEO, and digital marketing.",
     },
     {
       id: 2,
@@ -28,16 +28,16 @@ const Faq = () => {
     },
     {
       id: 3,
-      question: "Is DigitalSite Pro experienced in digital marketing?",
+      question: "Is Digital Site Pro experienced in digital marketing?",
       answer:
-        "Yes, DigitalSite Pro has extensive experience in digital marketing. We use proven strategies to enhance your online presence and drive results for your business.",
+        "Yes, Digital Site Pro has extensive experience in digital marketing. We use proven strategies to enhance your online presence and drive results for your business.",
     },
     {
       id: 4,
       question:
-        "What makes DigitalSite Pro different from other digital agencies?",
+        "What makes Digital Site Pro different from other digital agencies?",
       answer:
-        "At DigitalSite Pro, we focus on delivering high-quality services tailored to the unique needs of each client. Our team is dedicated to providing innovative solutions for web development, video editing, graphics design, SEO, and digital marketing.",
+        "At Digital Site Pro, we focus on delivering high-quality services tailored to the unique needs of each client. Our team is dedicated to providing innovative solutions for web development, video editing, graphics design, SEO, and digital marketing.",
     },
   ];
 

@@ -130,7 +130,7 @@ const Navbar = () => {
   //   setServiceActive(false);
   //   setTestimonialActive(!testimonialActive);
   // };
-  const handlSserviceOpen = () => {
+  const handlServiceOpen = () => {
     // setTestimonialActive(false);
     setServiceActive(!serviceActive);
   };
@@ -179,7 +179,7 @@ const Navbar = () => {
         !isSmall && scrolled
       } ${scrolled && "shadow-lg "}`}>
       <div
-        className={` flex md:max-w-[960px] lg:max-w-[1280px] mx-auto min-h-16 max-h-16 px-2 justify-between  items-center py-10 my-2 rounded  `}>
+        className={` flex md:max-w-[960px] lg:max-w-[1280px] mx-auto min-h-16 max-h-16 px-1 justify-between  items-center py-10 my-2 rounded  `}>
         <NavLink
           to="/"
           className="flex justify-start items-center active hideState min-w-[140px]">
@@ -278,7 +278,7 @@ const Navbar = () => {
           </li>
         </ul>
         <ul className="hidden md:flex justify-end space-x-0  sm:space-x-2 md:space-x-2 lg:space-x-8 min-w-[140px] max-w-[140px]">
-          <li className="  text-base flex items-center relative group cursor-pointer">
+          <li className="text-base flex items-center relative group cursor-pointer">
             {user?.email && user.emailVerified ? (
               <>
                 <NavLink as={HashLink} className="hideState text-[35px] pr-0">
@@ -390,13 +390,13 @@ const Navbar = () => {
                 className="mx-2 p-2 text-base overflow-hidden w-max md:w-full">
                 <NavLink
                   to="/services"
-                  onClick={handlSserviceOpen}
+                  onClick={handlServiceOpen}
                   className="flex justify-start items-center  ">
                   Services
                   <motion.span
                     variants={arrow}
                     animate={serviceActive ? "open" : "closed"}
-                    className="ml-1 ">
+                    className="ml-1">
                     <IoIosArrowDown></IoIosArrowDown>
                   </motion.span>
                 </NavLink>

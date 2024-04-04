@@ -121,7 +121,7 @@ const GraphicsDesign = () => {
       )}
       {/* <div className=" mt-[130px]"></div> */}
 
-      <div className="mt-[130px] md:max-w-[960px] lg:max-w-[1280px] mx-auto my-10  py-2 px-3 md:px-2 md:py-0  ">
+      <div className="mt-[130px] md:max-w-[960px] lg:max-w-[1280px] mx-auto my-10  py-2 px-3 md:px-1 md:py-0  ">
         <div className="grid grid-cols-1 sm:grid-cols-5 md:grid-cols-6 gap-3 ">
           <div className="mb-8 mr-5">
             <ul className="flex w-full  sm:w-[148px] lg:w-[200px] flex-row sm:flex-col space-x-2 sm:space-x-0 sm:space-y-2 sm:border-r-2 md:h-[calc(100vh-130px)]  ">

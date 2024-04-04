@@ -46,10 +46,9 @@ const Aboutus = () => {
 
   return (
     <>
-      
       <div className="w-full py-[30px] md:py-[50px] relative overflow-hidden  min-h-[400px] aboutbg">
-        <div className="md:max-w-[960px] lg:max-w-[1280px]  -mb-[70px] md:mt-[20px] mx-auto p-2 text-left flex items-center min-h-[400px] ">
-          <div className=" py-5  text-left">
+        <div className="md:max-w-[960px] lg:max-w-[1280px]  -mb-[70px] md:mt-[20px] mx-auto py-2 px-3 md:px-1 text-left flex items-center min-h-[400px] ">
+          <div className=" py-5   text-left">
             <p className="relative z-50 text-gray-100 font-inter   text-xl font-bold font-inter mb-2">
               Who We Are
             </p>
@@ -60,7 +59,7 @@ const Aboutus = () => {
           <div className="bg-gray-900/70 absolute inset-0 z-30"></div>
         </div>
       </div>
-      <div className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto px-3 md:p-2 text-left   my-16 ">
+      <div className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto px-3 md:py-2 md:px-1 text-left   my-16 ">
         <h2 className="text-2xl sm:text-2xl font-normal font-inter text-[#301934] mb-4">
           We provide our top-notch creative services
         </h2>
@@ -79,7 +78,7 @@ const Aboutus = () => {
             visionary thinking.
           </p>
         </div>
-        <h2 className="text-[#301934] text-3xl font-inter font-normal     text-center mt-12">
+        <h2 className="text-[#301934] text-3xl font-inter font-normal  text-center mt-12">
           Our Team
           <span className="w-[calc(100%-60%)] sm:w-[20%] h-[2px] bg-[#301934] block mx-auto"></span>
         </h2>

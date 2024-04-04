@@ -67,6 +67,7 @@ html {
 }
 .slick-slide > div {
   margin: 0 2px;
+ 
 }
 .slick-dots li {
   display: flex;
@@ -78,7 +79,7 @@ html {
   height: 2px !important;
 }
 .center{
-  margin: 0 -10px !important;
+  margin: 0 -20px !important;
 }
 .slick-dots li button {
   margin-top: 10px !important;

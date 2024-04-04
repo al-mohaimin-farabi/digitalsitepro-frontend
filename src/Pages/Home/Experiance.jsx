@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
+
 const Experiance = () => {
   // const isMobile = () => window.innerWidth < 960;
 
@@ -14,7 +15,7 @@ const Experiance = () => {
         <div className="col flex items-center order-1 md:order-2">
           <div className="w-full p-2 text-center md:text-left ">
             <h2 className="font-flow font-bold text-2xl md:text-3xl  lg:text-4xl text-primary my-4">
-              30 Years Experience 
+              30 Years Experience
             </h2>
             <p className="text-[#525B7A] text-base md:text-xl lg:text-2xl my-2  w-full sm:w-3/4 mx-auto md:mx-0 md:w-[80%] text-pretty whitespace-pre-line ">
               Our company has been the leading provided construction services to
@@ -36,9 +37,7 @@ export default Experiance;
 
 const Svg = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, {
-    once: true,
-  });
+  const inView = useInView(ref);
   const controls = useAnimation();
 
   const animateFrame = {

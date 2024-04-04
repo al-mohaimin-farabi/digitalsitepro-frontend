@@ -210,7 +210,7 @@ const Dashboard = () => {
       )}
 
       <div
-        className={`${DashboardCss.wrapper} mt-[120px] md:max-w-[960px] lg:max-w-[1280px] mx-auto p-2`}>
+        className={`${DashboardCss.wrapper} mt-[120px] md:max-w-[960px] lg:max-w-[1280px] mx-auto px-3 md:px-1 py-2`}>
         <div className="w-full border-[1px]  p-2 rounded">
           <div className={`${DashboardCss.bg_box} h-[150px] rounded relative`}>
             <div className="absolute left-[20px] bottom-[-30px]">

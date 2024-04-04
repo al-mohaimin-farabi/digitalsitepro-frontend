@@ -79,7 +79,7 @@ const Testimonials = () => {
           {...settings}>
           {testimonialData.map((testimonial, index) => (
             <div key={index} className="w-full">
-              <div className="rounded bg-white h-[480px]  w-full md:max-w-[660px] lg:max-w-[960px] mx-auto   py-6  px-10 flex flex-col justify-evenly mx-auto">
+              <div className="rounded bg-white h-[520px]  w-full md:max-w-[660px] lg:max-w-[960px] mx-auto   py-6  px-5 md:px-10 flex flex-col justify-evenly ">
                 <img className="w-[70px] " src={quote} alt="" />
                 <p className="font-inter text-pretty break-words w-[100%] my-16 text-lg md:text-2xl">
                   {testimonial?.testimonial}
@@ -93,16 +93,16 @@ const Testimonials = () => {
                         alt={testimonial?.name}
                       />
                     </div>
-                    <div className="p-5">
-                      <h4 className="font-extrabold text-xl md:text-2xl font-inter">
+                    <div className="p-5 ">
+                      <h4 className="font-extrabold text-lg md:text-2xl font-inter">
                         {testimonial?.name}
                       </h4>
-                      <h6 className="text-sm md:text-base font-semibold font-inter text-gray-800">
+                      <h6 className="text-sm text-justify md:text-base font-semibold font-inter text-gray-800">
                         {testimonial?.company}
                       </h6>
                     </div>
                   </div>
-                  <div className=" flex  pr-5 mt-5 md:mt-0 space-x-10">
+                  <div className="   pr-5 mt-5 md:mt-0 space-x-10 hidden md:flex">
                     <button
                       className=" my-2 mx-2 text-2xl  px-5 py-2"
                       onClick={previous}>
