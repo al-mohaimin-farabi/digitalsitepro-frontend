@@ -64,7 +64,7 @@ const Services = () => {
     <div className="services py-2  my-5 md:my-16 px-1 md:px-2 font-flow bg-[#1e1e1e]">
       <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-1 py-16">
         <ContentHeader color="white" title="OUR SERVICES" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 gap-y-8 md:gap-y-[50px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 gap-y-8 gap-x-8 ">
           {serviceCard.map((item) => (
             <ServicesCard key={item.id} item={item}></ServicesCard>
           ))}

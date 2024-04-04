@@ -40,28 +40,29 @@ const Header = () => {
     <header
       ref={ref}
       className={`bg-black  relative w-full py-16 px-0 overflow-hidden  h-[100svh] md:h-[110vh] grid place-items-center`}>
-      <div className="min-w-[100%] md:min-w-0 md:md:max-w-[960px] lg:max-w-[1280px]  py-12 grid place-items-center  text-center font-cardo text-balance z-[50]">
+      <div className="min-w-[100%] md:min-w-0 md:md:max-w-[960px] lg:max-w-[1280px]  py-12 grid place-items-center  text-center font-inter text-balance z-[50]">
         {/* <h1 className=" relative text-white md:-mt-[0px] lg:-mt-[50px]  md:mb-[10px] lg:mb-[20px] text-[32px] sm:text-[40px] md:text-[45px] font-extrabold my-2 px-1  uppercase tracking-widest text-pretty break-words ">
           Digital Site Pro <br />
           Studio <span className={`${HomeCss.gradient_text}`}>Live</span>
         </h1> */}
-        <h1 className=" relative text-white md:-mt-[0px] lg:-mt-[50px]  md:mb-[10px] lg:mb-[20px] text-[24px] sm:text-[40px] md:text-[45px] font-extrabold my-2 px-1  uppercase tracking-wide sm:tracking-widest text- break-words ">
-          <span className="text-purple-bright">Next-gen enterprise </span>{" "}
-          <br />
-          software development company
+        <h1 className=" relative text-white md:-mt-[0px] lg:-mt-[50px]  md:mb-[10px] lg:mb-[20px] text-[25px] sm:text-[40px] md:text-[45px] font-extrabold my-2 px-1   tracking-wide sm:tracking-widest text- break-words ">
+          Building Digital Products That <br />
+         
+            Transform Businesses
+         
         </h1>
-        <div className="px-1 flex  my-4 md:my-2 lg:my-4 capitalize max-w-[380px] lg:min-w-[50px] sm:max-w-[750px] text-lg  md:text-2xl text-gray-400 font-bold text-balance">
+        <p className="px-1 flex  my-4 md:my-2 lg:my-4 capitalize max-w-[380px] lg:min-w-[50px] sm:max-w-[750px] text-xl  md:text-3xl text-gray-400 font-bold text-balance">
           We Think&nbsp;
           <motion.span
             initial={{ opacity: 0, y: 20 }} // Start with opacity 0 and translate 20px down
             animate={{ opacity: 1, y: 0 }} // Fade in and translate to initial position
-            exit={{ opacity: 0, y: -20 }} // Fade out and translate 20px up on exit
+            exit={{ opacity: 0, y: -50 }} // Fade out and translate 20px up on exit
             transition={{ duration: 0.5 }}
             key={currentTitleIndex}
             className="text-purple-bright block w-[70px] text-left">
             {titles[currentTitleIndex]}
           </motion.span>
-        </div>
+        </p>
         <div className="flex flex-wrap mt-10 md:mt-10 lg:mt-20   text-white items-center justify-center ">
           <NavLink
             className={`${HomeCss.text_shadow} md:text-bas font-bold rounded-md mx-4 bg-transparent py-3 min-w-[180px] px-6  border-2  border-purple-bright hover:bg-transparent transition-colors duration-200 ease-linear font-nav  hover:text-purple-bright `}
