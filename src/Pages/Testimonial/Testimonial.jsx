@@ -17,10 +17,16 @@ const Testimonial = () => {
   const [verified, setVerified] = useState(false);
   const modalWrapperRef = useRef(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [loginAlret, setLoginAlert] = useState(false);
 
   const onChange = (value) => {
     setCaptchaValue(value);
     setVerified(true);
+  };
+
+  const handleLoginAlert = (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+    setLoginAlert(true); // Set the state to trigger login alert
   };
 
   const {
@@ -131,7 +137,35 @@ const Testimonial = () => {
         </motion.div>
       )}
 
-      <div className="py-5 md:py-10 mt-[96px] md:mt-[110px] md:h-[calc(100vh-110px)] grid place-content-center  testimonialbgWrapper px-3   font-inter">
+      {loginAlret && !user?.email && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          transition={{ type: "fade", duration: 0.5 }}
+          animate={modalOpen && { opacity: 1 }}
+          className="bg-black/40 w-[100vw] origin-top h-[100vh] inset-0 fixed z-[5555555] flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={modalOpen && { opacity: 1, y: 0 }}
+            transition={{ type: "fade", duration: 0.3 }}
+            ref={modalWrapperRef}
+            className="w-[calc(100vw-50px)] min-w-[250px] max-w-[450px] h-max mt-36  bg-white rounded-lg px-6 grid items-center shadow-lg">
+            <div className="py-8 text-center font-inter">
+              <p className="my-2 text-lg font-bold text-purple-bright">
+                You Need To Login or Signup To Submit Testimonial
+              </p>
+
+              <button
+                onClick={() => setLoginAlert(false)}
+                className="text-[25px]  px-6 md:px-0 md:w-[45px]  md:h-[45px]  md:rounded-full md:border border-purple-bright shadow-xl grid place-content-center mx-auto  mt-6">
+                <FontAwesomeIcon className="hidden md:block" icon={faXmark} />{" "}
+                <span className="md:hidden text-base font-inter">close</span>
+              </button>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+
+      <div className="py-5 md:py-10 mt-[96px] md:mt-[110px] md:min-h-[calc(100vh-110px)] grid place-content-center  testimonialbgWrapper px-3   font-inter">
         <div className="w-full py-5  overflow-hidden md:max-w-[960px] lg:max-w-[1280px] mx-auto">
           <h2
             data-aos="fade-up"
@@ -245,10 +279,12 @@ const Testimonial = () => {
           </h2>
 
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={user?.email ? handleSubmit(onSubmit) : handleLoginAlert}
             className=" mt-8 space-y-5     ">
             {!user?.email && (
-              <p className="text-red-600  mx-auto block text-left">
+              <p
+                data-aos="fade-up"
+                className="text-red-600  mx-auto block text-left">
                 <span className="font-extrabold">*</span>You Need To Login To
                 Submit Testimonial
               </p>
@@ -356,6 +392,7 @@ const Testimonial = () => {
             </div>
             <button
               data-aos="fade-up"
+              data-aos-once="true"
               disabled={!verified && !user?.email}
               className={` px-10 py-3  mt-6 font-bold border-2 transition-colors duration-200 ease-linear rounded  cursor-pointer ${
                 !user.email

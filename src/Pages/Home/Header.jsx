@@ -43,7 +43,7 @@ const Header = () => {
       className={`bg-black  relative w-full py-16 px-0 overflow-hidden  h-[100svh] md:h-[110vh] grid place-items-center`}>
       <motion.div
         layout
-        className="min-w-[100%] md:min-w-[960px] md:max-w-[960px] lg:max-w-[1280px]  py-12 grid place-items-center  text-center font-inter text-balance z-[50]">
+        className="min-w-[100%] md:min-w-[1020px] md:max-w-[1020px] lg:max-w-[1280px]  py-12 grid place-items-center  text-center font-inter text-balance z-[50]">
         {/* <h1 className=" relative text-white md:-mt-[0px] lg:-mt-[50px]  md:mb-[10px] lg:mb-[20px] text-[32px] sm:text-[40px] md:text-[45px] font-extrabold my-2 px-1  uppercase tracking-widest text-pretty break-words ">
           Digital Site Pro <br />
           Studio <span className={`${HomeCss.gradient_text}`}>Live</span>
