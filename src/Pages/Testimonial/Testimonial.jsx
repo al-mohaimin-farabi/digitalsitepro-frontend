@@ -11,9 +11,6 @@ import testimonialBg from "../../assets/Images/background/testimonialpagebg.webp
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 const Testimonial = () => {
   const { user } = useAuth();
   const [captchaValue, setCaptchaValue] = useState("");
@@ -134,12 +131,19 @@ const Testimonial = () => {
         </motion.div>
       )}
 
-      <div className="py-5 md:py-10 mt-[96px] md:mt-[110px]  testimonialbgWrapper px-3   font-inter">
-        <div className="w-full py-5  md:max-w-[960px] lg:max-w-[1280px] mx-auto">
-          <h2 className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl lg:text-5xl font-inter tracking-wide text-center my-2">
+      <div className="py-5 md:py-10 mt-[96px] md:mt-[110px] md:h-[calc(100vh-110px)] grid place-content-center  testimonialbgWrapper px-3   font-inter">
+        <div className="w-full py-5  overflow-hidden md:max-w-[960px] lg:max-w-[1280px] mx-auto">
+          <h2
+            data-aos="fade-up"
+            data-aos-once="true"
+            className="text-white overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl  font-inter tracking-wide text-center my-2">
             What our client said <br /> about us .
           </h2>
-          <p className="text-white font-semibold text-base md:text-lg lg:text-xl text-center mt-6 font-inter">
+          <p
+            data-aos-once="true"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-white overflow-hidden font-semibold text-base md:text-lg lg:text-xl text-center mt-6 font-inter">
             More than a vendor, they became a trusted partner in our digital
             journey.
           </p>
@@ -147,25 +151,41 @@ const Testimonial = () => {
         <TestimonialSlider />
       </div>
 
-      <div className=" py-5 md:py-10 px-1 font-inter">
-        <div className="w-full px-2 md:px-1 py-2 md:max-w-[960px] lg:max-w-[1280px] mx-auto text-center">
-          <h2 className="text-primary leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl lg:text-5xl font-inter tracking-wide text-center my-2">
+      <div className=" py-5 md:py-16 px-1 font-inter">
+        <div className="w-full px-2 md:px-1 py-2 md:max-w-[960px] lg:max-w-[1280px] mx-auto text-center overflow-hidden">
+          <h2
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-delay="200"
+            className="text-primary leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl lg:text-5xl font-inter tracking-wide text-center my-2">
             Where Individual Pieces Form a Brilliant Picture
           </h2>
-          <h4 className="font-semibold text-pretty text-base md:text-lg lg:text-xl text-center mt-6 font-inter">
+          <h4
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-delay="200"
+            className="font-semibold text-pretty text-base md:text-lg lg:text-xl text-center mt-6 font-inter">
             Digitalsitepro is your compass, guiding you with a steady hand. We
             understand the anxieties of carving a space online, and we&apos;re
             here to offer a supportive touch.
           </h4>
           <div className=" w-full my-4  md:max-w-[960px] lg:max-w-[1280px] mx-auto text-center relative overflow-hidden ">
             <img
-              className="w-[60%]  mx-auto aspect-auto md:aspect-[4/3] lg:aspect-[16/9]"
+              data-aos="zoom-out-up"
+              data-aos-once="true"
+              data-aos-delay="100"
+              data-aso-duration="1000"
+              data-aos-anchor-placement="center-bottom"
+              className="w-[60%] my-2  mx-auto aspect-auto md:aspect-[4/3] lg:aspect-[16/9]"
               src={testimonialBg}
               alt="Employee taking feedback from customer"
             />
-            <div className="absolute w-[60%] left-[50%] translate-x-[-50%]  h-full top-0 bg-gray-900/20 "></div>
           </div>
-          <p className=" px-1 text-base md:text-lg lg:text-2xl text-left mt-6   font-inter text-justified">
+          <p
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-offset="100"
+            className=" px-1 text-base md:text-lg lg:text-2xl text-left mt-6   font-inter text-justified">
             Located in Chittagong, Bangladesh, Digitalsitepro leverages its team
             of accomplished professionals to deliver comprehensive solutions for
             your business&lsquo;s online and offline presence. With over a
@@ -182,11 +202,19 @@ const Testimonial = () => {
 
       <div className=" py-16  testimonialbgWrapperTwo px-1 font-inter">
         <div className="w-full  md:max-w-[960px] lg:max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2  px-2 md:px-1 gap-16 ">
-          <div className="content font-inter h-full place-content-center">
-            <h2 className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl lg:text-5xl font-inter tracking-wide text-left my-2 capitalize">
+          <div
+            className="content font-inter h-full place-content-center "
+            data-aos="fade-right"
+            data-aos-once="true">
+            <h2
+              data-aos="fade-right"
+              className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl lg:text-5xl font-inter tracking-wide text-left my-2 capitalize">
               What we believe
             </h2>
-            <p className="text-white font-normal text-base lg:text-lg  mt-6 text-justify">
+            <p
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="text-white font-normal text-base lg:text-lg  mt-6 text-justify">
               In the ever-evolving digital landscape,your voice can easily get
               lost. We believe every business deserves to be heard, no matter
               the size. That&apos;s why we craft personalized digital strategies
@@ -207,8 +235,10 @@ const Testimonial = () => {
       </div>
 
       <div className=" bg-gray-200  py-12 px-1 font-inter">
-        <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-1">
-          <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-600 text-center tracking-wide  md:text-balance md:px-12">
+        <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-1 overflow-hidden">
+          <h2
+            data-aos="fade-up"
+            className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-600 overflow-hidden text-center tracking-wide  md:text-balance md:px-12">
             If you are on our customers and would like to submit your
             testimonial, please use the form bellow. We greatly appreciate your
             feedback
@@ -216,7 +246,7 @@ const Testimonial = () => {
 
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="py-5 mt-8 space-y-5     ">
+            className=" mt-8 space-y-5     ">
             {!user?.email && (
               <p className="text-red-600  mx-auto block text-left">
                 <span className="font-extrabold">*</span>You Need To Login To
@@ -224,7 +254,7 @@ const Testimonial = () => {
               </p>
             )}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div className="flex flex-col">
+              <div data-aos="fade-up" className="flex flex-col">
                 <input
                   autoComplete="true"
                   placeholder="Your Name"
@@ -244,7 +274,7 @@ const Testimonial = () => {
                   <p className="text-red-600">{errors.name.message}</p>
                 )}
               </div>
-              <div className="flex flex-col">
+              <div data-aos="fade-up" className="flex flex-col">
                 <input
                   autoComplete="true"
                   placeholder="Your Email"
@@ -265,7 +295,9 @@ const Testimonial = () => {
                 )}
               </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div
+              data-aos="fade-up"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col">
                 <input
                   autoComplete="true"
@@ -296,7 +328,7 @@ const Testimonial = () => {
                 )}
               </div>
             </div>
-            <div className="grid grid-cols-1  ">
+            <div data-aos="fade-up" className="grid grid-cols-1  ">
               <textarea
                 placeholder="Your Message Here"
                 className="outline outline-1 rounded p-2 w-full min-h-[180px] max-h-[220px] "
@@ -313,7 +345,7 @@ const Testimonial = () => {
                 <p className="text-red-600">{errors.message.message}</p>
               )}
             </div>
-            <div className=" grid place-content-start">
+            <div data-aos="fade-up" className=" grid place-content-start">
               <p className="font-thin font-mono text-sm text-left">
                 <span className="text-red-600">*</span>reCAPTCHA
               </p>
@@ -323,8 +355,9 @@ const Testimonial = () => {
               />
             </div>
             <button
+              data-aos="fade-up"
               disabled={!verified && !user?.email}
-              className={` px-10 py-3  my-6 font-bold border-2 transition-colors duration-200 ease-linear rounded  cursor-pointer ${
+              className={` px-10 py-3  mt-6 font-bold border-2 transition-colors duration-200 ease-linear rounded  cursor-pointer ${
                 !user.email
                   ? "bg-primary/40 text-white opacity-9"
                   : "bg-primary  text-white  hover:text-[#6E72DD]  hover:bg-transparent  border-primary hover:border-[#6E72DD]   "
@@ -343,14 +376,10 @@ const Testimonial = () => {
 export default Testimonial;
 
 const Card = ({ item, gap }) => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
     <div
       data-aos="fade-up"
-      data-aos-anchor-placement="center-center"
+      data-aos-anchor-placement="top-bottom"
       className={`bg-[#1E1E1E] grid place-content-center rounded-md px-4 py-5 md:py-0 h-full md:min-h-[230px] md:max-h-[280px] ${gap}  `}>
       <h4 className="text-white  font-bold texl-base md:text-lg font-inter capitalize">
         {item.heading}

@@ -12,6 +12,7 @@ import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
+
 // import AliceCarousel from "react-alice-carousel";
 // import "react-alice-carousel/lib/alice-carousel.css";
 
@@ -96,7 +97,10 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <div className="my-5 md:my-8 p-2 overflow-hidden">
+    <div
+      data-aos="fade-up"
+      data-aos-delay="100"
+      className="my-5 md:my-8 p-2 overflow-hidden ">
       <div className={` w-full mx-auto px-2 py-5  `}>
         <Slider
           ref={(slider) => {

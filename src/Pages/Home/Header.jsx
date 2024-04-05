@@ -4,6 +4,7 @@ import videoBgL from "../../assets/Video/heroBg_landscape.webm";
 import videoBgP from "../../assets/Video/heroBg_portrait.webm";
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 const Header = () => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
@@ -40,18 +41,36 @@ const Header = () => {
     <header
       ref={ref}
       className={`bg-black  relative w-full py-16 px-0 overflow-hidden  h-[100svh] md:h-[110vh] grid place-items-center`}>
-      <div className="min-w-[100%] md:min-w-0 md:md:max-w-[960px] lg:max-w-[1280px]  py-12 grid place-items-center  text-center font-inter text-balance z-[50]">
+      <motion.div
+        layout
+        className="min-w-[100%] md:min-w-[960px] md:max-w-[960px] lg:max-w-[1280px]  py-12 grid place-items-center  text-center font-inter text-balance z-[50]">
         {/* <h1 className=" relative text-white md:-mt-[0px] lg:-mt-[50px]  md:mb-[10px] lg:mb-[20px] text-[32px] sm:text-[40px] md:text-[45px] font-extrabold my-2 px-1  uppercase tracking-widest text-pretty break-words ">
           Digital Site Pro <br />
           Studio <span className={`${HomeCss.gradient_text}`}>Live</span>
         </h1> */}
-        <h1 className=" relative text-white md:-mt-[0px] lg:-mt-[50px]  md:mb-[10px] lg:mb-[20px] text-[25px] sm:text-[40px] md:text-[45px] font-extrabold my-2 px-1   tracking-wide sm:tracking-widest text- break-words ">
-          Building Digital Products That <br />
-         
-            Transform Businesses
-         
-        </h1>
-        <p className="px-1 flex  my-4 md:my-2 lg:my-4 capitalize max-w-[380px] lg:min-w-[50px] sm:max-w-[750px] text-xl  md:text-3xl text-gray-400 font-bold text-balance">
+
+        <TypeAnimation
+          preRenderFirstString={true}
+          wrapper="h1"
+          sequence={[
+            "Building",
+            500,
+            "Building Digital", //  Continuing previous Text
+            500,
+            "Building Digital Products",
+            500,
+            "Building Digital Products That ",
+            500,
+            "Building Digital Products That Transform",
+            500,
+            "Building Digital Products That Transform Businesses",
+            500,
+          ]}
+          className="md:min-w-[720px] md:max-w-[720px] block text-white md:-mt-[0px] lg:-mt-[50px]  md:mb-[10px] lg:mb-[20px] text-[25px] sm:text-[40px] md:text-[45px] font-extrabold my-2 px-1   tracking-wide  text-wrap break-words "
+          repeat={Infinity}
+        />
+
+        <p className="px-1 flex  my-4 md:my-2 lg:my-4 capitalize max-w-[380px] lg:min-w-[50px] sm:max-w-[750px] text-xl  md:text-3xl text-gray-400 font-bold text-left text-balance">
           We Think&nbsp;
           <motion.span
             initial={{ opacity: 0, y: 20 }} // Start with opacity 0 and translate 20px down
@@ -75,7 +94,7 @@ const Header = () => {
             Get Started
           </NavLink> */}
         </div>
-      </div>
+      </motion.div>
       {isSmallScreen ? (
         <motion.video
           style={{ y }}
