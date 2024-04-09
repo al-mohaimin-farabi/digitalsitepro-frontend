@@ -10,6 +10,8 @@ import ScrollToTop from "./Components/ScrollToTop.jsx";
 import AdminRoute from "./Pages/Login/AdminRoute.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Cursor from "./Components/Cursor.jsx";
+import Testing from "./Pages/Testing/Testing.jsx";
 
 // Lazy-loaded components
 const LazyHome = lazy(() => import("./Pages/Home/Home.jsx"));
@@ -47,6 +49,7 @@ function App() {
     <>
       <div className="App">
         <ScrollToTop />
+        <Cursor />
         <AuthProvider>
           {/* <div className="bg-gray-200">
             <p className=" text-center text-md text-red-600 font-bold">
@@ -81,6 +84,7 @@ function App() {
               }
             />
             <Route path="/test" element={<SuspenseLoader />} />
+            <Route path="/testing" element={<Testing />} />
             <Route
               path="/testimonial"
               element={

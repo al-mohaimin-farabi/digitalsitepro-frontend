@@ -20,9 +20,9 @@ const ServicesCard = ({ item }) => {
     <motion.div
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
-      className="grid place-content-center ">
+      className="grid place-content-center  ">
       <div
-        className={`relative  grid p-3 md:p-1 grid-place-content-center grid-cols-1 text-center md:px-[40px] bg-[#222121] rounded-3xl text-white font-inter border-[4px] border-[#6B3D96] py-[30px]`}>
+        className={`relative hover:scale-105 hover:-translate-y-5 transition-all duration-300  grid p-3 md:py-4 grid-place-content-center grid-cols-1 text-center md:px-[40px] bg-[#222121] rounded-3xl text-white font-inter border-[4px] border-[#6F3B9A]  py-[30px]`}>
         <img
           className="my-4 w-[90px] h-[72px] place-self-center"
           src={item.img}
@@ -30,7 +30,9 @@ const ServicesCard = ({ item }) => {
         />
 
         <h2 className="my-2 font-bold text-2xl">{item?.heading}</h2>
-        <p className="my-4 text-sm text-wrap min-h-[110px]">{item?.peragraph}</p>
+        <p className="my-4 text-sm  min-h-[110px] text-balance">
+          {item?.peragraph}
+        </p>
         <NavLink
           className={`${HomeCss.service_button} my-5 place-self-center rounded-full font-bold px-10 py-4 block w-max text-white border-2 border-purple-bright`}
           to={item?.link}>

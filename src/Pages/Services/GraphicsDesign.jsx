@@ -86,10 +86,10 @@ const GraphicsDesign = () => {
         <div className="bg-black/30 w-[100vw] h-[100vh] inset-0  fixed z-[5555555] grid place-content-center  ">
           <div
             ref={modalWrapperRef}
-            className=" w-[calc(100%-20px)] mx-auto md:mx-0 sm:min-w-[320px] sm:max-w-[450px] md:min-w-[420px] md:max-w-[480px] lg:max-w-[580px]   bg-white shadow-lg grid place-content-center py-5 rounded px-2">
+            className=" w-[calc(100%-20px)] mx-auto md:mx-0 sm:min-w-[320px] sm:max-w-[450px] md:min-w-[420px] md:max-w-[480px] lg:max-w-[580px]   bg-white shadow-lg grid place-content-center py-5 rounded-md px-2">
             <img
               // loading="lazy"
-              className=" aspect-[4/3]   rounded  "
+              className=" aspect-[4/3]   rounded-md  "
               src={imgPath}
               alt=""
             />
@@ -112,7 +112,7 @@ const GraphicsDesign = () => {
             </div>
 
             <button
-              className="mt-5 grid place-content-center border border-purple-bright/60 rounded-full w-[40px] h-[40px] mx-auto "
+              className="mt-5 grid place-content-center border border-purple-bright/60 rounded-md w-[40px] h-[40px] mx-auto "
               onClick={() => setIsModalOpen(false)}>
               <FontAwesomeIcon icon={faXmark} />
             </button>
@@ -131,8 +131,8 @@ const GraphicsDesign = () => {
                     to={`/services/graphicsdesign/?category=${tab.category}`}
                     onClick={() => handleTabChange(tab.id, tab.category)}
                     className={`${
-                      activeTab === tab.id && "bg-gray-200"
-                    } py-2 rounded w-full hideState dashboard_tab sm:block px-4 text-left`}>
+                      activeTab === tab.id ? "bg-gray-200" : "bg-gray-500/30 text-white"
+                    } py-2 rounded-md w-full hideState dashboard_tab sm:block px-4 text-left`}>
                     {tab.label}
                   </NavLink>
                 </li>
@@ -143,11 +143,11 @@ const GraphicsDesign = () => {
             {filteredDesigns.map((design, index) => (
               <div
                 key={index}
-                className="bg-gray-100 p-2 rounded text-center h-max">
-                <div className="img-box w-full  p-2 rounded group overflow-hidden cursor-pointer">
+                className="bg-gray-100 p-2 rounded-md text-center h-max">
+                <div className="img-box w-full  p-2 rounded-md group overflow-hidden cursor-pointer">
                   <img
                     onClick={() => showImage(design.img, design.gallery)}
-                    className="rounded mx-auto group-hover:-translate-y-1.5 transition-all duration-300 "
+                    className="rounded-md mx-auto group-hover:-translate-y-1.5 transition-all duration-300 "
                     src={design.img}
                     alt=""
                   />

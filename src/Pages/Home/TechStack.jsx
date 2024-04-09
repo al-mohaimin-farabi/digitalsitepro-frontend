@@ -47,24 +47,24 @@ const TechStack = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         ref={TechStack}
-        className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-5 font-mono pt-6 pb-8  ">
+        className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-y-12 sm:gap-x-0  font-mono pt-6 pb-8  ">
         <motion.div
           variants={children}
-          className="p-1 sm:p-2 bg-gray-100 flex flex-col sm:flex-row  justify-start items-center rounded ">
+          className="p-1 sm:p-2   flex flex-col sm:flex-row  justify-end items-center rounded ">
           <img
             loading="lazy"
             className="w-12 m-1 sm:m-2"
             src={Wordpress_logo}
             alt="wordpress logo"
           />
-          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2 text-black">
+          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2  text-white">
             Wordpress
           </h4>
           {/* <p className="text-sm text-gray-300"></p> */}
         </motion.div>
         <motion.div
           variants={children}
-          className="p-1 sm:p-2 bg-gray-100 flex flex-col sm:flex-row justify-start items-center rounded">
+          className="p-1 sm:p-2 col-span-2  flex flex-col sm:flex-row justify-center items-center rounded">
           <img
             loading="lazy"
             className="w-12 m-1 sm:m-2"
@@ -72,14 +72,14 @@ const TechStack = () => {
             alt="React logo"
           />
 
-          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2 text-black">
+          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2  text-white">
             React
           </h4>
           {/* <p className="text-sm text-gray-300"></p> */}
         </motion.div>
         <motion.div
           variants={children}
-          className="p-1 sm:p-2 bg-gray-100 flex flex-col sm:flex-row justify-start items-center rounded">
+          className="p-1 sm:p-2   flex flex-col sm:flex-row justify-start items-center rounded">
           <img
             loading="lazy"
             className="w-12 m-1 sm:m-2"
@@ -87,14 +87,14 @@ const TechStack = () => {
             alt="wordpress logo"
           />
 
-          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2 text-black">
+          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2  text-white">
             Elementor
           </h4>
           {/* <p className="text-sm text-gray-300"></p> */}
         </motion.div>
         <motion.div
           variants={children}
-          className="p-1 sm:p-2 bg-gray-100 flex flex-col sm:flex-row justify-start items-center rounded">
+          className="p-1 sm:p-2   flex flex-col sm:flex-row justify-start items-center rounded">
           <img
             loading="lazy"
             className="w-12 m-1 sm:m-2"
@@ -102,14 +102,14 @@ const TechStack = () => {
             alt="Divi logo"
           />
 
-          <h4 className=" text-sm sm:text-base md:text-lg m-1 sm:m-2 text-black">
+          <h4 className=" text-sm sm:text-base md:text-lg m-1 sm:m-2  text-white">
             Divi
           </h4>
           {/* <p className="text-sm text-gray-300"></p> */}
         </motion.div>
         <motion.div
           variants={children}
-          className=" p-1 sm:p-2 bg-gray-100 flex flex-col sm:flex-row justify-start items-center rounded">
+          className=" p-1 sm:p-2 flex flex-col sm:flex-row justify-center items-center rounded">
           <img
             loading="lazy"
             className="w-12 m-1 sm:m-2"
@@ -117,29 +117,14 @@ const TechStack = () => {
             alt="Shopify logo"
           />
 
-          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2 text-black">
+          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2  text-white">
             Shopify
           </h4>
           {/* <p className="text-sm text-gray-300"></p> */}
         </motion.div>
         <motion.div
           variants={children}
-          className=" p-1 sm:p-2 bg-gray-100 flex flex-col sm:flex-row justify-start items-center rounded">
-          <img
-            loading="lazy"
-            className="w-12 m-1 sm:m-2"
-            src={Pagefly_logo}
-            alt="PageFly logo"
-          />
-
-          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2 text-black">
-            PageFly
-          </h4>
-          {/* <p className="text-sm text-gray-300"></p> */}
-        </motion.div>
-        <motion.div
-          variants={children}
-          className=" p-1 sm:p-2 bg-gray-100 flex flex-col sm:flex-row justify-start items-center rounded ">
+          className=" p-1 sm:p-2   flex flex-col sm:flex-row justify-end items-center rounded ">
           <img
             loading="lazy"
             className="w-12 m-1 sm:m-2"
@@ -147,14 +132,29 @@ const TechStack = () => {
             alt="Adobe Premiere Pro logo"
           />
 
-          <h4 className="text-sm text-center sm:text-base md:text-lg m-1 sm:m-2 text-black">
+          <h4 className="text-sm text-center sm:text-base md:text-lg m-1 sm:m-2  text-white">
             Adobe Premiere Pro
           </h4>
           {/* <p className="text-sm text-gray-300"></p> */}
         </motion.div>
         <motion.div
           variants={children}
-          className=" p-1 sm:p-2 bg-gray-100 flex flex-col sm:flex-row justify-start items-center rounded">
+          className=" p-1 sm:p-2   flex flex-col sm:flex-row justify-end items-center rounded">
+          <img
+            loading="lazy"
+            className="w-12 m-1 sm:m-2"
+            src={Pagefly_logo}
+            alt="PageFly logo"
+          />
+
+          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2  text-white">
+            PageFly
+          </h4>
+          {/* <p className="text-sm text-gray-300"></p> */}
+        </motion.div>
+        <motion.div
+          variants={children}
+          className=" p-1 sm:p-2   flex flex-col sm:flex-row justify-end items-center rounded">
           <img
             loading="lazy"
             className="w-12 m-1 sm:m-2"
@@ -162,14 +162,14 @@ const TechStack = () => {
             alt="After Effects logo"
           />
 
-          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2 text-black">
+          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2  text-white">
             After Effects
           </h4>
           {/* <p className="text-sm text-gray-300"></p> */}
         </motion.div>
         <motion.div
           variants={children}
-          className="lg:col-start-2 p-1 sm:p-2 bg-gray-100 flex flex-col sm:flex-row justify-start items-center rounded">
+          className="col-span-2 p-1 sm:p-2   flex flex-col sm:flex-row justify-center items-center rounded">
           <img
             loading="lazy"
             className="w-12 m-1 sm:m-2"
@@ -177,14 +177,14 @@ const TechStack = () => {
             alt="DaVinci logo"
           />
 
-          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2 text-black">
+          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2  text-white">
             DaVinci
           </h4>
           {/* <p className="text-sm text-gray-300"></p> */}
         </motion.div>
         <motion.div
           variants={children}
-          className="sm:col-start-2 md:col-start-2 lg:col-auto p-1 sm:p-2 bg-gray-100 flex flex-col sm:flex-row justify-start items-center rounded">
+          className="sm:col-start-2 md:col-start-2 lg:col-auto p-1 sm:p-2   flex flex-col sm:flex-row justify-start items-center rounded">
           <img
             loading="lazy"
             className="w-12 m-1 sm:m-2"
@@ -192,7 +192,7 @@ const TechStack = () => {
             alt="Audacity logo"
           />
 
-          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2 text-black">
+          <h4 className="text-sm sm:text-base md:text-lg m-1 sm:m-2  text-white">
             Audacity
           </h4>
           {/* <p className="text-sm text-gray-300"></p> */}

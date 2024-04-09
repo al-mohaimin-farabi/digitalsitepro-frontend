@@ -3,30 +3,55 @@ import useAuth from "../../Hooks/useAuth";
 import PhoneInput from "react-phone-input-2";
 import DashboardCss from "../../assets/CSS/Dashboard.module.css";
 import "react-phone-input-2/lib/style.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AccountSetting = () => {
   const { user, handleDisplayNameChange, userPhone, setUserPhone } = useAuth();
   const {
     register,
     handleSubmit,
+    setError,
+    clearErrors,
     formState: { errors },
   } = useForm();
 
   const [newPhoneNumber, setNewPhoneNumber] = useState("");
   const [newCountry, setNewCountry] = useState("");
 
-  const handlechange = (value, country) => {
+  const handlechange = (number, country) => {
     // Extract phone number and set it to newPhoneNumber state
-    setNewPhoneNumber(value);
     setNewCountry(country);
+    setNewPhoneNumber(number);
+    if (newPhoneNumber.length <= 7) {
+      setError("phone", {
+        type: "notValid",
+        message: "Phone number is not valid",
+      });
+    } else {
+      clearErrors("phone");
+    }
   };
 
   const onSubmit = async (data) => {
-    try {
-      if (user?.displayName !== data.displayName) {
-        handleDisplayNameChange(data.displayName);
-      }
+    clearErrors("phone");
+
+    // Check if display name is different
+    if (user?.displayName !== data.displayName) {
+      handleDisplayNameChange(data.displayName);
+    }
+
+    // Prepend country code if not already included
+    // const formattedPhoneNumber = `+${newPhoneNumber}`;
+
+    // Validate phone number
+    if (newPhoneNumber.length <= 7) {
+      setError("phone", {
+        type: "notValid",
+        message: "Phone number is not valid",
+      });
+      return;
+    } else {
+      clearErrors("phone");
       if (user?.email && user?.emailVerified) {
         const response = await fetch(
           `http://localhost:5000/users/${user.email}`,
@@ -47,15 +72,15 @@ const AccountSetting = () => {
         }
 
         const responseData = await response.json();
-        if (!userPhone?.length >= 5) {
-          setUserPhone(newPhoneNumber);
-        }
+        setUserPhone(newPhoneNumber); // Update userPhone with the formatted phone number
         console.log(responseData);
       }
-    } catch (error) {
-      console.error("Error updating user:", error.message);
     }
   };
+
+  useEffect(() => {
+    setNewPhoneNumber(userPhone);
+  }, [userPhone]);
 
   const inputClass = DashboardCss.phone_input;
 
@@ -66,7 +91,7 @@ const AccountSetting = () => {
         onSubmit={handleSubmit(onSubmit)}>
         <div className="grid  grid-cols-1 md:grid-cols-4 gap-5">
           <div className="flex flex-col text-left">
-            <label className="mb-2 font-[500] font-inter">Username</label>
+            <label className="mb-2 font-[500] font-inter text-white">Username</label>
             <input
               className="border p-2 rounded min-w"
               type="text"
@@ -75,28 +100,33 @@ const AccountSetting = () => {
             />
             {errors.displayName && (
               <span className="text-red-500 text-sm">
-                Display name is required
+                Username name is required
               </span>
             )}
           </div>
           <div className="flex flex-col text-left">
-            <label className="mb-2 font-[500] font-inter">
+            <label className="mb-2 font-[500] font-inter text-white">
               Add Phone Number
             </label>
             <PhoneInput
               inputClass={inputClass}
               country={"bd"}
-              value={newPhoneNumber}
+              value={userPhone ? userPhone : newPhoneNumber}
               onChange={handlechange}
             />
+            {errors.phone && (
+              <span className="text-red-500 text-sm">
+                Phone number is not valid
+              </span>
+            )}
           </div>
         </div>
 
-        <button
+        <input
           type="submit"
-          className="md:block mx-auto md:mx-0 mt-8 md:mt-4 transition-all duration-300 text-white hideState px-10 py-2  rounded bg-green-600 border-2 border-green-600 hover:bg-transparent hover:text-green-600 w-max   font-bold">
-          Update Profile
-        </button>
+          className="md:block mx-auto md:mx-0 mt-8 md:mt-4 transition-all duration-300 text-white hideState px-12 py-4  rounded bg-green-600 border-2 border-green-600 hover:bg-transparent hover:text-green-600 w-max   font-bold"
+          value="Update Profile"
+        />
       </form>
     </div>
   );

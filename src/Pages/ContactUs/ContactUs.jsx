@@ -63,7 +63,7 @@ const ContactUs = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         className=" px-2 md:w-2/4 mx-auto font-flow">
-        <h2 className={`text-2xl md:text-3xl font-bold text-primary mb-8 `}>
+        <h2 className={`text-2xl md:text-3xl font-bold text-white mb-8 `}>
           <span className={`${HomeCss.ContactUs}`}>Contact Us</span>
         </h2>
         <div className="flex flex-col space-y-3 my-5">

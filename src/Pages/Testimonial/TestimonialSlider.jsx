@@ -12,7 +12,6 @@ import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-
 // import AliceCarousel from "react-alice-carousel";
 // import "react-alice-carousel/lib/alice-carousel.css";
 
@@ -64,7 +63,7 @@ const TestimonialSlider = () => {
     slidesToShow: 3,
     className: "center",
     centerMode: true,
-    centerPadding: "5px",
+    centerPadding: "6px",
     slidesToScroll: 1,
     initialSlide: 1,
 

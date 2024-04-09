@@ -60,17 +60,17 @@ const Aboutus = () => {
         </div>
       </div>
       <div className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto px-3 md:py-2 md:px-1 text-left   my-16 ">
-        <h2 className="text-2xl sm:text-2xl font-normal font-inter text-[#301934] mb-4">
+        <h2 className="text-2xl sm:text-2xl font-normal font-inter text-[#6F3B9A] mb-4">
           We provide our top-notch creative services
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 mt-8">
-          <p className="text-base font-inter text-pretty break-words ">
+          <p className="text-base font-inter text-pretty break-words text-white ">
             Digital Site Pro is a solution service provider committed to helping
             you establish a strong presence in the digital realm. We are the
             agency known for innovative thinking and pushing the limits of what
             is achievable.
           </p>
-          <p className="text-base font-inter text-pretty break-words">
+          <p className="text-base font-inter text-pretty break-words text-white">
             Digital Site Pro: Your premier ally in conquering the digital
             frontier, pioneering innovation, and redefining possibilities.
             We&apos;re not just a service provider; we&apos;re your partners in
@@ -78,13 +78,13 @@ const Aboutus = () => {
             visionary thinking.
           </p>
         </div>
-        <h2 className="text-[#301934] text-3xl font-inter font-normal  text-center mt-12">
+        <h2 className="text-[#6F3B9A] text-3xl font-inter font-normal  text-center mt-12">
           Our Team
-          <span className="w-[calc(100%-60%)] sm:w-[20%] h-[2px] bg-[#301934] block mx-auto"></span>
+          <span className="w-[calc(100%-60%)] sm:w-[20%] h-[2px] bg-[#6F3B9A] block mx-auto"></span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-12 pb-5">
           {members.map((member) => (
-            <div key={member.id} className="p-2">
+            <div key={member.id} className="px-2 bg-white py-8 rounded-md">
               <div className="bg-gray-200 w-[120px] h-[120px] rounded-full overflow-hidden mx-auto">
                 <img className="w-[120px] h-[120px] " src={member.img} alt="" />
               </div>

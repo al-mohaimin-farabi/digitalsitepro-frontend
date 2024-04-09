@@ -44,26 +44,26 @@ const Ourwork = () => {
 
   return (
     <div className="my-5 md:my-5 py-2 overflow-hidden px-2">
-      <div className="text-center space-x-2 space-y- md:spcae-y-1 py-2 ">
+      <div className="text-center space-x-2 space-y-4 md:spcae-y-1 py-2 ">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => handleClick(tab.id)}
             className={`${
-              activeTab === tab.id ? "text-white" : "hover:text-gray-500 "
-            }   relative rounded-full px-3 md:px-6 py-2 text-lg md:text-xl  text-primary`}>
+              activeTab === tab.id
+                ? "text-primary l"
+                : "hover:text-white rounded-full hover:bg-purple-bright "
+            }   relative  px-3 md:px-6 py-2 text-lg md:text-xl  text-white`}>
             {activeTab === tab.id && (
               <motion.div
-                style={{ borderRadius: 9999 }}
-                transition={{ duration: 0.3, type: "easeIn" }}
+                style={{ borderRadius: 9999999999 }}
+                transition={{ duration: .5, type: "easeIn" }}
                 layoutId="active-pill"
-                className="absolute inset-0  bg-black"></motion.div>
+                className="absolute  inset-0 mix-blend-exclusion  bg-purple-bright"></motion.div>
             )}
-            <span className="relative z-10 mix-blend-exclusion ">
+            <span className="relative z-10  ">
               {tab.label === "All"
-                ? "\u00A0\u00A0" +
-                  tab.label +
-                  "\u00A0\u00A0"
+                ? "\u00A0\u00A0" + tab.label + "\u00A0\u00A0"
                 : tab.label}
             </span>
           </button>
@@ -74,7 +74,7 @@ const Ourwork = () => {
         transition={{ duration: 0.3 }}
         layout
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-5 py-2 gap-2 ">
-        {filteredWorks.map((work) => (
+        {filteredWorks.slice(0, 8).map((work) => (
           <Mockup key={work.id} work={work} />
         ))}
       </motion.div>
@@ -96,29 +96,31 @@ const Mockup = ({ work }) => {
         exit={{ opacity: 0, scale: 0 }}
         layout
         className="w-full mb-3">
-        <div className="group overflow-hidden pointer rounded cursor-pointer">
+        <div className="group overflow-hidden pointer rounded-md cursor-pointer">
           <img
             loading="lazy"
-            className="rounded w-full h-48 group-hover:scale-110 transition-all duration-300"
+            className="rounded-md w-full h-48 group-hover:scale-110 transition-all duration-300"
             src={img}
             alt=""
           />
         </div>
         <div>
-          <h2 className="text-xl mt-2 font-inter min-h-[56px]">{name}</h2>
+          <h2 className="text-xl mt-2 font-inter min-h-[56px] text-white">
+            {name}
+          </h2>
           <ul className="flex flex-wrap items-center space-x-2 w-full mt-4">
             {buttons.map((button, index) => (
               <li className="my-2" key={index}>
                 <NavLink
                   to={`/services/graphicsdesign/?category=${subcategory.toLowerCase()}`}
-                  className="p-2 hideState dashboard_tab border border-purple-bright rounded-[100px] px-4 py-2 text-sm grid place-content-center">
+                  className="p-2 hideState dashboard_tab  border-2 text-white border-purple-bright rounded-full px-4 py-2 text-sm grid place-content-center">
                   {button}
                 </NavLink>
               </li>
             ))}
-            <li className="flex my-2">
+            <li className="flex my-2 ">
               <Link
-                className="rounded-[100px] px-4 py-2 text-sm"
+                className="rounded-full px-4 py-2 text-sm text-white"
                 to="/services/graphicsdesign">
                 More <FontAwesomeIcon className="ml-1" icon={faArrowRight} />
               </Link>

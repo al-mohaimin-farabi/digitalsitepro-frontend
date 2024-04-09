@@ -4,10 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+/* html {
   scroll-behavior: smooth;
+} */
+body {
+  background-color: #000000;
 }
-
+/* .bg-over {
+  background: linear-gradient(to top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 1));
+  backdrop-filter: blur(10px);
+} */
 .font-nav {
   /* font-family: "Jost", sans-serif !important; */
   font-family: "Inter", sans-serif !important;
@@ -34,6 +40,19 @@ html {
 .font-inter {
   font-family: "Inter", sans-serif !important;
   font-optical-sizing: auto;
+}
+
+.services {
+  background-image: linear-gradient(
+      to top,
+
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url(./assets/Images/background/services-bg.webp);
+  background-position: center center;
+  background-size: calc(100% - 40px);
+  background-repeat: no-repeat;
 }
 
 .active {
@@ -77,6 +96,7 @@ html {
   width: 22px !important;
   height: 2px !important;
 }
+
 .center {
   margin: 0 -20px !important;
 }
@@ -172,6 +192,10 @@ html {
   background-color: red !important;
   width: 100% !important;
 } */
+
+.selected-flag {
+  outline: 1px solid #9ca3af !important;
+}
 
 @media screen and (max-width: 960px) {
   .aboutbg {

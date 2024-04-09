@@ -78,7 +78,7 @@ const Passreset = () => {
                 </p>
                 <NavLink
                   to="/home"
-                  className="md:block transition-all hideState px-12 py-2 rounded-lg bg-primary border-2 border-primary hover:bg-transparent hover:text-primary md:w-max md:mx-auto text-white font-bold">
+                  className="md:block transition-all hideState px-12 py-4 rounded-md bg-primary border-2 border-primary hover:bg-transparent hover:text-white md:w-max md:mx-auto text-white font-bold">
                   Return To Home
                 </NavLink>
               </motion.div>
@@ -88,41 +88,43 @@ const Passreset = () => {
                 animate={"animate"}
                 exit="exit"
                 variants={passResetVariants}
-                className="space-y-4 text-center"
+                className="space-y-8 text-center"
                 onSubmit={handleSubmit(onSubmit)}>
-                <label className="tracking-wide" htmlFor="email">
-                  Enter Your Email Address
-                </label>
-                <Controller
-                  name="email"
-                  control={control}
-                  rules={{
-                    required: "Email is required",
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                      message: "Invalid email address",
-                    },
-                  }}
-                  render={({ field }) => (
-                    <>
-                      <input
-                        id="email"
-                        {...field}
-                        placeholder="kevin@example.com"
-                        className="w-full border-[1px] p-2 rounded-md outline-primary text-center"
-                        type="email"
-                        autoComplete="on"
-                      />
-                      <span className="text-red-600 my-2 block text-sm">
-                        {errors.email?.message}
-                      </span>
-                    </>
-                  )}
-                />
+                <div className="space-y-2">
+                  <label className="tracking-wide" htmlFor="email">
+                    Enter Your Email Address
+                  </label>
+                  <Controller
+                    name="email"
+                    control={control}
+                    rules={{
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                        message: "Invalid email address",
+                      },
+                    }}
+                    render={({ field }) => (
+                      <>
+                        <input
+                          id="email"
+                          {...field}
+                          placeholder="kevin@example.com"
+                          className="w-full border-[1px] p-2 rounded-md outline-primary text-center"
+                          type="email"
+                          autoComplete="on"
+                        />
+                        <span className="text-red-600 my-2 mb-4 block text-sm">
+                          {errors.email?.message}
+                        </span>
+                      </>
+                    )}
+                  />
+                </div>
 
                 <button
                   type="submit"
-                  className="md:block transition-all hideState px-12 py-2 rounded-lg bg-primary border-2 border-primary hover:bg-transparent hover:text-primary md:w-max md:mx-auto text-white font-bold">
+                  className="md:block  transition-all hideState px-10 py-4 rounded-md bg-primary border-2 border-primary hover:bg-transparent hover:text-white  md:w-max md:mx-auto text-white font-bold">
                   Send Email{" "}
                   <FontAwesomeIcon className="ml-[6px]" icon={faPaperPlane} />
                 </button>

@@ -92,7 +92,7 @@ const Login = ({ isNewAuth, setIsNewAuth, isSmallScreen }) => {
             exit={{ opacity: 0 }}
             layout
             className="w-full text-center space-y-4 mb-2 my-4">
-            <h2 className="text-3xl md:text-4xl my-2 font-bold font-hero  text-gray-600 md:text-primary ">
+            <h2 className="text-3xl md:text-4xl my-2 font-bold font-hero  text-gray-600 md:text-black ">
               LogIn
             </h2>
             <ul className="flex justify-center items-center space-x-4 py-2">
@@ -208,12 +208,12 @@ const Login = ({ isNewAuth, setIsNewAuth, isSmallScreen }) => {
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className=" md:block transition-all hideState  px-12 md:px-16 py-4 rounded-lg bg-primary border-2 border-primary hover:bg-transparent hover:text-primary md:w-max md:mx-auto text-white font-bold">
+                  className=" md:block transition-all hideState  px-12 md:px-16 py-4 rounded-md  bg-primary border-2 border-primary hover:bg-transparent hover:text-purple-bright md:w-max md:mx-auto text-white font-bold">
                   Login
                 </button>
                 <button
                   onClick={() => setIsNewAuth(!isNewAuth)}
-                  className=" md:hidden ml-2 transition-all hideState  px-12 py-4 rounded-lg bg-primary border-2 border-primary hover:bg-transparent hover:text-primary x  md:mx-auto text-white font-bold">
+                  className=" md:hidden ml-2 transition-all hideState  px-12 py-4 rounded-md  bg-primary border-2 border-primary hover:bg-transparent hover:text-white x  md:mx-auto text-white font-bold">
                   Signup
                 </button>
               </div>
@@ -221,13 +221,13 @@ const Login = ({ isNewAuth, setIsNewAuth, isSmallScreen }) => {
           </motion.form>
         </>
       ) : (
-        <div className="w-full h-full min-h-[518px] grid place-content-center text-primary">
+        <div className="w-full h-full min-h-[518px] grid place-content-center text-white">
           <img
             src={checkMark}
             className="w-[55px] my-5 mx-auto"
             alt="checkMark"
           />
-          <h4 className="text-xl font-flow text-primary">Login successful</h4>
+          <h4 className="text-xl font-flow text-white">Login successful</h4>
         </div>
       )}
     </>

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const Calltoaction = () => {
   return (
-    <div className={` relative my-5 mt-16  px-2  text-center font-flow`}>
+    <div className={` relative mt-5 md:mt-16    text-center font-flow`}>
       <div className={`${HomeCss.overlay} py-6`}>
         <h4 className="my-2 text-white text-2xl md:text-4xl font-extrabold">
           Do You Have Any Project

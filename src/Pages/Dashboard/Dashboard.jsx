@@ -142,12 +142,12 @@ const Dashboard = () => {
             animate={isModalOpen && { opacity: 1, y: 0 }}
             transition={{ type: "fade", duration: 0.3 }}
             ref={modalWrapperRef}
-            className="w-[calc(100vw-50px)] md:min-w-[670px] md:max-w-[700px] max-h-[570px] min-h-[390px] md:min-h-[490px] bg-white rounded-lg px-6 grid items-center shadow-lg">
-            <div className="-mt-1   border-[2px] border-dashed border-purple-bright/50 min-h-[170px] md:min-h-[350px] rounded-lg grid place-content-center text-center">
+            className="w-[calc(100vw-50px)] md:min-w-[670px] md:max-w-[700px] max-h-[570px] min-h-[390px] md:min-h-[490px] bg-white rounded-md  px-6 grid items-center shadow-lg">
+            <div className="-mt-1   border-[2px] border-dashed border-purple-bright/50 min-h-[170px] md:min-h-[350px] rounded-md  grid place-content-center text-center">
               <Dropzone onDrop={onDrop}>
                 {({ getRootProps, getInputProps }) => (
                   <div
-                    className="text-[40px] md:text-[75px] text-primary min-w-[100%]  md:min-w-[635px] "
+                    className="text-[40px] md:text-[75px] text-white min-w-[100%]  md:min-w-[635px] "
                     {...getRootProps()}>
                     <input {...getInputProps()} />
                     {!file && (
@@ -180,7 +180,7 @@ const Dashboard = () => {
                 <>
                   <div className="relative mx-auto">
                     <img
-                      className="mb-4 max-w-[350px] max-h-[200px] mx-auto border rounded-lg"
+                      className="mb-4 max-w-[350px] max-h-[200px] mx-auto border rounded-md "
                       src={URL.createObjectURL(file)}
                       alt="Uploaded image"
                     />
@@ -210,7 +210,7 @@ const Dashboard = () => {
       )}
 
       <div
-        className={`${DashboardCss.wrapper} mt-[120px] md:max-w-[960px] lg:max-w-[1280px] mx-auto px-3 md:px-1 py-2`}>
+        className={`${DashboardCss.wrapper}  mt-[120px] md:max-w-[960px] lg:max-w-[1280px] mx-auto px-3 md:px-1 py-2`}>
         <div className="w-full border-[1px]  p-2 rounded">
           <div className={`${DashboardCss.bg_box} h-[150px] rounded relative`}>
             <div className="absolute left-[20px] bottom-[-30px]">
@@ -239,7 +239,7 @@ const Dashboard = () => {
           </div>
           <div className="user_info mx-[5px] mt-[40px] mb-[10px]">
             <div className="top flex justify-between items-center ">
-              <h4 className="text-2xl font-bold font-inter  ">
+              <h4 className="text-2xl font-bold font-inter text-white  ">
                 {user?.displayName}
               </h4>
               <button className="options hidden border-[1px] border-gray-100 py-2 px-4 rounded">
@@ -250,11 +250,10 @@ const Dashboard = () => {
               <p className="text-sm bg-gray-200 text-blue-900 w-max px-2 rounded">
                 {user?.email}
               </p>
-              
-                <p className="text-sm bg-gray-200 text-blue-900 w-max px-2 rounded">
-                  +{userPhone}
-                </p>
-              
+
+              <p className="text-sm bg-gray-200 text-blue-900 w-max px-2 rounded">
+                +{userPhone}
+              </p>
             </div>
           </div>
         </div>
@@ -276,8 +275,8 @@ const Dashboard = () => {
                     to={action.to}
                     onClick={() => handeAccountSettings(action.id)}
                     className={`${
-                      activeTab === action.id ? "bg-gray-200" : ""
-                    } py-2 px-4 rounded hideState dashboard_tab block`}>
+                      activeTab === action.id ? "bg-gray-200" : "bg-gray-500/30 text-white"
+                    } py-2 px-4 rounded-md hideState dashboard_tab block`}>
                     {action.label}
                   </NavLink>
                 </li>

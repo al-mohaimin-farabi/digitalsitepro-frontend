@@ -1,7 +1,6 @@
 import Services from "./Services";
 import Experiance from "./Experiance";
 import Ourwork from "./Ourwork";
-import Fetures from "./Fetures";
 import TechStack from "./TechStack";
 import Testimonials from "./Testimonials";
 import Calltoaction from "./Calltoaction";
@@ -19,26 +18,25 @@ import tiktok from "../../assets/Images/marquee-logo/tiktok.webp";
 import thereds from "../../assets/Images/marquee-logo/thereds.webp";
 import pinterest from "../../assets/Images/marquee-logo/pinterest.webp";
 import tumblr from "../../assets/Images/marquee-logo/tumblr.webp";
+import Fetures from "./Fetures";
 
 const Main = () => {
   return (
-    <div className="w-full">
-      <main className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-0">
-        <Fetures />{" "}
-      </main>
+    <div className="w-full ">
+      <Fetures />
       <Services />
+      <Faq />
       <main className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-0">
-        <TechStack />
-        <Experiance />
+       
+        {/* <Experiance /> */}
         <Ourwork />
         <Testimonials />
-        <Calltoaction />
+ <TechStack />
         {/* <OurTeam /> */}
-        <Faq />
       </main>
-
+      <Calltoaction />
       <Marquee
-        className="overflow-hidden my-5 md:my-14 py-4 font-mono   "
+        className="overflow-hidden mb-5 md:mb-14 py-4 font-mono  bg-white "
         speed={50}
         pauseOnHover="True"
         pauseOnClick="True"

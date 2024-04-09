@@ -55,7 +55,7 @@ const OurTeam = () => {
               variants={card}
               initial="hidden"
               animate={payelInView && "visible"}
-              className="bg-gray-100 text-black px-2 w-full md:w-[80%] py-8 rounded  text-center  my-2">
+              className="bg-gray-100 text-white px-2 w-full md:w-[80%] py-8 rounded  text-center  my-2">
               <div className="bg-gray-200 w-[95px] h-[95px] md:w-[130px] md:h-[130px] rounded-full mx-auto relative border-2">
                 <img
                   loading="lazy"
@@ -77,7 +77,7 @@ const OurTeam = () => {
               loading="lazy"
               initial="hidden"
               animate={rabbiInView && "visible"}
-              className="bg-gray-100 text-black px-2 w-full md:w-[80%] py-8 rounded  text-center  my-2">
+              className="bg-gray-100 text-white px-2 w-full md:w-[80%] py-8 rounded  text-center  my-2">
               <div className="bg-gray-200 w-[95px] h-[95px] md:w-[130px] md:h-[130px] rounded-full mx-auto relative">
                 <img
                   className="w-[95px] h-[calc(100%+15px)] md:w-[165px] md:h-[calc(100%+20px)] rounded-full   absolute bottom-0 "
@@ -86,10 +86,10 @@ const OurTeam = () => {
                 />
               </div>
               <h4 className="mt-6 mb-0 font-bold text-lg font-flow">
-                 Fazlee Rabbi
+                Fazlee Rabbi
               </h4>
               <p className="text-base font-mono text-wrap break-words  ">
-                 Managing Director (Founder)
+                Managing Director (Founder)
               </p>
             </motion.div>
           </div>
@@ -100,7 +100,7 @@ const OurTeam = () => {
               variants={card}
               initial="hidden"
               animate={farabiInView && "visible"}
-              className="bg-gray-100 text-black px-2 w-full md:w-[80%] py-8 rounded  text-center  my-2">
+              className="bg-gray-100 text-white px-2 w-full md:w-[80%] py-8 rounded  text-center  my-2">
               <div className="bg-gray-200 w-[95px] h-[95px] md:w-[130px] md:h-[130px] rounded-full mx-auto relative">
                 <img
                   className="w-[95px] h-[calc(100%+15px)] md:w-[145px] md:h-[calc(100%+25px)] rounded-full   absolute bottom-0 "
@@ -109,10 +109,10 @@ const OurTeam = () => {
                 />
               </div>
               <h4 className="mt-6 mb-0 font-bold text-lg font-flow ">
-              Al Mohaimin Farabi
+                Al Mohaimin Farabi
               </h4>
               <p className="text-base font-mono text-wrap break-words  ">
-              Tech Lead
+                Tech Lead
               </p>
             </motion.div>
             <motion.div
@@ -121,7 +121,7 @@ const OurTeam = () => {
               variants={card}
               initial="hidden"
               animate={faysalInView && "visible"}
-              className="bg-gray-100 text-black px-2 w-full md:w-[80%] py-8 rounded  text-center  my-2">
+              className="bg-gray-100 text-white px-2 w-full md:w-[80%] py-8 rounded  text-center  my-2">
               <div className="bg-gray-200 w-[95px] h-[95px] md:w-[130px] md:h-[130px] rounded-full mx-auto relative">
                 <img
                   className="w-[95px] h-[calc(100%+15px)] md:w-[145px] md:h-[calc(100%+25px)] rounded-full   absolute bottom-0 "
@@ -144,7 +144,7 @@ const OurTeam = () => {
           animate={contentInView && "visible"}
           variants={contentAnimation}
           className="grid content-center p-2 order-1 md:order-2 text-center md:text-left">
-          <h1 className="text-primary text-2xl md:text-3xl uppercase font-flow font-bold my-2">
+          <h1 className="text-white text-2xl md:text-3xl uppercase font-flow font-bold my-2">
             Our Team
           </h1>
           <p className="text-[#525B7A] text-sm sm:text-base md:text-xl lg:text-2xl my-2  w-full sm:w-3/4 mx-auto md:mx-0 md:w-[90%] text-balance ">

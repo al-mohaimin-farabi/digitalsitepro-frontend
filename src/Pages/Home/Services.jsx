@@ -61,10 +61,10 @@ const Services = () => {
   ];
 
   return (
-    <div className="services py-2  my-5 md:my-16 px-1 md:px-2 font-flow bg-[#1e1e1e]">
-      <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-1 py-16">
+    <div className="services py-2 bg-black md:pb-0  relative md:-mt-[195px] lg:-mt-[195px] z-[9999] md:pt-[195px] lg:pt-[195px] px-1 md:px-2 font-flow ">
+      <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-1 py-5">
         <ContentHeader color="white" title="OUR SERVICES" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 gap-y-8 gap-x-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 gap-y-12 gap-x-12 ">
           {serviceCard.map((item) => (
             <ServicesCard key={item.id} item={item}></ServicesCard>
           ))}

@@ -223,7 +223,7 @@ const Navbar = () => {
             </NavLink>
             <IoIosArrowDown className="transition-all duration-300 group-hover:rotate-180 ml-1 inline-block" />
 
-            <div className="hidden absolute top-10 z-[999999] w-[200px]  py-2 text-black  group-hover:block  ">
+            <div className="hidden absolute top-10 z-[999999] w-[200px]  py-2 text-primary  group-hover:block  ">
               <ul className="bg-gray-200 shadow-lg p-2 rounded-md space-y-1">
                 <li className="pl-3 py-2 hover:bg-black hover:text-white rounded-md">
                   <NavLink
@@ -256,7 +256,7 @@ const Navbar = () => {
             </NavLink>
             {/* <IoIosArrowDown className="transition-all duration-300 group-hover:rotate-180 ml-1 inline-block" />
 
-              <div className="hidden absolute top-11 z-[999999] w-[150px] mt-2 py-2 text-black  group-hover:block ">
+              <div className="hidden absolute top-11 z-[999999] w-[150px] mt-2 py-2 text-white  group-hover:block ">
                 <ul className="bg-gray-200 p-2 space-y-1 rounded-md w-ful  shadow-lg">
                   <li className="pl-3 py-2 hover:bg-black hover:text-white rounded-md">
                     <NavLink className=" inline-block w-[100%]" to="/demo1">
@@ -296,23 +296,23 @@ const Navbar = () => {
                     />
                   )}
                 </NavLink>
-                <div className="hidden  absolute right-2 top-10   z-[999999] w-[170px] mt-2 py-2 text-black  group-hover:block  ">
+                <div className="hidden  absolute right-2 top-10   z-[999999] w-[170px] mt-2 py-2 text-white  group-hover:block  ">
                   <ul className="bg-gray-200 p-2 rounded-md w-full  shadow-lg space-y-1">
-                    <li className="pl-3 py-2 hover:bg-black hover:text-white rounded-md ">
+                    <li className="pl-3 py-2 text-black hover:bg-black hover:text-white rounded-md ">
                       <NavLink
                         className="inline-block w-[100%] "
                         to="/dashboard">
                         Dashboard
                       </NavLink>
                     </li>
-                    <li className="pl-3 py-2 hover:bg-black hover:text-white rounded-md ">
+                    <li className="pl-3 py-2 text-black hover:bg-black hover:text-white rounded-md ">
                       <NavLink
                         className="inline-block w-[100%]"
                         to="/makeproposal">
                         Make Proposal
                       </NavLink>
                     </li>
-                    <li className="pl-3 py-2 hover:bg-black hover:text-white rounded-md">
+                    <li className="pl-3 py-2 text-black hover:bg-black hover:text-white rounded-md">
                       <button
                         onClick={logout}
                         className="hideState flex items-center gap-1  w-[100%]">

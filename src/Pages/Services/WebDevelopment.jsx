@@ -72,7 +72,7 @@ const WebDevelopment = () => {
     <div className="mt-[130px] md:max-w-[960px] lg:max-w-[1280px] mx-auto my-10  py-2 px-3 md:px-1   md:py-0  ">
       <div className="grid gap-5 gird-cols-1 md:grid-cols-3 lg:grid-cols-4">
         {servicesCard.map((service) => (
-          <div key={service?.id} className="shadow-xl px-4 py-4 text-center">
+          <div key={service?.id} className="shadow-xl px-4 py-4 text-center bg-white rounded-md">
             <img
               className="w-[100px] aspect-square max-w-[100px]  mx-auto"
               src={service?.img}

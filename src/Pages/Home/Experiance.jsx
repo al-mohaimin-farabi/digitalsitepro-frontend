@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-
 const Experiance = () => {
   // const isMobile = () => window.innerWidth < 960;
 
@@ -14,16 +13,16 @@ const Experiance = () => {
         </div>
         <div className="col flex items-center order-1 md:order-2">
           <div className="w-full p-2 text-center md:text-left ">
-            <h2 className="font-flow font-bold text-2xl md:text-3xl  lg:text-4xl text-primary my-4">
+            <h2 className="font-flow font-bold text-2xl md:text-3xl  lg:text-4xl text-white my-4">
               30 Years Experience
             </h2>
-            <p className="text-[#525B7A] text-base md:text-xl lg:text-2xl my-2  w-full sm:w-3/4 mx-auto md:mx-0 md:w-[80%] text-pretty whitespace-pre-line ">
+            <p className="text-[#b4bbd6] text-base md:text-xl lg:text-2xl my-2  w-full sm:w-3/4 mx-auto md:mx-0 md:w-[80%] text-pretty whitespace-pre-line ">
               Our company has been the leading provided construction services to
               clients throughout the USA since 1988.
             </p>
             <NavLink
               to="/contact"
-              className="bg-primary  px-6 md:px-10 py-2 lg:py-4 mx-auto md:mx-0 text-white my-4 md:my-8  block w-max  border-2 border-primary hover:text-[#000] hover:bg-transparent transition-colors duration-200 ease-linear hideState font-semibold text-lg rounded-md">
+              className="bg-purple-bright  px-6 text-center w-[180px] py-4 lg:py-4 mx-auto md:mx-0 text-white my-4 md:my-8  block   border-2 border-purple-bright hover:text-purple-bright hover:bg-transparent transition-colors duration-200 ease-linear hideState font-semibold text-lg rounded-md">
               Contact Us
             </NavLink>
           </div>

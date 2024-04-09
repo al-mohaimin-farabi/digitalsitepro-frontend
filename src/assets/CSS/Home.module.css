@@ -35,7 +35,7 @@
   transform: translateX(-50%);
   height: 55%;
   background-color: transparent;
-  transition: all 1s linear ;
+  transition: all 0.8s linear;
   z-index: -2;
   border-radius: 20px 20px 100% 100%;
   transform-origin: top center;
@@ -46,13 +46,23 @@
   content: "";
   top: -750;
   left: 50%;
-  border-radius: 50%;
+  border-radius: 20px 20px 100% 100%;
   transform: translateX(-50%);
+  transition: all 0.8s linear;
   width: 300%;
   height: 200%;
   background-color: #6b3d96;
   z-index: -2;
 }
+.scrollable_container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: visible; /* Allow vertical overflow to be visible */
+}
+
+.scrollable_container::-webkit-scrollbar {
+  width: 0; /* Hide the vertical scrollbar for Chrome, Safari, and Opera */
+}
+
 
 /* #711DB0 */
 /* .gradient_bg {

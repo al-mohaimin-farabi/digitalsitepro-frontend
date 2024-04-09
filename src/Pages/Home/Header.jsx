@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
+
 const Header = () => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const ref = useRef(null);
@@ -33,14 +34,14 @@ const Header = () => {
       clearInterval(intervalId);
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [titles.length]);
 
   const isSmallScreen = innerWidth < 960;
 
   return (
     <header
       ref={ref}
-      className={`bg-black  relative w-full py-16 px-0 overflow-hidden  h-[100svh] md:h-[110vh] grid place-items-center`}>
+      className={`bg-black   relative w-full py-16 px-0 overflow-hidden   h-[100svh] md:h-[110vh] grid place-items-center`}>
       <motion.div
         layout
         className="min-w-[100%] md:min-w-[1020px] md:max-w-[1020px] lg:max-w-[1280px]  py-12 grid place-items-center  text-center font-inter text-balance z-[50]">
@@ -66,7 +67,7 @@ const Header = () => {
             "Building Digital Products That Transform Businesses",
             500,
           ]}
-          className="md:min-w-[720px] md:max-w-[720px] block text-white md:-mt-[0px] lg:-mt-[50px]  md:mb-[10px] lg:mb-[20px] text-[25px] sm:text-[40px] md:text-[45px] font-extrabold my-2 px-1   tracking-wide  text-wrap break-words "
+          className="md:min-w-[720px] min-h-[150px]  md:max-w-[720px] block text-white md:-mt-[0px] lg:-mt-[50px]  md:mb-[10px] lg:mb-[20px] text-[25px] sm:text-[40px] md:text-[45px] font-extrabold my-2 px-1   tracking-wide  text-wrap break-words "
           repeat={Infinity}
         />
 
@@ -84,7 +85,7 @@ const Header = () => {
         </p>
         <div className="flex flex-wrap mt-10 md:mt-10 lg:mt-20   text-white items-center justify-center ">
           <NavLink
-            className={`${HomeCss.text_shadow} md:text-bas font-bold rounded-md mx-4 bg-transparent py-3 min-w-[180px] px-6  border-2  border-purple-bright hover:bg-transparent transition-colors duration-200 ease-linear font-nav  hover:text-purple-bright `}
+            className={`${HomeCss.text_shadow} md:text-bas font-bold rounded-md mx-4 bg-transparent py-4 min-w-[180px] block px-6  border-2  border-purple-bright hover:bg-transparent transition-colors duration-200 ease-linear font-nav  hover:text-purple-bright `}
             to="/contact">
             Let&apos;s Talk
           </NavLink>
@@ -95,6 +96,7 @@ const Header = () => {
           </NavLink> */}
         </div>
       </motion.div>
+
       {isSmallScreen ? (
         <motion.video
           style={{ y }}
@@ -112,6 +114,7 @@ const Header = () => {
           loop
           muted></motion.video>
       )}
+      
     </header>
   );
 };

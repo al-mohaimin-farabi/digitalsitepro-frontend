@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const NotFound = () => {
   return (
     <div className="mt-[120px] h-[calc(100vh-120px)] flex items-center px-6">
-      <div className="w-full md:max-w-[780px]  bg-primary/90 mx-auto h-[60%] rounded-lg grid place-content-center">
+      <div className="w-full md:max-w-[780px]  bg-primary/90 mx-auto h-[60%] rounded-md  grid place-content-center">
         <div className="text-center">
           <h1 className="text-6xl md:text-8xl text-gray-100 font-bold underline decoration-wavy underline-offset-8 my-2 font-mono">
             404

@@ -11,7 +11,10 @@ import "slick-carousel/slick/slick-theme.css";
 import HomeCss from "../../assets/CSS/Home.module.css";
 import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeftLong,
+  faArrowRightLong,
+} from "@fortawesome/free-solid-svg-icons";
 
 // import AliceCarousel from "react-alice-carousel";
 // import "react-alice-carousel/lib/alice-carousel.css";
@@ -64,64 +67,89 @@ const Testimonials = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 1,
+    fade: true,
+    waitForAnimate: false,
   };
 
   return (
-    <div className="my-5 md:my-8 p-2 ">
+    <div className="my-5  p-2 ">
       <ContentHeader title={"Testimonials"} />
 
       <div
-        className={`${HomeCss.testimonialBg} w-full mx-auto px-5 pt-5 pb-10 md:p-10 `}>
-        <Slider
-          ref={(slider) => {
-            sliderRef = slider;
-          }}
-          {...settings}>
-          {testimonialData.map((testimonial, index) => (
-            <div key={index} className="w-full">
-              <div className="rounded bg-white h-[520px]  w-full md:max-w-[660px] lg:max-w-[960px] mx-auto   py-6  px-5 md:px-10 flex flex-col justify-evenly ">
-                <img className="w-[70px] " src={quote} alt="" />
-                <p className="font-inter text-pretty break-words w-[100%] my-16 text-lg md:text-2xl">
-                  {testimonial?.testimonial}
-                </p>
-                <div className="flex flex-col md:flex-row  justify-between  space-x-2 items-center -mt-5 md:mt-0">
-                  <div className="flex items-center">
-                    <div className={`${HomeCss.layer} `}>
-                      <img
-                        className="rounded-md overflow-hidden max-w-[100px] md:max-w-[135px] "
-                        src={testimonial?.img}
-                        alt={testimonial?.name}
-                      />
+        className={`${HomeCss.testimonialBg}  rounded-3xl overflow-hidden w-full mx-auto px-5 pt-5 pb-10 md:p-10 md:grid md:grid-cols-12    `}>
+        <div className=" grid place-content-center  ">
+          <button
+            className="grid place-content-center my-2 mx-2 text-2xl w-[60px] h-[60px] text-white rounded-full border-2 border-white overflow-hidden  px-5 py-2"
+            onClick={previous}>
+            <FontAwesomeIcon icon={faArrowLeftLong} />
+          </button>
+        </div>
+        <div className="col-span-10">
+          <Slider
+            ref={(slider) => {
+              sliderRef = slider;
+            }}
+            {...settings}>
+            {testimonialData.map((testimonial, index) => (
+              <div key={index} className="w-full ">
+                <div className="  text-white h-[520px]   w-full md:max-w-[660px] lg:max-w-[960px] mx-auto   py-6  px-5 md:px-10 flex flex-col justify-evenly ">
+                  <img className="w-[70px] " src={quote} alt="" />
+                  <p className="font-inter text-pretty break-words w-[100%] my-16 text-lg md:text-2xl">
+                    {testimonial?.testimonial}
+                  </p>
+                  <div className="flex flex-col md:flex-row  justify-between  space-x-2 items-center -mt-5 md:mt-0">
+                    <div className="flex items-center">
+                      <div className={`${HomeCss.layer} `}>
+                        <img
+                          className="rounded-md overflow-hidden max-w-[100px] md:max-w-[135px] "
+                          src={testimonial?.img}
+                          alt={testimonial?.name}
+                        />
+                      </div>
+                      <div className="p-5 ">
+                        <h4 className="font-extrabold text-lg md:text-2xl font-inter">
+                          {testimonial?.name}
+                        </h4>
+                        <h6 className="text-sm text-justify md:text-base font-semibold font-inter text-white">
+                          {testimonial?.company}
+                        </h6>
+                      </div>
                     </div>
-                    <div className="p-5 ">
-                      <h4 className="font-extrabold text-lg md:text-2xl font-inter">
-                        {testimonial?.name}
-                      </h4>
-                      <h6 className="text-sm text-justify md:text-base font-semibold font-inter text-gray-800">
-                        {testimonial?.company}
-                      </h6>
-                    </div>
-                  </div>
-                  <div className="   pr-5 mt-5 md:mt-0 space-x-10 hidden md:flex">
-                    <button
-                      className=" my-2 mx-2 text-2xl  px-5 py-2"
-                      onClick={previous}>
-                      <FontAwesomeIcon icon={faAngleLeft} />
-                    </button>
-                    <button
-                      className=" my-2 mx-2 text-2xl  px-5 py-2"
-                      onClick={next}>
-                      <FontAwesomeIcon icon={faAngleRight} />
-                    </button>
+                    {/* <div className=" hidden  pr-5 mt-5 md:mt-0 space-x-10 ">
+                      <button
+                        className=" my-2 mx-2 text-2xl  px-5 py-2"
+                        onClick={previous}>
+                        <FontAwesomeIcon icon={faAngleLeft} />
+                      </button>
+                      <button
+                        className=" my-2 mx-2 text-2xl  px-5 py-2"
+                        onClick={next}>
+                        <FontAwesomeIcon icon={faAngleRight} />
+                      </button>
+                    </div> */}
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
+
+        <div className=" grid place-content-center ">
+          <button
+            className="grid place-content-center my-2 mx-2 text-2xl w-[60px] h-[60px] text-white rounded-full border-2 border-white overflow-hidden px-5 py-2"
+            onClick={next}>
+            <FontAwesomeIcon icon={faArrowRightLong} />
+          </button>
+        </div>
       </div>
     </div>
   );
 };
-
+{
+  /*  
+<
+</button><button className=" my-2 mx-2 text-2xl  px-5 py-2" onClick={next}>
+                
+              </button> */
+}
 export default Testimonials;
