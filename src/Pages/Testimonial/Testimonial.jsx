@@ -229,8 +229,7 @@ const Testimonial = () => {
         />
         <p
           data-aos="fade-up"
-          data-aos-delay="100"
-          data-aos-duration="500"
+          data-aos-delay="200"
           className="text-white font-normal text-base lg:text-lg  mt-6 text-justify ">
           Located in Chittagong, Bangladesh, Digitalsitepro leverages its team
           of accomplished professionals to deliver comprehensive solutions for
@@ -318,8 +317,6 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
-
-      
 
       <div className="py-5 md:py-10  md:min-h-[calc(100vh-110px)] grid place-content-center  testimonialbgWrapper px-3   font-inter">
         <div className="w-full py-5  overflow-hidden md:max-w-[960px] lg:max-w-[1280px] mx-auto">

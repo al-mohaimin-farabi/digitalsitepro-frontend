@@ -233,16 +233,15 @@ const Aboutus = () => {
               We live by powerful values
             </h2>
           </div>
-          <div className="flex flex-col justify-center items-center my-16">
+          <div className="flex verflow-hidden flex-col justify-center items-center my-16">
             <div className="space-y-10 flex flex-col justify-center text-left verflow-hidden px-1 md:px-0">
               {statements.map((statement, index) => (
                 <div
-                  data-aos-offset="50"
-                  data-aos-duration="500"
+                  data-aos-duration={(index + 1) * 100}
                   data-aos="fade-up"
-                  data-aos-delay={(index + 1) * 2}
-                  data-aos-anchor-placement="center-bottom"
-                  className="text-white  flex items-center   gap-5 "
+                  data-aos-delay={(index + 1) * 30}
+                  data-aos-anchor-placement="top-bottom"
+                  className="text-white  flex items-center  gap-5 "
                   key={index}>
                   <span className="text-3xl md:text-5xl lg:text-6xl font-extrabold metal_number">
                     {index + 1}
