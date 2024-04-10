@@ -5,8 +5,8 @@ import img_03 from "../../assets/Images/Powerful-Video-Editing-Icons for Your Pr
 import img_04 from "../../assets/Images/icon/WebDevelopment/Creative-SEO-Icon.svg";
 import img_05 from "../../assets/Images/Creative-Web-Development-Icons-for-Modern-Projects.svg";
 import img_06 from "../../assets/Images/Creative-Web-Development-Icons-for-Modern-Projects.svg";
-
 import ServicesCard from "./ServicesCard.jsx";
+import HomeCss from "../../assets/CSS/Home.module.css";
 
 const Services = () => {
   const serviceCard = [
@@ -61,10 +61,12 @@ const Services = () => {
   ];
 
   return (
-    <div className="services py-2 bg-black md:pb-0  relative md:-mt-[195px] lg:-mt-[195px] z-[9999] md:pt-[195px] lg:pt-[195px] px-1 md:px-2 font-flow ">
+    // md:-mt - [195px] lg: -mt - [195px] z - [9999] md: pt - [195px] lg: pt - [220px]
+    <div
+      className={`${HomeCss.services} my-5 md:my-10 py-2 bg-black md:pb-0  relative  px-1 md:px-2 font-flow `}>
       <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-1 py-5">
         <ContentHeader color="white" title="OUR SERVICES" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 gap-y-12 gap-x-12 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8  lg:gap-12 ">
           {serviceCard.map((item) => (
             <ServicesCard key={item.id} item={item}></ServicesCard>
           ))}

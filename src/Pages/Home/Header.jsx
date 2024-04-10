@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
-
 const Header = () => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const ref = useRef(null);
@@ -85,7 +84,7 @@ const Header = () => {
         </p>
         <div className="flex flex-wrap mt-10 md:mt-10 lg:mt-20   text-white items-center justify-center ">
           <NavLink
-            className={`${HomeCss.text_shadow} md:text-bas font-bold rounded-md mx-4 bg-transparent py-4 min-w-[180px] block px-6  border-2  border-purple-bright hover:bg-transparent transition-colors duration-200 ease-linear font-nav  hover:text-purple-bright `}
+            className={`${HomeCss.text_shadow} md:text-bas font-bold rounded-full mx-4 bg-transparent py-4 min-w-[200px] block px-6  border-2  border-purple-bright hover:bg-transparent transition-colors duration-200 ease-linear font-nav  hover:text-purple-bright `}
             to="/contact">
             Let&apos;s Talk
           </NavLink>
@@ -114,7 +113,6 @@ const Header = () => {
           loop
           muted></motion.video>
       )}
-      
     </header>
   );
 };

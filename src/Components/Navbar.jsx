@@ -327,7 +327,7 @@ const Navbar = () => {
                 to="/login"
                 className={`text-base font-bold tracking-wide text-center  ${
                   isScrolled ? "text-purple-bright" : "text-white"
-                }  border-2 border-purple-bright hover:text-[#ffffff] hover:bg-purple-bright  py-2 px-6  min-w-[140px] transition-colors duration-200 ease-linear  hideState rounded-md`}>
+                }  border-2 border-purple-bright hover:text-[#ffffff] hover:bg-purple-bright  py-2 px-6  min-w-[140px] transition-colors duration-200 ease-linear  hideState rounded-full`}>
                 Login
               </NavLink>
             )}

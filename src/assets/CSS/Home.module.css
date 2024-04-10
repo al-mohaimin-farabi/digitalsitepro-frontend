@@ -63,7 +63,6 @@
   width: 0; /* Hide the vertical scrollbar for Chrome, Safari, and Opera */
 }
 
-
 /* #711DB0 */
 /* .gradient_bg {
   background-color: hsla(0, 0%, 0%, 1);
@@ -197,6 +196,17 @@
   width: 20%;
   height: 2px;
   background-color: #2c3392;
+}
+.services {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url(../Images/background/services-bg.webp);
+  background-position: center center;
+  background-size: calc(100% - 40px);
+  background-repeat: no-repeat;
 }
 .text_shadow {
   text-shadow: 1px 1px transparent !important;

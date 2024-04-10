@@ -43,23 +43,23 @@ const Ourwork = () => {
   }, [activeTab, allWorks]);
 
   return (
-    <div className="my-5 md:my-5 py-2 overflow-hidden px-2">
-      <div className="text-center space-x-2 space-y-4 md:spcae-y-1 py-2 ">
+    <div className="my-5  py-2 overflow-hidden px-2">
+      <div className="text-center space-x-2 space-y-2 md:spcae-y-1 py-2 ">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => handleClick(tab.id)}
             className={`${
               activeTab === tab.id
-                ? "text-primary l"
-                : "hover:text-white rounded-full hover:bg-purple-bright "
-            }   relative  px-3 md:px-6 py-2 text-lg md:text-xl  text-white`}>
+                ? "text-primary "
+                : "hover:text-white rounded-full hover:border-purple-bright "
+            }   relative border-2 border-transparent px-3 md:px-6 py-2 text-lg md:text-xl  text-white`}>
             {activeTab === tab.id && (
               <motion.div
                 style={{ borderRadius: 9999999999 }}
-                transition={{ duration: .5, type: "easeIn" }}
+                transition={{ duration: .3, type: "easeIn" }}
                 layoutId="active-pill"
-                className="absolute  inset-0 mix-blend-exclusion  bg-purple-bright"></motion.div>
+                className="absolute  inset-0 mix-blend-exclusion  bg-purple-bright border-2 border-purple-bright"></motion.div>
             )}
             <span className="relative z-10  ">
               {tab.label === "All"
@@ -73,7 +73,7 @@ const Ourwork = () => {
       <motion.div
         transition={{ duration: 0.3 }}
         layout
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-5 py-2 gap-2 ">
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-5 py-2 gap-2 md:gap-3">
         {filteredWorks.slice(0, 8).map((work) => (
           <Mockup key={work.id} work={work} />
         ))}

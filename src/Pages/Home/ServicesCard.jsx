@@ -20,9 +20,9 @@ const ServicesCard = ({ item }) => {
     <motion.div
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
-      className="grid place-content-center  ">
+      className="grid place-content-center  h-full">
       <div
-        className={`relative hover:scale-105 hover:-translate-y-5 transition-all duration-300  grid p-3 md:py-4 grid-place-content-center grid-cols-1 text-center md:px-[40px] bg-[#222121] rounded-3xl text-white font-inter border-[4px] border-[#6F3B9A]  py-[30px]`}>
+        className={`relative hover:scale-105 hover:-translate-y-5 transition-all duration-300  grid p-3 md:py-4 grid-place-content-center grid-cols-1 text-center md:px-[10px]  lg:px-[40px] bg-[#222121] rounded-3xl text-white font-inter border-[4px] border-[#6F3B9A]  py-[30px] md:h-[475px] lg:h-full`}>
         <img
           className="my-4 w-[90px] h-[72px] place-self-center"
           src={item.img}

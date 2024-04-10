@@ -83,7 +83,7 @@ function App() {
                 </Suspense>
               }
             />
-            <Route path="/test" element={<SuspenseLoader />} />
+            {/* <Route path="/test" element={<SuspenseLoader />} /> */}
             <Route path="/testing" element={<Testing />} />
             <Route
               path="/testimonial"

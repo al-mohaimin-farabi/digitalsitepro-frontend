@@ -27,11 +27,10 @@ const Main = () => {
       <Services />
       <Faq />
       <main className=" md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-0">
-       
         {/* <Experiance /> */}
         <Ourwork />
         <Testimonials />
- <TechStack />
+        <TechStack />
         {/* <OurTeam /> */}
       </main>
       <Calltoaction />

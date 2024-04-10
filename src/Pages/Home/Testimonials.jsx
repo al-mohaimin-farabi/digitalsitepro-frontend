@@ -79,7 +79,7 @@ const Testimonials = () => {
         className={`${HomeCss.testimonialBg}  rounded-3xl overflow-hidden w-full mx-auto px-5 pt-5 pb-10 md:p-10 md:grid md:grid-cols-12    `}>
         <div className=" grid place-content-center  ">
           <button
-            className="grid place-content-center my-2 mx-2 text-2xl w-[60px] h-[60px] text-white rounded-full border-2 border-white overflow-hidden  px-5 py-2"
+            className="hidden md:grid place-content-center my-2 mx-2 text-2xl w-[60px] h-[60px] text-white rounded-full border-2 border-white overflow-hidden  px-5 py-2"
             onClick={previous}>
             <FontAwesomeIcon icon={faArrowLeftLong} />
           </button>
@@ -92,9 +92,9 @@ const Testimonials = () => {
             {...settings}>
             {testimonialData.map((testimonial, index) => (
               <div key={index} className="w-full ">
-                <div className="  text-white h-[520px]   w-full md:max-w-[660px] lg:max-w-[960px] mx-auto   py-6  px-5 md:px-10 flex flex-col justify-evenly ">
+                <div className="  text-white    w-full md:max-w-[660px] lg:max-w-[960px] mx-auto   py-6  px-5 md:px-10 flex flex-col justify-evenly ">
                   <img className="w-[70px] " src={quote} alt="" />
-                  <p className="font-inter text-pretty break-words w-[100%] my-16 text-lg md:text-2xl">
+                  <p className="font-inter text-pretty break-words w-[100%]  my-8 md:my-10 lg:my-16 text-lg md:text-2xl">
                     {testimonial?.testimonial}
                   </p>
                   <div className="flex flex-col md:flex-row  justify-between  space-x-2 items-center -mt-5 md:mt-0">
@@ -134,7 +134,7 @@ const Testimonials = () => {
           </Slider>
         </div>
 
-        <div className=" grid place-content-center ">
+        <div className="hidden md:grid place-content-center ">
           <button
             className="grid place-content-center my-2 mx-2 text-2xl w-[60px] h-[60px] text-white rounded-full border-2 border-white overflow-hidden px-5 py-2"
             onClick={next}>

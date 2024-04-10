@@ -11,7 +11,7 @@ const Calltoaction = () => {
           Do You Have Any Project
         </h4>
         <button
-          className={` bg-white px-6 md:px-10 py-2 lg:py-4 my-6 font-bold text-purple-bright hover:text-[#fff] hover:bg-transparent border-2 transition-colors duration-200 ease-linear border-purple-bright rounded-md  `}>
+          className={` bg-white px-6 md:px-10 py-2 lg:py-4 my-6 font-bold text-purple-bright hover:text-[#fff] hover:bg-transparent border-2 transition-colors duration-200 ease-linear border-purple-bright rounded-full  `}>
           <div className={`${HomeCss.separator} inline`}>
             <NavLink to="Contact">Contact Us</NavLink>
           </div>

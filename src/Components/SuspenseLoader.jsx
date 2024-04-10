@@ -7,9 +7,15 @@ const SuspenseLoader = () => {
       opacity: 0,
     },
     visible: {
-      opacity: [0, 1, 0, 1, 0, 1],
-
-      transition: { duration: 5, yoyo: Infinity },
+      opacity: [0.1, 1, 0.1],
+      repeat: Infinity,
+      transition: {
+        times: [0, 0.5, 1],
+        duration: 1,
+        repeat: Infinity,
+        type: "keyframes",
+        ease: "easeInOut",
+      },
     },
   };
 

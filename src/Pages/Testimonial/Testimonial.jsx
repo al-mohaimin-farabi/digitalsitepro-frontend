@@ -178,15 +178,15 @@ const Testimonial = () => {
         </motion.div>
       )}
 
-      <div className="mt-[96px] md:mt-[110px] px-4 md:px-1 py-5 w-full mx-auto md:max-w-[960px] lg:max-w-[1280px]">
-        <div className="grid md:grid-cols-2 place-content-center gap-5">
+      <div className="mt-[96px] md:mt-[110px] px-4 md:px-1 py-5 w-full mx-auto md:max-w-[960px] lg:max-w-[1280px]  ">
+        <div className="grid md:grid-cols-2 place-content-center gap-5 my-5 md:my-10">
           <div className="my-auto overflow-hidden">
             <h2
               data-aos="fade-up"
               data-aos-delay="100"
-              className="text-white text-center md:text-left leading-[45px] overflow-hidden md:leading-[58px] font-extrabold text-4xl md:text-5xl lg:text-5xl font-inter tracking-wide  mb-6 capitalize">
+              className="text-white text-center md:text-left leading-[45px] overflow-hidden md:leading-[58px] font-extrabold text-4xl md:text-4xl lg:text-5xl font-inter tracking-wide  mb-6 capitalize">
               We are hungry for your success
-            </h2>{" "}
+            </h2>
             <img
               data-aos-delay="200"
               data-aos="zoom-in-up"
@@ -204,7 +204,7 @@ const Testimonial = () => {
               here to offer a supportive touch.
             </p>
           </div>
-          <div className="flex justify-center md:justify-center">
+          <div className="flex justify-center md:justify-center overflow-hidden">
             <img
               data-aos-delay="200"
               data-aos="zoom-in-up"
@@ -217,7 +217,7 @@ const Testimonial = () => {
         </div>
       </div>
 
-      <div className="px-4 md:px-1 pt-10 pb-20 w-full mx-auto md:max-w-[960px] lg:max-w-[1280px] overflow-hidden">
+      <div className="px-4 md:px-1 py-5 my-5 md:my-10 w-full mx-auto md:max-w-[960px] lg:max-w-[1280px] overflow-hidden">
         <img
           data-aos-delay="200"
           data-aos="zoom-out-up"
@@ -245,14 +245,14 @@ const Testimonial = () => {
         </p>
       </div>
 
-      <div className=" py-16  bg-black px-1 font-inter">
-        <div className="w-full  md:max-w-[960px] lg:max-w-[1280px] mx-auto grid grid-cols-1 place-content-center   px-2 md:px-1  ">
+      <div className=" py-5  bg-black px-1 font-inter">
+        <div className="w-full  md:max-w-[960px] lg:max-w-[1280px] mx-auto grid grid-cols-1 place-content-center my-5 md:my-10   px-2 md:px-1  ">
           <div
             className="content font-inter h-full place-content-center overflow-hidden"
             data-aos="fade-up"
             data-aos-delay="100"
             data-aos-once="false">
-            <h2 className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl lg:text-5xl font-inter tracking-wide my-2 capitalize text-center">
+            <h2 className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-4xl lg:text-5xl font-inter tracking-wide my-2 capitalize text-center">
               Our way of making a positive impact
             </h2>
           </div>
@@ -260,7 +260,9 @@ const Testimonial = () => {
             {cardData.map((item, index) => (
               <Card
                 direction={index % 2 == 0 ? "fade-right" : "fade-left"}
-                placement={index % 2 == 0 ? "justify-end" : "justify-start"}
+                placement={
+                  index % 2 == 0 ? "md:justify-end  " : "md:justify-start "
+                }
                 key={index}
                 item={item}
               />
@@ -269,13 +271,13 @@ const Testimonial = () => {
         </div>
       </div>
 
-      <div className=" md:px-1 pt-5 pb-28  bg-black  font-inter">
+      <div className=" md:px-1 py-5 pb-20 md:pb-24  bg-black  font-inter">
         <div className="w-full  md:max-w-[960px] lg:max-w-[1280px] mx-auto grid grid-cols-1   px-3 md:px-1 gap-5 ">
           <div className="w-full md:w-[70%] mx-auto">
             <h2
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-delay="100"
-              className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl lg:text-5xl font-inter tracking-wide mb-4 capitalize text-center">
+              className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-4xl lg:text-5xl font-inter tracking-wide mb-4 capitalize text-center">
               Let’s work together
             </h2>
             <p
@@ -287,7 +289,6 @@ const Testimonial = () => {
             </p>
           </div>
           <div className="overflow-hidden mt-10 flex flex-col space-y-5 md:space-y-0 md:flex-row  space-x-0 md:space-x-5 text-white justify-center items-center">
-            
             <NavLink
               data-aos-duration="500"
               data-aos="fade-up"
@@ -318,54 +319,20 @@ const Testimonial = () => {
         </div>
       </div>
 
-      {/* <div className=" py-16 hidden testimonialbgWrapperTwo px-1 font-inter">
-        <div className="w-full  md:max-w-[960px] lg:max-w-[1280px] mx-auto grid grid-cols-1 place-content-center md:grid-cols-2  px-2 md:px-1 gap-16 ">
-          <div
-            className="content font-inter h-full place-content-center "
-            data-aos="fade-right"
-            data-aos-delay="100"
-            data-aos-once="false">
-            <h2
-              data-aos="fade-right"
-              data-aos-delay="100"
-              className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl lg:text-5xl font-inter tracking-wide text-left my-2 capitalize">
-              What we believe
-            </h2>
-            <p
-              data-aos="fade-up"
-              data-aos-delay="200"
-              className="text-white font-normal text-base lg:text-lg  mt-6 text-justify">
-              In the ever-evolving digital landscape,your voice can easily get
-              lost. We believe every business deserves to be heard, no matter
-              the size. That&apos;s why we craft personalized digital strategies
-              that connect you with your dream audience, fostering meaningful
-              connections and growth.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 py-8 gap-y-8 gap-x-8 justify-center items-start mt-5 overflow-hidden">
-            {cardData.map((item, index) => (
-              <Card
-                key={index}
-                item={item}
-                gap={index % 2 == 0 ? "-mt-5" : "mt-5"}
-              />
-            ))}
-          </div>
-        </div>
-      </div> */}
+      
 
       <div className="py-5 md:py-10  md:min-h-[calc(100vh-110px)] grid place-content-center  testimonialbgWrapper px-3   font-inter">
         <div className="w-full py-5  overflow-hidden md:max-w-[960px] lg:max-w-[1280px] mx-auto">
           <h2
             data-aos="fade-up"
             data-aos-once="false"
-            className="text-white hidden md:block overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl  font-inter tracking-wide text-center my-2">
+            className="text-white hidden md:block overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-4xl  font-inter tracking-wide text-center my-2">
             What our client said <br /> about us .
           </h2>
           <h2
             data-aos="fade-up"
             data-aos-once="false"
-            className="text-white  md:hidden overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-5xl  font-inter tracking-wide text-center my-2">
+            className="text-white  md:hidden overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-4xl  font-inter tracking-wide text-center my-2">
             What our client said about us .
           </h2>
           <p
@@ -544,11 +511,11 @@ const Card = ({ item, direction, placement }) => {
         data-aos={direction}
         data-aos-anchor-placement="top-bottom"
         data-aos-offset="300"
-        className={`bg-[#1E1E1E] overflow-hidden w-[80%]  font-inter flex md:min-h-[300px] flex-col justify-between  rounded-2xl py-10  h-full  gap-5  relative`}>
+        className={`bg-[#1E1E1E]  md:mx-0 overflow-hidden md:w-[80%]  font-inter flex min-h-[260px] md:min-h-[300px] flex-col justify-between  rounded-2xl py-10    gap-5  relative`}>
         <div className="px-8  ">
-          <h4 className="text-white  font-bold texl-base md:text-lg font-inter capitalize">
+          <h4 className="text-white relative mb-4 w-max font-bold texl-base md:text-lg font-inter capitalize c_underline">
             {item.heading}
-            <div className="h-[2px] bg-purple-bright w-[120px] rounded-full mt-2 mb-4"></div>
+            {/* <div className="h-[2px] bg-purple-bright w-[120px] rounded-full mt-2 mb-4"></div> */}
           </h4>
 
           <p className="text-white text-sm md:text-base font-inter text-balance">
