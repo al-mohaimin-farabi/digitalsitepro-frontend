@@ -223,26 +223,33 @@ const Aboutus = () => {
 
       {/* 4th */}
 
-      <div className=" verflow-hidden testimonialbgWrapperTwo my-5  py-24 font-inter">
-        <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto">
+      <div className=" verflow-hidden testimonialbgWrapperTwo my-5 py-5 md:py-24 font-inter">
+        <div className="w-full overflow-hidden px-3 md:px-1 md:max-w-[960px] lg:max-w-[1280px] mx-auto">
           <div className="verflow-hidden ">
             <h2
-              // data-aos="fade-up"
-              // data-aos-duration="700"
+              data-aos="fade-up"
+              data-aos-duration="700"
               className=" text-white    font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter text-center tracking-wide my-4 capitalize  ">
               We live by powerful values
             </h2>
           </div>
           <div className="flex flex-col justify-center items-center my-16">
-            <div className="space-y-10 flex flex-col justify-center text-left">
+            <div className="space-y-10 flex flex-col justify-center text-left verflow-hidden px-1 md:px-0">
               {statements.map((statement, index) => (
                 <div
-                  className="text-white   flex items-center  w-max gap-5 "
+                  data-aos-offset="50"
+                  data-aos-duration="500"
+                  data-aos="fade-up"
+                  data-aos-delay={(index + 1) * 2}
+                  data-aos-anchor-placement="center-bottom"
+                  className="text-white  flex items-center   gap-5 "
                   key={index}>
-                  <span className="text-6xl font-extrabold metal_number">
+                  <span className="text-3xl md:text-5xl lg:text-6xl font-extrabold metal_number">
                     {index + 1}
                   </span>
-                  <h1 className="text-2xl font-bold ">{statement}</h1>
+                  <h1 className="text-base md:text-xl lg:text-2xl font-bold ">
+                    {statement}
+                  </h1>
                 </div>
               ))}
             </div>
