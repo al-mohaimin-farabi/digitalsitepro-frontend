@@ -527,7 +527,7 @@ const Card = ({ item, direction, placement }) => {
         className={`bg-[#1E1E1E]  md:mx-0 overflow-hidden md:w-[80%]  font-inter flex min-h-[260px] md:min-h-[300px] flex-col justify-between  rounded-2xl py-10    gap-5  relative`}
         data-aos={direction}
         data-aos-anchor-placement="top-bottom"
-        data-aos-offset={window.innerWidth < 768 ? "200" : "200"}>
+        data-aos-offset="200" >
         <div className="px-8  ">
           <h4 className="text-white relative mb-4 w-max font-bold texl-base md:text-lg font-inter capitalize c_underline">
             {item.heading}
