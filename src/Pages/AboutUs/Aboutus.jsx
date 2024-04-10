@@ -20,6 +20,7 @@ const staggerVariants = {
     opacity: 1,
     y: 0,
     transition: {
+      duration: 0.3,
       delay: index * 0.1, // Adjust the delay time as needed
     },
   }),
@@ -110,7 +111,7 @@ const Aboutus = () => {
             <p
               data-aos="fade-right"
               data-aos-duration="700"
-              className="text-white  font-semibold text-base md:text-lg lg:text-xl  my-2 font-inter relative c_underline w-max ">
+              className="text-white  font-semibold  md:text-lg lg:text-xl  my-2 font-inter text-xl relative c_underline w-max ">
               Who We Are
             </p>
             <h2
@@ -134,7 +135,7 @@ const Aboutus = () => {
         </div>
 
         {/* 2nd */}
-        <div className="overflow-hidden my-5 md:my-16">
+        <div className="overflow-hidden my-8 md:my-16">
           <div className="overflow-hidden">
             <h2
               data-aos="fade-up"
@@ -147,10 +148,11 @@ const Aboutus = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5 overflow-hidden">
             <div className="overflow-hidden flex items-center">
               <p
+                className="text-white  overflow-hidden text-base md:text-lg lg:text-xl  my-2 font-inter relative text-justify  "
                 data-aos="fade-up"
                 data-aos-delay="150"
-                data-aos-duration="700"
-                className="text-white  overflow-hidden text-base md:text-lg lg:text-xl  my-2 font-inter relative text-justify  ">
+                data-aos-offset="60"
+                data-aos-duration="700">
                 Digital Site Pro is a solution service provider committed to
                 helping you establish a strong presence in the digital realm. We
                 are the agency known for innovative thinking and pushing the
@@ -239,6 +241,7 @@ const Aboutus = () => {
                 <div
                   data-aos-duration={(index + 1) * 100}
                   data-aos="fade-up"
+                  data-aos-offset="50"
                   data-aos-delay={(index + 1) * 30}
                   data-aos-anchor-placement="top-bottom"
                   className="text-white  flex items-center  gap-5 "
@@ -312,6 +315,7 @@ const Card = ({ item, gap, index }) => {
   return (
     <div
       data-aos="fade-up"
+      data-aos-offset="50"
       data-aos-delay={index * 50}
       className={`lg:py-8 lg:px-5 px-4 py-6 ${gap} h-full rounded-3xl bg-[#1E1E1E]`}>
       <h2 className="text-white text-base font-semibold inline-block  c_underline relative  text-wrap break-words">

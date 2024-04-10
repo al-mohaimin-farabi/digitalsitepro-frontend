@@ -219,13 +219,14 @@ const Testimonial = () => {
 
       <div className="px-4 md:px-1 py-5 my-5 md:my-10 w-full mx-auto md:max-w-[960px] lg:max-w-[1280px] overflow-hidden">
         <img
-          data-aos-delay="200"
-          data-aos="zoom-out-up"
-          data-aos-duration="500"
-          data-aos-anchor="center"
-          className="w-[90%] md:w-[50%]  mx-auto"
+          className="w-[90%] md:w-[50%] mx-auto"
           src={imgTwo}
           alt=""
+          data-aos="zoom-out-up"
+          data-aos-delay="200"
+          data-aos-duration="500"
+          data-aos-offset="100"
+          data-aos-anchor-placement="top-bottom"
         />
         <p
           data-aos="fade-up"
