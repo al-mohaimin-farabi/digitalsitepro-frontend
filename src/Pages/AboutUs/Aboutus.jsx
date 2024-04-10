@@ -214,7 +214,7 @@ const Aboutus = () => {
 
         {/* 5th */}
         <div className=" py-5    font-inter">
-          <div className="grid grid-cols-1 place-content-center md:grid-cols-2   gap-5 ">
+          <div className="grid grid-cols-1 place-content-center md:grid-cols-2  gap-10  ">
             <div className="content font-inter h-full place-content-center  ">
               <div className="overflow-hidden">
                 <h2
