@@ -53,8 +53,6 @@ body {
   left: 0;
 }
 
-
-
 .active {
   font-weight: 700;
   position: relative;
@@ -176,6 +174,14 @@ body {
 .shadow-feture {
   box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.1);
 }
+
+.metal_number  {
+  background: linear-gradient(#262626, #eaeaea, #262626);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* #rc-anchor-container {
   background-color: red !important;
   width: 100% !important;

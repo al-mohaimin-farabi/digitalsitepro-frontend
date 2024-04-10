@@ -28,20 +28,20 @@ const staggerVariants = {
 const Aboutus = () => {
   const cardData = [
     {
-      heading: "Custom web & app development",
-      pera: "Ready to solve your unique business challenges? Our custom web and app solutions streamline your operations,elevate customer experiences,and unlock serious growth.",
+      heading: "Build meaningful relationships",
+      pera: "We care about our clients and partners, and we're committed to building long-term relationships based on trust and respect.",
     },
     {
-      heading: "User experience design",
-      pera: "Let our UX expertise work for you. We craft intelligent interfaces that guide users seamlessly towards their goals, increasing engagement and satisfaction.",
+      heading: "Better everyday",
+      pera: "We're always striving tolearn and grow so that we can provide our clients with the best possible service.",
     },
     {
       heading: "Graphics Design",
       pera: "Designs that speak to your audience.We'll visually articulate your brand's purpose and create an emotional connection with your customers.",
     },
     {
-      heading: "Video editing ",
-      pera: "Unleash the power of exceptional content.  Refine every detail, craft captivating visuals, and leave a lasting impact.  Let's craft content that resonates and elevates your brand.",
+      heading: "Deliver faithfully",
+      pera: "We're committed to delivering on our promises and meeting our clients' expectations.",
     },
   ];
 
@@ -93,6 +93,14 @@ const Aboutus = () => {
     },
   ];
 
+  const statements = [
+    "We are always honest no matter what.",
+    "We deep dive into every project to deliver excellence.",
+    "We take ownership of what we do.",
+    "We value long-term relationships above quick wins and want to bring lasting gains for you.",
+    "We believe we can help you drive margins while remaining true to our ethical values.",
+  ];
+
   return (
     <>
       <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto py-5 mt-[96px] md:mt-[112px]  px-3 md:px-1">
@@ -109,7 +117,7 @@ const Aboutus = () => {
               data-aos="fade-right"
               data-aos-delay="100"
               data-aos-duration="700"
-              className="text-white  font-extrabold text-4xl md:text-4xl lg:text-5xl font-inter tracking-wide my-4 capitalize text-left">
+              className="text-white  font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide my-4 capitalize text-left">
               Designers, thinkers & collaborators
             </h2>
           </div>
@@ -132,7 +140,7 @@ const Aboutus = () => {
               data-aos="fade-up"
               data-aos-delay="100"
               data-aos-duration="700"
-              className="text-white  font-extrabold text-4xl md:text-4xl lg:text-5xl font-inter tracking-wide my-4 capitalize text-left  ">
+              className="text-white  font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide my-4 capitalize text-left  ">
               We provide our top-notch creative services
             </h2>
           </div>
@@ -167,12 +175,12 @@ const Aboutus = () => {
         </div>
 
         {/* team */}
-        <div className="verflow-hidden my-5 md:my-16">
+        <div className="verflow-hidden my-5 md:my-16 font-inter">
           <div className="flex flex-col justify-center overflow-hidden">
             <h2
               data-aos="fade-right"
               data-aos-duration="700"
-              className=" text-white relative w-max  font-extrabold text-4xl md:text-4xl lg:text-5xl font-inter tracking-wide my-4 capitalize text-left c_underline">
+              className=" text-white relative w-max  font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide my-4 capitalize text-left c_underline">
               Our team
             </h2>
             <p
@@ -211,16 +219,47 @@ const Aboutus = () => {
             ))}
           </div>
         </div>
+      </div>
 
+      {/* 4th */}
+
+      <div className=" verflow-hidden testimonialbgWrapperTwo my-5  py-24 font-inter">
+        <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto">
+          <div className="verflow-hidden ">
+            <h2
+              // data-aos="fade-up"
+              // data-aos-duration="700"
+              className=" text-white    font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter text-center tracking-wide my-4 capitalize  ">
+              We live by powerful values
+            </h2>
+          </div>
+          <div className="flex flex-col justify-center items-center my-16">
+            <div className="space-y-10 flex flex-col justify-center text-left">
+              {statements.map((statement, index) => (
+                <div
+                  className="text-white   flex items-center  w-max gap-5 "
+                  key={index}>
+                  <span className="text-6xl font-extrabold metal_number">
+                    {index + 1}
+                  </span>
+                  <h1 className="text-2xl font-bold ">{statement}</h1>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto py-5  px-3 md:px-1">
         {/* 5th */}
-        <div className=" py-5    font-inter">
-          <div className="grid grid-cols-1 place-content-center md:grid-cols-2  gap-10  ">
+        <div className="verflow-hidden py-5 font-inter">
+          <div className="grid grid-cols-1 place-content-center md:grid-cols-2  gap-5 md:gap-8 lg:gap-10  ">
             <div className="content font-inter h-full place-content-center  ">
               <div className="overflow-hidden">
                 <h2
                   data-aos="fade-up"
                   data-aos-delay="100"
-                  className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-4xl lg:text-5xl font-inter tracking-wide text-left my-2 capitalize">
+                  className="text-white leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide text-left my-2 capitalize">
                   What we believe
                 </h2>
                 <p
@@ -269,7 +308,7 @@ const Card = ({ item, gap, index }) => {
       data-aos="fade-up"
       data-aos-delay={index * 50}
       className={`lg:py-8 lg:px-5 px-4 py-6 ${gap} h-full rounded-3xl bg-[#1E1E1E]`}>
-      <h2 className="text-white inline-block lg:block  c_underline relative lg:w-max text-wrap break-words">
+      <h2 className="text-white text-base font-semibold inline-block  c_underline relative  text-wrap break-words">
         {item.heading}
       </h2>
       <p className="text-white my-4 md:text-[14px] lg:text-base text-balance">

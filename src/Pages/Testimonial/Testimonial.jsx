@@ -184,7 +184,7 @@ const Testimonial = () => {
             <h2
               data-aos="fade-up"
               data-aos-delay="100"
-              className="text-white text-center md:text-left leading-[45px] overflow-hidden md:leading-[58px] font-extrabold text-4xl md:text-4xl lg:text-5xl font-inter tracking-wide  mb-6 capitalize">
+              className="text-white text-center md:text-left leading-[45px] overflow-hidden md:leading-[58px] font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide  mb-6 capitalize">
               We are hungry for your success
             </h2>
             <img
@@ -252,7 +252,7 @@ const Testimonial = () => {
             data-aos="fade-up"
             data-aos-delay="100"
             data-aos-once="false">
-            <h2 className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-4xl lg:text-5xl font-inter tracking-wide my-2 capitalize text-center">
+            <h2 className="text-white leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide my-2 capitalize text-center">
               Our way of making a positive impact
             </h2>
           </div>
@@ -277,7 +277,7 @@ const Testimonial = () => {
             <h2
               data-aos="fade-up"
               data-aos-delay="100"
-              className="text-white leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-4xl lg:text-5xl font-inter tracking-wide mb-4 capitalize text-center">
+              className="text-white leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide mb-4 capitalize text-center">
               Let’s work together
             </h2>
             <p
@@ -326,13 +326,13 @@ const Testimonial = () => {
           <h2
             data-aos="fade-up"
             data-aos-once="false"
-            className="text-white hidden md:block overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-4xl  font-inter tracking-wide text-center my-2">
+            className="text-white hidden md:block overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl  font-inter tracking-wide text-center my-2">
             What our client said <br /> about us .
           </h2>
           <h2
             data-aos="fade-up"
             data-aos-once="false"
-            className="text-white  md:hidden overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-4xl md:text-4xl  font-inter tracking-wide text-center my-2">
+            className="text-white  md:hidden overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl  font-inter tracking-wide text-center my-2">
             What our client said about us .
           </h2>
           <p
