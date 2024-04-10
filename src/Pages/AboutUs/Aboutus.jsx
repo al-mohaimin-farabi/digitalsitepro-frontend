@@ -3,13 +3,15 @@ import Farabi from "../../assets/Images/avatar/Farabi.webp";
 import Rabbi from "../../assets/Images/avatar/Rabbi.webp";
 import Faysal from "../../assets/Images/avatar/Faysal.webp";
 import Footter from "../../Components/Footer";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import imgOne from "../../assets/Images/aboutus/about_us_img-1.webp";
 import imgTwo from "../../assets/Images/aboutus/about_us_img-2.webp";
 import imgThree from "../../assets/Images/aboutus/about_us_img-3.png";
 
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 
 const staggerVariants = {
   hidden: {
@@ -27,6 +29,10 @@ const staggerVariants = {
 };
 
 const Aboutus = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const cardData = [
     {
       heading: "Build meaningful relationships",
@@ -109,27 +115,27 @@ const Aboutus = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-5 md:my-10">
           <div className="flex flex-col justify-center overflow-hidden">
             <p
+              className="text-white  font-semibold  md:text-lg lg:text-xl  my-2 font-inter text-xl relative c_underline w-max "
               data-aos="fade-right"
-              data-aos-duration="700"
-              className="text-white  font-semibold  md:text-lg lg:text-xl  my-2 font-inter text-xl relative c_underline w-max ">
+              data-aos-duration="700">
               Who We Are
             </p>
             <h2
+              className="text-white  font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide my-4 capitalize text-left"
               data-aos="fade-right"
               data-aos-delay="100"
-              data-aos-duration="700"
-              className="text-white  font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide my-4 capitalize text-left">
+              data-aos-duration="700">
               Designers, thinkers & collaborators
             </h2>
           </div>
           <div className="flex flex-col justify-center overflow-hidden">
             <img
-              data-aos="fade-left"
-              data-aos-delay="50"
-              data-aos-duration="700"
               className="rounded w-full aspect-auto"
               src={imgOne}
               alt=""
+              data-aos="fade-left"
+              data-aos-delay="50"
+              data-aos-duration="700"
             />
           </div>
         </div>
@@ -138,10 +144,10 @@ const Aboutus = () => {
         <div className="overflow-hidden my-8 md:my-16">
           <div className="overflow-hidden">
             <h2
+              className="text-white  font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide my-4 capitalize text-left  "
               data-aos="fade-up"
               data-aos-delay="100"
-              data-aos-duration="700"
-              className="text-white  font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide my-4 capitalize text-left  ">
+              data-aos-duration="700">
               We provide our top-notch creative services
             </h2>
           </div>
@@ -151,7 +157,7 @@ const Aboutus = () => {
                 className="text-white  overflow-hidden text-base md:text-lg lg:text-xl  my-2 font-inter relative text-justify  "
                 data-aos="fade-up"
                 data-aos-delay="150"
-                data-aos-offset="60"
+                data-aos-offset="150"
                 data-aos-duration="700">
                 Digital Site Pro is a solution service provider committed to
                 helping you establish a strong presence in the digital realm. We
@@ -165,12 +171,13 @@ const Aboutus = () => {
             </div>
             <div className="">
               <img
-                data-aos="zoom-in"
-                data-aos-delay="150"
-                data-aos-duration="700"
                 src={imgTwo}
                 className="w-max mx-auto aspect-auto rounded "
                 alt=""
+                data-aos="zoom-in"
+                data-aos-delay="150"
+                data-aos-duration="700"
+                data-aos-offset="180"
               />
             </div>
           </div>
@@ -180,16 +187,16 @@ const Aboutus = () => {
         <div className="verflow-hidden my-5 md:my-16 font-inter">
           <div className="flex flex-col justify-center overflow-hidden">
             <h2
+              className=" text-white relative w-max  font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide my-4 capitalize text-left c_underline"
               data-aos="fade-right"
-              data-aos-duration="700"
-              className=" text-white relative w-max  font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide my-4 capitalize text-left c_underline">
+              data-aos-duration="700">
               Our team
             </h2>
             <p
+              className="text-white  font-semibold text-base md:text-lg lg:text-xl  my-2 font-inter   w-max"
               data-aos="fade-right"
               data-aos-delay="100"
-              data-aos-duration="700"
-              className="text-white  font-semibold text-base md:text-lg lg:text-xl  my-2 font-inter   w-max">
+              data-aos-duration="700">
               Our web service team is ready to help you
             </p>
           </div>
@@ -229,23 +236,22 @@ const Aboutus = () => {
         <div className="w-full overflow-hidden px-3 md:px-1 md:max-w-[960px] lg:max-w-[1280px] mx-auto">
           <div className="verflow-hidden ">
             <h2
+              className=" text-white    font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter text-center tracking-wide my-4 capitalize  "
               data-aos="fade-up"
-              data-aos-duration="700"
-              className=" text-white    font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter text-center tracking-wide my-4 capitalize  ">
+              data-aos-duration="700">
               We live by powerful values
             </h2>
           </div>
           <div className="flex verflow-hidden flex-col justify-center items-center my-16">
-            <div className="space-y-10 flex flex-col justify-center text-left verflow-hidden px-1 md:px-0">
+            <div className="space-y-10 flex flex-col justify-center text-left verflow-hidden px-1 md:px-0 mt-5">
               {statements.map((statement, index) => (
                 <div
-                  data-aos-duration={(index + 1) * 100}
-                  data-aos="fade-up"
-                  data-aos-offset="50"
-                  data-aos-delay={(index + 1) * 30}
-                  data-aos-anchor-placement="top-bottom"
                   className="text-white  flex items-center  gap-5 "
-                  key={index}>
+                  key={index}
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                  data-aos-offset={window.innerWidth < 768 ? "200" : "250"}
+                  data-aos-delay={(index + 1) * 30}>
                   <span className="text-3xl md:text-5xl lg:text-6xl font-extrabold metal_number">
                     {index + 1}
                   </span>
@@ -266,15 +272,15 @@ const Aboutus = () => {
             <div className="content font-inter h-full place-content-center  ">
               <div className="overflow-hidden">
                 <h2
+                  className="text-white leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide text-left my-2 capitalize"
                   data-aos="fade-up"
-                  data-aos-delay="100"
-                  className="text-white leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide text-left my-2 capitalize">
+                  data-aos-delay="100">
                   What we believe
                 </h2>
                 <p
+                  className="text-white font-normal text-base lg:text-lg  mt-6 text-justify"
                   data-aos="fade-up"
-                  data-aos-delay="200"
-                  className="text-white font-normal text-base lg:text-lg  mt-6 text-justify">
+                  data-aos-delay="200">
                   In the ever-evolving digital landscape,your voice can easily
                   get lost. We believe every business deserves to be heard, no
                   matter the size. That&apos;s why we craft personalized digital
@@ -284,10 +290,11 @@ const Aboutus = () => {
               </div>
               <div className="overflow-hudden">
                 <img
-                  data-aos="fade-up"
                   className="rounded mx-auto md:w-[40%] my-2 aspect-auto"
                   src={imgThree}
                   alt=""
+                  data-aos="fade-up"
+                  data-aos-offset={"250"}
                 />
               </div>
             </div>
@@ -314,10 +321,10 @@ export default Aboutus;
 const Card = ({ item, gap, index }) => {
   return (
     <div
+      className={`lg:py-8 lg:px-5 px-4 py-6 ${gap} h-full rounded-3xl bg-[#1E1E1E]`}
       data-aos="fade-up"
-      data-aos-offset="50"
-      data-aos-delay={index * 50}
-      className={`lg:py-8 lg:px-5 px-4 py-6 ${gap} h-full rounded-3xl bg-[#1E1E1E]`}>
+      data-aos-offset={window.innerWidth <= 768 ? "150" : "220"}
+      data-aos-delay={index * 50}>
       <h2 className="text-white text-base font-semibold inline-block  c_underline relative  text-wrap break-words">
         {item.heading}
       </h2>

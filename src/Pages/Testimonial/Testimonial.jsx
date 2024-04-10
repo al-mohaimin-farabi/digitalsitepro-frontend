@@ -5,6 +5,8 @@ import {
   faPaperPlane,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useEffect, useRef, useState } from "react";
 import HomeCss from "../../assets/CSS/Home.module.css";
 import useAuth from "../../Hooks/useAuth";
@@ -118,6 +120,10 @@ const Testimonial = () => {
     };
   }, [modalWrapperRef]);
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       {verified && user?.email && modalOpen && (
@@ -142,7 +148,7 @@ const Testimonial = () => {
               <button
                 onClick={() => setModalOpen(false)}
                 className="text-[25px]  px-6 md:px-0 md:w-[45px]  md:h-[45px]  md:rounded-full md:border border-purple-bright shadow-xl grid place-content-center mx-auto  mt-6">
-                <FontAwesomeIcon className="hidden md:block" icon={faXmark} />{" "}
+                <FontAwesomeIcon className="hidden md:block" icon={faXmark} />
                 <span className="md:hidden text-base font-inter">close</span>
               </button>
             </div>
@@ -182,23 +188,23 @@ const Testimonial = () => {
         <div className="grid md:grid-cols-2 place-content-center gap-5 my-5 md:my-10">
           <div className="my-auto overflow-hidden">
             <h2
+              className="text-white text-center md:text-left leading-[45px] overflow-hidden md:leading-[58px] font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide  mb-6 capitalize"
               data-aos="fade-up"
-              data-aos-delay="100"
-              className="text-white text-center md:text-left leading-[45px] overflow-hidden md:leading-[58px] font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide  mb-6 capitalize">
+              data-aos-delay="100">
               We are hungry for your success
             </h2>
             <img
-              data-aos-delay="200"
-              data-aos="zoom-in-up"
-              data-aos-duration="1000"
               src={imgOne}
               className=" w-[80%] md:w-[90%] block mx-auto  md:hidden"
               alt=""
+              data-aos-delay="200"
+              data-aos="zoom-in-up"
+              data-aos-duration="1000"
             />
             <p
+              className="text-white text-center md:text-left text-xl my-2"
               data-aos="fade-up"
-              data-aos-delay="150"
-              className="text-white text-center md:text-left text-xl my-2">
+              data-aos-delay="150">
               Digitalsitepro is your compass, guiding you with a steady hand. We
               understand the anxieties of carving a space online, and we&apos;re
               here to offer a supportive touch.
@@ -206,12 +212,12 @@ const Testimonial = () => {
           </div>
           <div className="flex justify-center md:justify-center overflow-hidden">
             <img
-              data-aos-delay="200"
-              data-aos="zoom-in-up"
-              data-aos-duration="1000"
               src={imgOne}
               className=" w-[80%] md:w-[65%] hidden md:block"
               alt=""
+              data-aos-delay="200"
+              data-aos="zoom-in-up"
+              data-aos-duration="1000"
             />
           </div>
         </div>
@@ -225,13 +231,14 @@ const Testimonial = () => {
           data-aos="zoom-out-up"
           data-aos-delay="200"
           data-aos-duration="500"
-          data-aos-offset="100"
+          data-aos-offset="250"
           data-aos-anchor-placement="top-bottom"
         />
         <p
+          className="text-white font-normal text-base lg:text-lg  mt-6 text-justify "
           data-aos="fade-up"
           data-aos-delay="200"
-          className="text-white font-normal text-base lg:text-lg  mt-6 text-justify ">
+          data-aos-offset={window.innerWidth < 768 ? "200" : "200"}>
           Located in Chittagong, Bangladesh, Digitalsitepro leverages its team
           of accomplished professionals to deliver comprehensive solutions for
           your business&apos;s online and offline presence. With over a decade
@@ -275,44 +282,49 @@ const Testimonial = () => {
         <div className="w-full  md:max-w-[960px] lg:max-w-[1280px] mx-auto grid grid-cols-1   px-3 md:px-1 gap-5 ">
           <div className="w-full md:w-[70%] mx-auto">
             <h2
+              className="text-white leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide mb-4 capitalize text-center"
               data-aos="fade-up"
               data-aos-delay="100"
-              className="text-white leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide mb-4 capitalize text-center">
+              data-aos-offset={window.innerWidth < 768 ? "300" : "250"}>
               Let’s work together
             </h2>
             <p
+              className="text-white text-center  text-xl my-2  mx-auto"
               data-aos="fade-up"
               data-aos-delay="150"
-              className="text-white text-center  text-xl my-2  mx-auto">
+              data-aos-offset={window.innerWidth < 768 ? "300" : "250"}>
               Ready to rock the business world together? Let&apos;s shake hands
               and dive into the awesomeness of teamwork
             </p>
           </div>
           <div className="overflow-hidden mt-10 flex flex-col space-y-5 md:space-y-0 md:flex-row  space-x-0 md:space-x-5 text-white justify-center items-center">
             <NavLink
+              className="block p-4 w-[220px] max-w-[280px] border-2 border-purple-bright rounded-full text-center text-base bg-purple-bright hover:bg-transparent hover:text-white transition-all duration-300"
+              to="/makeproposal"
               data-aos-duration="500"
               data-aos="fade-up"
               data-aos-delay="100"
               data-aos-once="false"
-              className="block p-4 w-[220px] max-w-[280px] border-2 border-purple-bright rounded-full text-center text-base bg-purple-bright hover:bg-transparent hover:text-white transition-all duration-300"
-              to="/makeproposal">
+              data-aos-offset="150">
               Request a proposal
             </NavLink>
             <span
+              className="text-2xl"
               data-aos-duration="500"
               data-aos="fade-up"
               data-aos-delay="100"
               data-aos-once="false"
-              className="text-2xl">
+              data-aos-offset="150">
               OR
             </span>
             <NavLink
+              className="block p-4 w-[220px] max-w-[280px] border-2 rounded-full text-center text-base bg-transparent hover:bg-purple-bright hover:border-purple-bright hover:text-white transition-all duration-300"
+              to="/services"
               data-aos-duration="500"
               data-aos="fade-up"
               data-aos-delay="100"
               data-aos-once="false"
-              className="block p-4 w-[220px] max-w-[280px] border-2 rounded-full text-center text-base bg-transparent hover:bg-purple-bright hover:border-purple-bright hover:text-white transition-all duration-300"
-              to="/services">
+              data-aos-offset="150">
               See our services
             </NavLink>
           </div>
@@ -322,33 +334,39 @@ const Testimonial = () => {
       <div className="py-5 md:py-10  md:min-h-[calc(100vh-110px)] grid place-content-center  testimonialbgWrapper px-3   font-inter">
         <div className="w-full py-5  overflow-hidden md:max-w-[960px] lg:max-w-[1280px] mx-auto">
           <h2
+            className="text-white hidden md:block overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl  font-inter tracking-wide text-center my-2"
             data-aos="fade-up"
             data-aos-once="false"
-            className="text-white hidden md:block overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl  font-inter tracking-wide text-center my-2">
+            data-aos-offset={window.innerWidth < 768 ? "300" : "250"}>
             What our client said <br /> about us .
           </h2>
           <h2
+            className="text-white  md:hidden overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl  font-inter tracking-wide text-center my-2"
             data-aos="fade-up"
             data-aos-once="false"
-            className="text-white  md:hidden overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl  font-inter tracking-wide text-center my-2">
+            data-aos-offset={window.innerWidth < 768 ? "300" : "250"}>
             What our client said about us .
           </h2>
           <p
+            className="text-white overflow-hidden font-semibold text-base md:text-lg lg:text-xl text-center mt-6 font-inter"
             data-aos-once="false"
             data-aos="fade-up"
             data-aos-delay="100"
-            className="text-white overflow-hidden font-semibold text-base md:text-lg lg:text-xl text-center mt-6 font-inter">
+            data-aos-offset="200">
             More than a vendor, they became a trusted partner in our digital
             journey.
           </p>
         </div>
         <TestimonialSlider />
       </div>
-      <div className=" bg-gray-200  py-12 px-1 font-inter">
+      <div
+        className=" bg-gray-200  py-12 px-1 font-inter"
+        data-aos="fade-up"
+        data-aos-offset={window.innerWidth < 768 ? "300" : "250"}>
         <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-1 overflow-hidden">
           <h2
-            data-aos="fade-up"
-            className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-600 overflow-hidden text-center tracking-wide  md:text-balance md:px-12">
+            className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-600 overflow-hidden text-center tracking-wide  md:text-balance md:px-12"
+            data-aos="fade-up">
             If you are on our customers and would like to submit your
             testimonial, please use the form bellow. We greatly appreciate your
             feedback
@@ -359,17 +377,17 @@ const Testimonial = () => {
             className=" mt-8 space-y-5     ">
             {!user?.email && (
               <p
-                data-aos="fade-up"
-                className="text-red-600  mx-auto block text-left">
+                className="text-red-600  mx-auto block text-left"
+                data-aos="fade-up">
                 <span className="font-extrabold">*</span>You Need To Login To
                 Submit Testimonial
               </p>
             )}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div
+                className="flex flex-col"
                 data-aos="fade-up"
-                data-aos-delay="50"
-                className="flex flex-col">
+                data-aos-delay="50">
                 <input
                   autoComplete="true"
                   placeholder="Your Name"
@@ -390,9 +408,9 @@ const Testimonial = () => {
                 )}
               </div>
               <div
+                className="flex flex-col"
                 data-aos="fade-up"
-                data-aos-delay="100"
-                className="flex flex-col">
+                data-aos-delay="100">
                 <input
                   autoComplete="true"
                   placeholder="Your Email"
@@ -414,9 +432,9 @@ const Testimonial = () => {
               </div>
             </div>
             <div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-5"
               data-aos="fade-up"
-              data-aos-delay="150"
-              className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              data-aos-delay="150">
               <div className="flex flex-col">
                 <input
                   autoComplete="true"
@@ -448,9 +466,9 @@ const Testimonial = () => {
               </div>
             </div>
             <div
+              className="grid grid-cols-1  "
               data-aos="fade-up"
-              data-aos-delay="200"
-              className="grid grid-cols-1  ">
+              data-aos-delay="200">
               <textarea
                 placeholder="Your Message Here"
                 className="outline outline-1 rounded p-2 w-full min-h-[180px] max-h-[220px] "
@@ -468,9 +486,9 @@ const Testimonial = () => {
               )}
             </div>
             <div
+              className=" grid place-content-start"
               data-aos="fade-up"
-              data-aos-delay="250"
-              className=" grid place-content-start">
+              data-aos-delay="250">
               <p className="font-thin font-mono text-sm text-left">
                 <span className="text-red-600">*</span>reCAPTCHA
               </p>
@@ -480,15 +498,15 @@ const Testimonial = () => {
               />
             </div>
             <button
-              data-aos="fade-up"
-              data-aos-delay="300"
-              data-aos-once="false"
               disabled={!verified && !user?.email}
               className={` px-10 py-3  mt-6 font-bold border-2 transition-colors duration-200 ease-linear rounded  cursor-pointer ${
                 !user.email
                   ? "bg-primary/40 text-white opacity-9"
                   : "bg-primary  text-white  hover:text-[#6E72DD]  hover:bg-transparent  border-primary hover:border-[#6E72DD]   "
-              }`}>
+              }`}
+              data-aos="fade-up"
+              data-aos-delay="300"
+              data-aos-once="false">
               <div className={`${HomeCss.separator} inline`}>Submit</div>
               <FontAwesomeIcon className="ml-[14px] " icon={faPaperPlane} />
             </button>
@@ -506,10 +524,10 @@ const Card = ({ item, direction, placement }) => {
   return (
     <div className={`w-full flex overflow-hidden ${placement}`}>
       <div
+        className={`bg-[#1E1E1E]  md:mx-0 overflow-hidden md:w-[80%]  font-inter flex min-h-[260px] md:min-h-[300px] flex-col justify-between  rounded-2xl py-10    gap-5  relative`}
         data-aos={direction}
         data-aos-anchor-placement="top-bottom"
-        data-aos-offset="300"
-        className={`bg-[#1E1E1E]  md:mx-0 overflow-hidden md:w-[80%]  font-inter flex min-h-[260px] md:min-h-[300px] flex-col justify-between  rounded-2xl py-10    gap-5  relative`}>
+        data-aos-offset={window.innerWidth < 768 ? "200" : "200"}>
         <div className="px-8  ">
           <h4 className="text-white relative mb-4 w-max font-bold texl-base md:text-lg font-inter capitalize c_underline">
             {item.heading}
@@ -521,11 +539,11 @@ const Card = ({ item, direction, placement }) => {
           </p>
         </div>
 
-        <div className="border-t hover:bg-purple-bright transition-all duration-300 border-gray-400 px-8 absolute bottom-0 w-full  py-5 group">
+        <div className="border-t hover:bg-purple-bright transition-all duration-300 border-gray-400 px-8 absolute bottom-0 w-full  py-5 group ">
           <NavLink
-            className="text-white font-semibold w-full h-full block"
+            className="text-white font-semibold w-full h-full flex items-center"
             to="/">
-            Learn more
+            <span>Learn more</span>
             <FontAwesomeIcon
               className="ml-1 group-hover:translate-x-1.5 transition-all duration-300"
               icon={faArrowRight}

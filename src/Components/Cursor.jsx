@@ -2,7 +2,7 @@ import AnimatedCursor from "react-animated-cursor";
 
 const Cursor = () => {
   return (
-    <div className="relative z-[9999999999999999999999]">
+    <div className="relative hidden md:block z-[9999999999999999999999]">
       <AnimatedCursor
         innerSize={0}
         outerSize={18}

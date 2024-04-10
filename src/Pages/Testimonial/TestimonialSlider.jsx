@@ -2,13 +2,14 @@ import person1 from "../../assets/Images/avatar/person1.webp";
 import person2 from "../../assets/Images/avatar/person2.webp";
 import person3 from "../../assets/Images/avatar/person3.webp";
 import person4 from "../../assets/Images/avatar/person4.webp";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import quote from "../../assets/Images/quote.svg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HomeCss from "../../assets/CSS/Home.module.css";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -16,6 +17,12 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 // import "react-alice-carousel/lib/alice-carousel.css";
 
 const TestimonialSlider = () => {
+
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const testimonialData = [
     {
       name: "John Smith",
@@ -97,9 +104,9 @@ const TestimonialSlider = () => {
 
   return (
     <div
+      className="my-5 md:my-8 p-2 overflow-hidden "
       data-aos="fade-up"
-      data-aos-delay="100"
-      className="my-5 md:my-8 p-2 overflow-hidden ">
+      data-aos-delay="200">
       <div className={` w-full mx-auto px-2 py-5  `}>
         <Slider
           ref={(slider) => {

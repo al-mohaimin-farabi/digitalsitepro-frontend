@@ -7,6 +7,29 @@
 /* html {
   scroll-behavior: smooth;
 } */
+
+/* Target the scrollbar track and thumb for all elements with overflow */
+*::-webkit-scrollbar {
+  width: 8px; /* Adjust width as desired */
+}
+
+*::-webkit-scrollbar-track {
+  margin: 0px 3px !important;
+  background-color: #353434; /* Transparent track */
+}
+
+/* Target the scrollbar thumb for all elements with overflow */
+*::-webkit-scrollbar-thumb {
+  margin: 0px 3px !important;
+  background-color: #f5f5f5; /* Off-white thumb */
+  border-radius: 6px; /* Add rounded corners */
+}
+
+/* Target the scrollbar thumb on hover for all elements with overflow */
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #ddd; /* Light gray on hover */
+}
+
 body {
   background-color: #000000;
 }
@@ -175,7 +198,7 @@ body {
   box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.1);
 }
 
-.metal_number  {
+.metal_number {
   background: linear-gradient(#262626, #eaeaea, #262626);
   -webkit-background-clip: text;
   background-clip: text;

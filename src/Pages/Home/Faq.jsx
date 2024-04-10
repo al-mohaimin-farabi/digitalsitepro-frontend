@@ -92,7 +92,7 @@ const Accordion = ({ question, answer, id, isOpen, toggleAccordion }) => {
               isOpen
                 ? "text-purple-bright  border-purple-bright"
                 : "text-white border-white"
-            } text-xl grid place-content-center h-[30px] w-[30px]  rounded-full overflow-hidden border  p-1 md:text-base cursor-pointer  `}>
+            } text-xl grid place-content-center min-h-[30px] min-w-[30px]  rounded-full overflow-hidden border  p-1 md:text-base cursor-pointer  `}>
             <FontAwesomeIcon icon={faArrowUp} />
           </motion.span>
         </button>

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar.jsx";
 import NotFound from "./Components/NotFound.jsx";
@@ -8,8 +8,6 @@ import SecureRoute from "./Pages/Login/SecureRoute.jsx";
 import SuspenseLoader from "./Components/SuspenseLoader.jsx";
 import ScrollToTop from "./Components/ScrollToTop.jsx";
 import AdminRoute from "./Pages/Login/AdminRoute.jsx";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Cursor from "./Components/Cursor.jsx";
 import Testing from "./Pages/Testing/Testing.jsx";
 
@@ -42,9 +40,6 @@ const LazyMakeProposal = lazy(() =>
 );
 
 function App() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <>
       <div className="App">
