@@ -121,6 +121,7 @@ const Testimonial = () => {
   }, [modalWrapperRef]);
 
   useEffect(() => {
+    AOS.refresh();
     AOS.init();
   }, []);
 
@@ -176,7 +177,7 @@ const Testimonial = () => {
               <button
                 onClick={() => setLoginAlert(false)}
                 className="text-[25px]  px-6 md:px-0 md:w-[45px]  md:h-[45px]  md:rounded-full md:border border-purple-bright shadow-xl grid place-content-center mx-auto  mt-6">
-                <FontAwesomeIcon className="hidden md:block" icon={faXmark} />{" "}
+                <FontAwesomeIcon className="hidden md:block" icon={faXmark} />
                 <span className="md:hidden text-base font-inter">close</span>
               </button>
             </div>
@@ -232,13 +233,12 @@ const Testimonial = () => {
           data-aos-delay="200"
           data-aos-duration="500"
           data-aos-offset="250"
-          data-aos-anchor-placement="top-bottom"
         />
         <p
           className="text-white font-normal text-base lg:text-lg  mt-6 text-justify "
           data-aos="fade-up"
           data-aos-delay="200"
-          data-aos-offset={window.innerWidth < 768 ? "200" : "200"}>
+          data-aos-offset={window.innerWidth <= 768 ? "250" : "200"}>
           Located in Chittagong, Bangladesh, Digitalsitepro leverages its team
           of accomplished professionals to deliver comprehensive solutions for
           your business&apos;s online and offline presence. With over a decade
@@ -285,48 +285,38 @@ const Testimonial = () => {
               className="text-white leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl lg:text-5xl font-inter tracking-wide mb-4 capitalize text-center"
               data-aos="fade-up"
               data-aos-delay="100"
-              data-aos-offset={window.innerWidth < 768 ? "300" : "250"}>
+              data-aos-offset={window.innerWidth <= 768 ? "250" : "200"}>
               Let’s work together
             </h2>
             <p
               className="text-white text-center  text-xl my-2  mx-auto"
               data-aos="fade-up"
               data-aos-delay="150"
-              data-aos-offset={window.innerWidth < 768 ? "300" : "250"}>
+              data-aos-offset={window.innerWidth <= 768 ? "300" : "250"}>
               Ready to rock the business world together? Let&apos;s shake hands
               and dive into the awesomeness of teamwork
             </p>
           </div>
-          <div className="overflow-hidden mt-10 flex flex-col space-y-5 md:space-y-0 md:flex-row  space-x-0 md:space-x-5 text-white justify-center items-center">
-            <NavLink
-              className="block p-4 w-[220px] max-w-[280px] border-2 border-purple-bright rounded-full text-center text-base bg-purple-bright hover:bg-transparent hover:text-white transition-all duration-300"
-              to="/makeproposal"
+          <div className="overflow-hidden mt-10 ">
+            <div
+              className="flex flex-col space-y-5 md:space-y-0 md:flex-row  space-x-0 md:space-x-5 text-white justify-center items-center"
               data-aos-duration="500"
               data-aos="fade-up"
               data-aos-delay="100"
               data-aos-once="false"
-              data-aos-offset="150">
-              Request a proposal
-            </NavLink>
-            <span
-              className="text-2xl"
-              data-aos-duration="500"
-              data-aos="fade-up"
-              data-aos-delay="100"
-              data-aos-once="false"
-              data-aos-offset="150">
-              OR
-            </span>
-            <NavLink
-              className="block p-4 w-[220px] max-w-[280px] border-2 rounded-full text-center text-base bg-transparent hover:bg-purple-bright hover:border-purple-bright hover:text-white transition-all duration-300"
-              to="/services"
-              data-aos-duration="500"
-              data-aos="fade-up"
-              data-aos-delay="100"
-              data-aos-once="false"
-              data-aos-offset="150">
-              See our services
-            </NavLink>
+              data-aos-offset="200">
+              <NavLink
+                className="block p-4 w-[220px] max-w-[280px] border-2 border-purple-bright rounded-full text-center text-base bg-purple-bright hover:bg-transparent hover:text-white transition-all duration-300"
+                to="/makeproposal">
+                Request a proposal
+              </NavLink>
+              <span className="text-2xl">OR</span>
+              <NavLink
+                className="block p-4 w-[220px] max-w-[280px] border-2 rounded-full text-center text-base bg-transparent hover:bg-purple-bright hover:border-purple-bright hover:text-white transition-all duration-300"
+                to="/services">
+                See our services
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>
@@ -337,14 +327,14 @@ const Testimonial = () => {
             className="text-white hidden md:block overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl  font-inter tracking-wide text-center my-2"
             data-aos="fade-up"
             data-aos-once="false"
-            data-aos-offset={window.innerWidth < 768 ? "300" : "250"}>
+            data-aos-offset={window.innerWidth <= 768 ? "250" : "200"}>
             What our client said <br /> about us .
           </h2>
           <h2
             className="text-white  md:hidden overflow-hidden leading-[45px] md:leading-[58px] font-extrabold text-3xl md:text-4xl  font-inter tracking-wide text-center my-2"
             data-aos="fade-up"
             data-aos-once="false"
-            data-aos-offset={window.innerWidth < 768 ? "300" : "250"}>
+            data-aos-offset={window.innerWidth <= 768 ? "300" : "250"}>
             What our client said about us .
           </h2>
           <p
@@ -362,7 +352,7 @@ const Testimonial = () => {
       <div
         className=" bg-gray-200  py-12 px-1 font-inter"
         data-aos="fade-up"
-        data-aos-offset={window.innerWidth < 768 ? "300" : "250"}>
+        data-aos-offset={window.innerWidth <= 768 ? "300" : "250"}>
         <div className="md:max-w-[960px] lg:max-w-[1280px] mx-auto px-2 md:px-1 overflow-hidden">
           <h2
             className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-600 overflow-hidden text-center tracking-wide  md:text-balance md:px-12"
@@ -526,8 +516,8 @@ const Card = ({ item, direction, placement }) => {
       <div
         className={`bg-[#1E1E1E]  md:mx-0 overflow-hidden md:w-[80%]  font-inter flex min-h-[260px] md:min-h-[300px] flex-col justify-between  rounded-2xl py-10    gap-5  relative`}
         data-aos={direction}
-        data-aos-anchor-placement="top-bottom"
-        data-aos-offset="200" >
+        data-aos-duration="800"
+        data-aos-anchor-placement="bottom-bottom">
         <div className="px-8  ">
           <h4 className="text-white relative mb-4 w-max font-bold texl-base md:text-lg font-inter capitalize c_underline">
             {item.heading}

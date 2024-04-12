@@ -17,9 +17,8 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 // import "react-alice-carousel/lib/alice-carousel.css";
 
 const TestimonialSlider = () => {
-
-
   useEffect(() => {
+    AOS.refresh();
     AOS.init();
   }, []);
 
@@ -106,7 +105,8 @@ const TestimonialSlider = () => {
     <div
       className="my-5 md:my-8 p-2 overflow-hidden "
       data-aos="fade-up"
-      data-aos-delay="200">
+      data-aos-delay="200"
+      data-aos-offset={window.innerWidth <= 768 ? "250" : "200"}>
       <div className={` w-full mx-auto px-2 py-5  `}>
         <Slider
           ref={(slider) => {

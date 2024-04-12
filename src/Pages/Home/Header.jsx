@@ -66,11 +66,11 @@ const Header = () => {
             "Building Digital Products That Transform Businesses",
             500,
           ]}
-          className="md:min-w-[720px] min-h-[150px]  md:max-w-[720px] block text-white md:-mt-[0px] lg:-mt-[50px]  md:mb-[10px] lg:mb-[20px] text-[25px] sm:text-[40px] md:text-[45px] font-extrabold my-2 px-1   tracking-wide  text-wrap break-words "
+          className="md:min-w-[720px] h-max md:min-h-[150px]  md:max-w-[720px] block text-white md:-mt-[0px] lg:-mt-[50px]  md:mb-[10px] lg:mb-[20px] text-[25px] sm:text-[40px] md:text-[45px] font-extrabold my-2 px-1   tracking-wide  text-wrap break-words "
           repeat={Infinity}
         />
 
-        <p className="px-1 flex  my-4 md:my-2 lg:my-4 capitalize max-w-[380px] lg:min-w-[50px] sm:max-w-[750px] text-xl  md:text-3xl text-gray-400 font-bold text-left text-balance">
+        <p className="px-1 flex  md:my-2 lg:my-4 capitalize max-w-[380px] lg:min-w-[50px] sm:max-w-[750px] text-xl  md:text-3xl text-gray-400 font-bold text-left text-balance">
           We Think&nbsp;
           <motion.span
             initial={{ opacity: 0, y: 20 }} // Start with opacity 0 and translate 20px down

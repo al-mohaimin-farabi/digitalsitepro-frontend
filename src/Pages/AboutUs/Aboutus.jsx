@@ -2,6 +2,7 @@ import Payel from "../../assets/Images/avatar/Asraful.webp";
 import Farabi from "../../assets/Images/avatar/Farabi.webp";
 import Rabbi from "../../assets/Images/avatar/Rabbi.webp";
 import Faysal from "../../assets/Images/avatar/Faysal.webp";
+import Sabbir from "../../assets/Images/avatar/Sabbir.webp";
 import Footter from "../../Components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -13,23 +14,9 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { useEffect } from "react";
 
-const staggerVariants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-  },
-  visible: (index) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-      delay: index * 0.1, // Adjust the delay time as needed
-    },
-  }),
-};
-
 const Aboutus = () => {
   useEffect(() => {
+    AOS.refresh();
     AOS.init();
   }, []);
 
@@ -91,9 +78,9 @@ const Aboutus = () => {
     },
     {
       id: 5,
-      name: "Mubasshirul Islam Sabbir",
-      email: "almohaiminfarabi.work@gmail.com",
-      img: Farabi,
+      name: "Mubbashirul Islam",
+      email: "mubbashirulislam@gmail.com",
+      img: Sabbir,
       role: "researcher",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ratione.",
@@ -157,7 +144,7 @@ const Aboutus = () => {
                 className="text-white  overflow-hidden text-base md:text-lg lg:text-xl  my-2 font-inter relative text-justify  "
                 data-aos="fade-up"
                 data-aos-delay="150"
-                data-aos-offset="150"
+                data-aos-offset={window.innerWidth <= 768 ? "300" : "0"}
                 data-aos-duration="700">
                 Digital Site Pro is a solution service provider committed to
                 helping you establish a strong presence in the digital realm. We
@@ -177,7 +164,7 @@ const Aboutus = () => {
                 data-aos="zoom-in"
                 data-aos-delay="150"
                 data-aos-duration="700"
-                data-aos-offset="180"
+                data-aos-offset="200"
               />
             </div>
           </div>
@@ -200,14 +187,14 @@ const Aboutus = () => {
               Our web service team is ready to help you
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-5">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-5 ">
             {members.map((member, index) => (
-              <motion.div
+              <div
                 key={member?.id}
-                variants={staggerVariants}
-                initial="hidden"
-                whileInView="visible"
-                custom={index}
+                data-aos="fade-up"
+                data-aos-easing="ease-in-out-back"
+                data-aos-duration="800"
+                data-aos-delay={index * 100}
                 className="bg-[#1E1E1E] p-5 flex gap-2 rounded">
                 <div className="overflow-hidden bg-purple-900/60 px-2 w-max rounded">
                   <img
@@ -224,7 +211,7 @@ const Aboutus = () => {
                     {member?.role}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -250,7 +237,7 @@ const Aboutus = () => {
                   key={index}
                   data-aos="fade-up"
                   data-aos-duration="800"
-                  data-aos-offset={window.innerWidth < 768 ? "200" : "250"}
+                  data-aos-offset={window.innerWidth <= 768 ? "250" : "250"}
                   data-aos-delay={(index + 1) * 30}>
                   <span className="text-3xl md:text-5xl lg:text-6xl font-extrabold metal_number">
                     {index + 1}
@@ -294,7 +281,7 @@ const Aboutus = () => {
                   src={imgThree}
                   alt=""
                   data-aos="fade-up"
-                  data-aos-offset={"250"}
+                  data-aos-offset="250"
                 />
               </div>
             </div>
@@ -323,8 +310,10 @@ const Card = ({ item, gap, index }) => {
     <div
       className={`lg:py-8 lg:px-5 px-4 py-6 ${gap} h-full rounded-3xl bg-[#1E1E1E]`}
       data-aos="fade-up"
-      data-aos-offset={window.innerWidth <= 768 ? "150" : "220"}
-      data-aos-delay={index * 50}>
+      data-aos-anchore-placement="bottom-bottom"
+      data-aos-delay={index * 50}
+      data-aos-duration="800"
+      data-aos-easing="ease-in-out-back">
       <h2 className="text-white text-base font-semibold inline-block  c_underline relative  text-wrap break-words">
         {item.heading}
       </h2>
