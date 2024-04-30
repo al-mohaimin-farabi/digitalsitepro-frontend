@@ -2,15 +2,13 @@ import Payel from "../../assets/Images/avatar/Asraful.webp";
 import Farabi from "../../assets/Images/avatar/Farabi.webp";
 import Rabbi from "../../assets/Images/avatar/Rabbi.webp";
 import Faysal from "../../assets/Images/avatar/Faysal.webp";
-import Sabbir from "../../assets/Images/avatar/Sabbir.webp";
+import Sabbir from "../../assets/Images/avatar/sabbir.webp";
 import Footter from "../../Components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import imgOne from "../../assets/Images/aboutus/about_us_img-1.webp";
 import imgTwo from "../../assets/Images/aboutus/about_us_img-2.webp";
 import imgThree from "../../assets/Images/aboutus/about_us_img-3.png";
-
-import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { useEffect } from "react";
 
