@@ -6,8 +6,9 @@ import PhoneInput from "react-phone-input-2";
 import { useEffect, useState } from "react";
 import "react-phone-input-2/lib/style.css";
 import Dropzone from "react-dropzone";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudArrowUp, faXmark } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const MakeProposal = () => {
   const { user, userPhone } = useAuth();
@@ -24,94 +25,117 @@ const MakeProposal = () => {
     formState: { errors },
   } = useForm();
 
+  // Handle phone number change
   const handlechange = (value) => {
     setPhoneNumber(value);
-    if (phoneNumber.length <= 7) {
+    if (value.length <= 7) {
       setError("phone", {
         type: "notValid",
         message: "Phone number is not valid",
       });
     } else {
       clearErrors("phone");
-      reset();
     }
   };
 
+  // Handle file drop
   const onDrop = (acceptedFiles) => {
+    setFileError(""); // Clear previous errors
+
     if (acceptedFiles.length > 1) {
-      console.error("Only one file can be uploaded.");
       setFileError("Only one file can be uploaded");
       return;
     }
+
     const acceptedFileTypes = [
       "application/zip",
       "application/x-rar-compressed",
+      "application/x-zip-compressed",
+      "multipart/x-zip",
     ];
     const validFile =
       acceptedFiles[0] && acceptedFileTypes.includes(acceptedFiles[0].type);
 
     if (validFile) {
-      // Validate file size and set error if too large
-      const MAX_FILE_SIZE_MB = 200; // 10 MB
-      const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024; // Convert MB to bytes
+      const MAX_FILE_SIZE_MB = 200; // 200 MB
+      const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
       const fileSize = acceptedFiles[0].size;
 
       if (fileSize > MAX_FILE_SIZE_BYTES) {
         setFileError(
           `File exceeds file size limit (max ${MAX_FILE_SIZE_MB} MB)`
         );
-        setFile(null); // Clear file selection if size is invalid
+        setFile(null);
       } else {
-        setFile(acceptedFiles[0]); // Set valid file
-        setFileError(null); // Clear any previous errors
+        setFile(acceptedFiles[0]);
+        setFileError(""); // Clear any existing file error
       }
     } else {
       setFileError("Only zip or rar file uploads are allowed");
-      console.error("Only zip or rar file uploads are allowed.");
     }
   };
 
-  const selectFile = () => {
-    setError("");
-    // setIsModalOpen(true);
+  // Clear selected file
+  const selectFile = (e) => {
+    e.preventDefault(); // Prevent default behavior to avoid triggering form submit
     setFile(null);
   };
 
-  const handleFileUpload = async () => {
-    if (!file) return;
+  // Submit proposal data
 
-    const formData = new FormData();
-    formData.append("file", file);
-  };
-
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     if (phoneNumber.length <= 5) {
       setError("phone", {
         type: "notValid",
         message: "Phone number is not valid",
       });
-    } else {
-      clearErrors("phone");
-      const combined = { ...data, phoneNumber };
-      console.log(combined);
+      return;
     }
 
-    // Ensure errors are cleared before submission
-  };
+    const combinedData = { ...data, phoneNumber };
+    const formData = new FormData();
+    formData.append("name", combinedData.name);
+    formData.append("email", combinedData.email);
+    formData.append("phoneNumber", combinedData.phoneNumber);
+    formData.append("category", combinedData.category);
+    formData.append("details", combinedData.details);
+    if (file) {
+      formData.append("file", file); // Append file to FormData
+    }
 
-  const inputClass = DashboardCss.phone_input;
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/makeproposal",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("Proposal submitted successfully:", response.data);
+      alert("Proposal submitted successfully");
+      reset();
+      setFile(null);
+      setPhoneNumber("");
+    } catch (error) {
+      console.error("Error submitting proposal:", error.response || error);
+      alert("Failed to submit proposal, please try again.");
+    }
+  };
 
   useEffect(() => {
     setPhoneNumber(userPhone ? userPhone : phoneNumber);
   }, [userPhone]);
 
   return (
-    <div className="w-full md:max-w-[960px] mx-auto  lg:max-w-[1280px] px-2 md:px-1 mt-[96px] md:mt-[110px] py-5 md:py-16">
+    <div className="w-full md:max-w-[960px] mx-auto lg:max-w-[1280px] px-2 md:px-1 mt-[96px] md:mt-[110px] py-5 md:py-16">
       <form className="w-full" onSubmit={handleSubmit(onSubmit)} action="#">
-        <h2 className={`text-2xl md:text-3xl font-bold text-white mb-8 `}>
+        <h2 className={`text-2xl md:text-3xl font-bold text-white mb-8`}>
           <span className={`${HomeCss.ContactUs}`}>Fill out the form</span>
         </h2>
         <div className="grid grid-cols-1 gap-5 md:gap-8 md:grid-cols-2 w-full">
+          {/* Name Input */}
           <div className="flex flex-col space-y-3 my-2">
             <label className="text-lg text-white" htmlFor="nameInput">
               Name<span className="text-red-600">*</span>
@@ -135,7 +159,9 @@ const MakeProposal = () => {
               <p className="text-red-600">{errors.name.message}</p>
             )}
           </div>
-          <div className="flex flex-col space-y-3 my-2 ">
+
+          {/* Email Input */}
+          <div className="flex flex-col space-y-3 my-2">
             <label className="text-lg text-white" htmlFor="emailInput">
               Email<span className="text-red-600">*</span>
             </label>
@@ -160,24 +186,26 @@ const MakeProposal = () => {
             )}
           </div>
         </div>
+
+        {/* Phone Number Input */}
         <div className="grid grid-cols-1 gap-5 md:gap-8 md:grid-cols-2 w-full">
           <div className="flex flex-col space-y-3 my-2">
             <label className="text-lg text-white">
               Phone Number<span className="text-red-600">*</span>
             </label>
-
             <PhoneInput
-              inputClass={inputClass}
+              inputClass={DashboardCss.phone_input}
               country={"bd"}
-              value={userPhone ? userPhone : phoneNumber}
+              value={phoneNumber}
               onChange={handlechange}
               inputProps={{ required: true }}
             />
-
             {errors.phone && (
               <p className="text-red-600">{errors.phone.message}</p>
             )}
           </div>
+
+          {/* Category Select */}
           <div className="flex flex-col space-y-3 my-2">
             <label className="text-lg text-white" htmlFor="categorySelect">
               Select Category<span className="text-red-600">*</span>
@@ -198,7 +226,6 @@ const MakeProposal = () => {
                   <option value="" disabled>
                     --Select Category--
                   </option>
-                  {/* disabled and non-selectable */}
                   <option className="text-black" value="video_editing">
                     Video Editing
                   </option>
@@ -216,6 +243,8 @@ const MakeProposal = () => {
             )}
           </div>
         </div>
+
+        {/* Project Description and File Upload */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
           <div className="flex flex-col space-y-3 mt-2 mb-3">
             <label className="text-lg text-white" htmlFor="detailsInput">
@@ -225,7 +254,7 @@ const MakeProposal = () => {
             <textarea
               autoComplete="true"
               placeholder="Project Description Here"
-              className="outline outline-1 outline-gray-400 rounded-md p-2 min-h-[180px] max-h-[220px] "
+              className="outline outline-1 outline-gray-400 rounded-md p-2 min-h-[180px] max-h-[220px]"
               id="detailsInput"
               name="details"
               {...register("details", {
@@ -240,41 +269,41 @@ const MakeProposal = () => {
               <p className="text-red-600">{errors.details.message}</p>
             )}
           </div>
-          <div className="flex flex-col space-y-3 mt-2 mb-3 w-full ">
-            <label className="text-lg  opacity-0" htmlFor="fileInput">
-              Upload File
-              <span className="text-red-600">*</span>
+
+          {/* File Upload */}
+          <div className="flex flex-col space-y-3 mt-2 mb-3 w-full">
+            <label className="text-lg opacity-0" htmlFor="fileInput">
+              Upload File<span className="text-red-600">*</span>
             </label>
             <div className="outline-green-500 bg-green-500/30 outline outline-1 h-full rounded-md min-w-full grid place-content-center">
-              <Dropzone onDrop={onDrop}>
+              <Dropzone
+                onDrop={onDrop}
+                multiple={false} // Ensure only one file is allowed
+              >
                 {({ getRootProps, getInputProps }) => (
                   <div
-                    className="text-[40px] md:text-[75px] text-white  grid place-content-center text-center min-w-full "
+                    className="text-[40px] md:text-[75px] text-white grid place-content-center text-center min-w-full"
                     {...getRootProps()}>
                     <input {...getInputProps()} />
                     {!file && (
-                      <FontAwesomeIcon
-                        className="mx-auto text-[50px] md:text-[60px] text-green-700/70"
-                        icon={faCloudArrowUp}
-                      />
+                      <>
+                        <FontAwesomeIcon
+                          className="mx-auto text-[50px] md:text-[60px] text-green-700/70"
+                          icon={faCloudArrowUp}
+                        />
+                        <p className="text-gray-200 text-base md:text-lg font-inter">
+                          Drag and drop file here <br /> or
+                        </p>
+                        <button
+                          type="button"
+                          className="mt-2 text-purple-bright/80 underline text-base md:text-lg font-semibold font-inter">
+                          Choose from computer
+                        </button>
+                      </>
                     )}
-                    <div className="flex flex-col">
-                      {!file && (
-                        <>
-                          <p className="text-gray-200 text-base md:text-lg  font-inter">
-                            Drag and drop file here <br /> or
-                          </p>
-                          <button className="mt-2 text-purple-bright/80 underline text-base md:text-lg font-semibold font-inter ">
-                            Choose from computer
-                          </button>
-                          {fileError && (
-                            <span className="text-red-600 text-sm">
-                              {fileError}
-                            </span>
-                          )}
-                        </>
-                      )}
-                    </div>
+                    {fileError && (
+                      <span className="text-red-600 text-sm">{fileError}</span>
+                    )}
                   </div>
                 )}
               </Dropzone>
@@ -288,19 +317,16 @@ const MakeProposal = () => {
                   </div>
                   <button
                     onClick={selectFile}
-                    className=" mx-auto mb-4 h-[40px] w-[40px] grid place-content-center bg-red-600 text-white py-2 px-4  hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50 rounded-full">
+                    className="mx-auto mb-4 h-[40px] w-[40px] grid place-content-center bg-red-600 text-white py-2 px-4 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50 rounded-full">
                     <FontAwesomeIcon icon={faXmark} />
-                  </button>
-                  <button
-                    onClick={handleFileUpload}
-                    className="block mx-auto text-purple-bright/80 underline text-lg font-semibold font-inter ">
-                    Upload {file.name}
                   </button>
                 </>
               )}
             </div>
           </div>
         </div>
+
+        {/* Submit Button */}
         <button
           type="submit"
           className="rounded-md font-semibold font-inter border-2 border-purple-bright hover:bg-transparent hover:text-purple-bright transition-colors duration-300 bg-purple-bright text-white px-12 py-4 mt-5">

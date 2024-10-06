@@ -13,17 +13,11 @@ const ContactUs = () => {
   const navigate = useNavigate();
   const [verified, setVerified] = useState(false);
   const [captchaValue, setCaptchaValue] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   const service_id = import.meta.env.VITE_REACT_APP_SERVICE_ID;
   const template_id = import.meta.env.VITE_REACT_APP_TEMPLATE_ID;
   const public_key = import.meta.env.VITE_REACT_APP_PUBLIC_KEY;
-
-  const onChange = (value) => {
-    setCaptchaValue(value);
-    setVerified(true);
-  };
-
-  // const [details, setDetails] = useState({ name: "", email: "" });
 
   const {
     reset,
@@ -32,40 +26,47 @@ const ContactUs = () => {
     formState: { errors },
   } = useForm();
 
+  // Captcha change handler
+  const onChange = (value) => {
+    setCaptchaValue(value);
+    setVerified(true);
+  };
+
   const onSubmit = (data) => {
-    // setDetails({ name: data.name, email: data.email });
-    // console.log(details);
-    // console.log(data);
-    // return data;
-    const templatePerameter = {
-      from_name: data?.name,
-      from_email: data?.email,
+    setIsSending(true);
+    const templateParameter = {
+      from_name: data.name,
+      from_email: data.email,
       to_name: "DigitalSitePro",
       message: data.message,
       "g-recaptcha-response": captchaValue,
     };
 
-    emailjs.send(service_id, template_id, templatePerameter, public_key).then(
+    emailjs.send(service_id, template_id, templateParameter, public_key).then(
       (response) => {
         console.log("SUCCESS!", response.status, response.text);
+        setIsSending(false);
         reset();
-        alert("Message Sent Successfuly");
+        alert("Message Sent Successfully");
         navigate("/");
       },
       (error) => {
-        console.log("FAILED...", error);
+        console.error("FAILED...", error);
+        setIsSending(false);
+        alert("Failed to send message, please try again later.");
       }
     );
   };
 
   return (
-    <div className="mt-[80px] md:mt-[120px] mx-auto  md:max-w-[960px] lg:max-w-[1280px] px-2 py-16">
+    <div className="mt-[80px] md:mt-[120px] mx-auto md:max-w-[960px] lg:max-w-[1280px] px-2 py-16">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" px-2 md:w-2/4 mx-auto font-flow">
-        <h2 className={`text-2xl md:text-3xl font-bold text-white mb-8 `}>
+        className="px-2 md:w-2/4 mx-auto font-flow">
+        <h2 className={`text-2xl md:text-3xl font-bold text-white mb-8`}>
           <span className={`${HomeCss.ContactUs}`}>Contact Us</span>
         </h2>
+
         <div className="flex flex-col space-y-3 my-5">
           <label className="text-lg" htmlFor="name">
             Name:
@@ -74,18 +75,19 @@ const ContactUs = () => {
             autoComplete="true"
             placeholder="Insert Your Name"
             className={`${
-              user && "text-gray-400"
+              user ? "text-gray-400" : ""
             } outline-gray-950 outline outline-1 rounded p-2`}
             type="text"
             id="name"
             defaultValue={user?.displayName || ""}
-            readOnly={user.email ? true : false}
+            readOnly={!!user?.displayName}
             {...register("name", {
-              required: !user ? "Name is required!" : "",
+              required: !user ? "Name is required!" : false,
             })}
           />
           {errors.name && <p className="text-red-600">{errors.name.message}</p>}
         </div>
+
         <div className="flex flex-col space-y-3 my-5">
           <label className="text-lg" htmlFor="email">
             Email:
@@ -94,29 +96,33 @@ const ContactUs = () => {
             autoComplete="true"
             placeholder="Insert Your Email"
             className={`${
-              user && "text-gray-400"
+              user ? "text-gray-400" : ""
             } outline-gray-950 outline outline-1 rounded p-2`}
             type="email"
             id="email"
             defaultValue={user?.email || ""}
-            readOnly={user.email ? true : false}
+            readOnly={!!user?.email}
             {...register("email", {
-              required: !user ? "Email is required!" : "",
-              pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              required: !user ? "Email is required!" : false,
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "Invalid email address",
+              },
             })}
           />
           {errors.email && (
             <p className="text-red-600">{errors.email.message}</p>
           )}
         </div>
+
         <div className="flex flex-col space-y-3 mt-5 mb-3">
-          <label className="text-lg " htmlFor="message">
+          <label className="text-lg" htmlFor="message">
             Message:
           </label>
           <textarea
             autoComplete="true"
             placeholder="Your Message Here"
-            className="outline outline-1 rounded p-2 min-h-[150px] max-h-[220px] "
+            className="outline outline-1 rounded p-2 min-h-[150px] max-h-[220px]"
             id="message"
             {...register("message", {
               required: "Message is required!",
@@ -130,6 +136,7 @@ const ContactUs = () => {
             <p className="text-red-600">{errors.message.message}</p>
           )}
         </div>
+
         <p className="font-thin font-mono text-sm">
           <span className="text-red-600">*</span>reCAPTCHA
         </p>
@@ -140,12 +147,42 @@ const ContactUs = () => {
         />
 
         <button
-          disabled={!verified}
-          className={` bg-primary px-10 py-2 my-6 font-bold  text-white hover:text-[#6E72DD]  hover:bg-transparent border-2 transition-colors duration-200 ease-linear border-primary hover:border-[#6E72DD]  rounded  cursor-pointer`}>
-          <div className={`${HomeCss.separator} inline`}>Send</div>
-          <FontAwesomeIcon className="ml-[12px] " icon={faPaperPlane} />
+          disabled={!verified || isSending}
+          className={`${
+            isSending ? "bg-gray-400" : "bg-primary"
+          } px-10 py-2 my-6 font-bold text-white hover:text-[#6E72DD] hover:bg-transparent border-2 transition-colors duration-200 ease-linear border-primary hover:border-[#6E72DD] rounded cursor-pointer`}>
+          {isSending ? (
+            <div className="flex items-center">
+              <div className="loader mr-2"></div>
+              Sending...
+            </div>
+          ) : (
+            <div className="flex items-center">
+              <span className={`${HomeCss.separator} inline`}>Send</span>
+              <FontAwesomeIcon className="ml-[12px]" icon={faPaperPlane} />
+            </div>
+          )}
         </button>
       </form>
+
+      {/* Loading spinner CSS */}
+      <style>
+        {`
+          .loader {
+            border: 4px solid #f3f3f3; 
+            border-top: 4px solid #3498db; 
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            animation: spin 1s linear infinite;
+          }
+
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}
+      </style>
     </div>
   );
 };

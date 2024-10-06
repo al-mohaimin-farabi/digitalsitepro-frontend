@@ -30,6 +30,12 @@ const actions = [
     label: "Approve Testimonial",
     to: "/dashboard/approvetestimonial",
   },
+  {
+    id: 4,
+    accessLevel: "admin",
+    label: "Proposal's",
+    to: "/dashboard/proposals",
+  },
 ];
 
 const Dashboard = () => {
@@ -275,7 +281,9 @@ const Dashboard = () => {
                     to={action.to}
                     onClick={() => handeAccountSettings(action.id)}
                     className={`${
-                      activeTab === action.id ? "bg-gray-200" : "bg-gray-500/30 text-white"
+                      activeTab === action.id
+                        ? "bg-gray-200"
+                        : "bg-gray-500/30 text-white"
                     } py-2 px-4 rounded-md hideState dashboard_tab block`}>
                     {action.label}
                   </NavLink>

@@ -11,7 +11,8 @@ import {
   updateProfile,
   getIdToken,
   sendEmailVerification,
-  signInWithRedirect,
+  // signInWithRedirect,
+  signInWithPopup,
   sendPasswordResetEmail,
   TwitterAuthProvider,
 } from "firebase/auth";
@@ -112,10 +113,10 @@ const useFirebase = () => {
     }
   };
 
-  // google signin
+  // google signing
   const signInWithGoogle = (location, navigate) => {
     setIsLoading(true);
-    signInWithRedirect(auth, googleProvider)
+    signInWithPopup(auth, googleProvider)
       .then((result) => {
         // eslint-disable-next-line no-unused-vars
         const user = result.user;
@@ -133,10 +134,10 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
-  // facebook signin
+  // facebook singing
   const signInWithFacebook = (location, navigate) => {
     setIsLoading(true);
-    signInWithRedirect(auth, facebookProvider)
+    signInWithPopup(auth, facebookProvider)
       .then((result) => {
         const user = result.user;
         // console.log(user);
@@ -151,10 +152,10 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
-  // twitter signin
+  // twitter singin
   const signInWithTwitter = (location, navigate) => {
     setIsLoading(true);
-    signInWithRedirect(auth, twitterProvider)
+    signInWithPopup(auth, twitterProvider)
       .then((result) => {
         const user = result.user;
         // console.log(user);

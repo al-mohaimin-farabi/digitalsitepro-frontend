@@ -10,6 +10,7 @@ import ScrollToTop from "./Components/ScrollToTop.jsx";
 import AdminRoute from "./Pages/Login/AdminRoute.jsx";
 import Cursor from "./Components/Cursor.jsx";
 import Testing from "./Pages/Testing/Testing.jsx";
+import Register from "./Register.jsx";
 
 // Lazy-loaded components
 const LazyHome = lazy(() => import("./Pages/Home/Home.jsx"));
@@ -38,6 +39,12 @@ const LazyApproveTestimonial = lazy(() =>
 const LazyMakeProposal = lazy(() =>
   import("./Pages/MakeProposal/MakeProposal.jsx")
 );
+const LazyOrderHistory = lazy(() =>
+  import("./Pages/Dashboard/OrderHistory.jsx")
+);
+const LazyProposals = lazy(() =>
+  import("./Pages/Dashboard/Proposals.jsx")
+);
 
 function App() {
   return (
@@ -63,13 +70,13 @@ function App() {
             />
             <Route
               path="/home"
-              end
               element={
                 <Suspense fallback={<SuspenseLoader />}>
                   <LazyHome />
                 </Suspense>
               }
             />
+            <Route path="/register" element={<Register />} />
             <Route
               path="/aboutus"
               element={
@@ -145,6 +152,26 @@ function App() {
                   <SecureRoute>
                     <Suspense fallback={<SuspenseLoader />}>
                       <LazyAccountSetting />
+                    </Suspense>
+                  </SecureRoute>
+                }
+              />
+              <Route
+                path="orderhistory"
+                element={
+                  <SecureRoute>
+                    <Suspense fallback={<SuspenseLoader />}>
+                      <LazyOrderHistory />
+                    </Suspense>
+                  </SecureRoute>
+                }
+              />
+              <Route
+                path="proposals"
+                element={
+                  <SecureRoute>
+                    <Suspense fallback={<SuspenseLoader />}>
+                      <LazyProposals />
                     </Suspense>
                   </SecureRoute>
                 }
