@@ -1,3 +1,4 @@
+// mew proposal, now accept rar and zip file
 import { Controller, useForm } from "react-hook-form";
 import HomeCss from "../../assets/CSS/Home.module.css";
 import DashboardCss from "../../assets/CSS/Dashboard.module.css";
@@ -53,8 +54,12 @@ const MakeProposal = () => {
       "application/x-zip-compressed",
       "multipart/x-zip",
     ];
+
     const validFile =
-      acceptedFiles[0] && acceptedFileTypes.includes(acceptedFiles[0].type);
+      acceptedFiles[0] &&
+      (acceptedFileTypes.includes(acceptedFiles[0].type) ||
+        acceptedFiles[0].name.endsWith(".zip") ||
+        acceptedFiles[0].name.endsWith(".rar"));
 
     if (validFile) {
       const MAX_FILE_SIZE_MB = 200; // 200 MB
@@ -82,7 +87,6 @@ const MakeProposal = () => {
   };
 
   // Submit proposal data
-
   const onSubmit = async (data) => {
     if (phoneNumber.length <= 5) {
       setError("phone", {
@@ -279,7 +283,10 @@ const MakeProposal = () => {
               <Dropzone
                 onDrop={onDrop}
                 multiple={false} // Ensure only one file is allowed
-              >
+                accept={{
+                  "application/zip": [".zip"],
+                  "application/x-rar-compressed": [".rar"],
+                }}>
                 {({ getRootProps, getInputProps }) => (
                   <div
                     className="text-[40px] md:text-[75px] text-white grid place-content-center text-center min-w-full"
